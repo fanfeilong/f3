@@ -1,0 +1,3 @@
+- 刘戈,  [中国人为什么反转基因](http://www.agrogene.cn/info-1651.shtml)
+- 方舟子，[脂肪的是是非非](http://www.scipark.net/archives/21882)
+- [zhihu:有没有什么自然科学理论瞬间击中你以至于改变了你的价值观？](http://www.zhihu.com/question/27341806/answer/37210794)
