@@ -77,8 +77,7 @@ network notes
     * [PUSH-ACK](https://ask.wireshark.org/questions/20423/pshack-wireshark-capture) 
   * [HTTPPacket](http://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol)
   * [HTTP state codes](http://en.wikipedia.org/wiki/List_of_HTTP_status_codes)
-  * [Understanding tcp sequence acknowledgment numbers]
-  (http://packetlife.net/blog/2010/jun/7/understanding-tcp-sequence-acknowledgment-numbers/)
+  * [Understanding tcp sequence acknowledgment numbers](http://packetlife.net/blog/2010/jun/7/understanding-tcp-sequence-acknowledgment-numbers/)
   * [The TIME-WAIT state in TCP and Its Effect on Busy Servers](http://www.isi.edu/touch/pubs/infocomm99/infocomm99-web/)
   * [How to Calculate IP/TCP/UDP Checksum–Part 1 Theory](http://www.roman10.net/how-to-calculate-iptcpudp-checksumpart-1-theory/)
   * [Introduce to HyperText Transfer Protocol ](http://www.ntu.edu.sg/home/ehchua/programming/webprogramming/HTTP_Basics.html) 
@@ -87,8 +86,7 @@ network notes
   * [网络基本功（一）：细说网络传输](https://community.emc.com/thread/197851)
   * [协议森林](http://www.cnblogs.com/vamei/tag/%E7%BD%91%E7%BB%9C/)
   * [15 New TCP Implements](http://intronetworks.cs.luc.edu/current/html/newtcps.html)
-  * [Raw socket, Packet socket and Zero copy networking in Linux]
-    (http://yusufonlinux.blogspot.jp/2010/11/data-link-access-and-zero-copy.html)
+  * [Raw socket, Packet socket and Zero copy networking in Linux](http://yusufonlinux.blogspot.jp/2010/11/data-link-access-and-zero-copy.html)
   * [using sockets rather like using files](http://www.cplusplus.com/forum/general/58677/)
   * [How$speedy$is$SPDY?](https://www.usenix.org/sites/default/files/conference/protected-files/nsdi14_slides_wang.pdf)
   * [Do routers verify UDP and TCP checksums?](http://serverfault.com/questions/644289/do-routers-verify-udp-and-tcp-checksums)
