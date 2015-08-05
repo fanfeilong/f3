@@ -56,8 +56,8 @@ void Main(){
 	var ca = new CNBlogSoftareClassAnalyzer(savePath);
 	
 	// 下载数据，并保存到savePath
-	//var userName = "fanfeilong";
-	//var passWord = "markdown2.7182818";
+	//var userName = "";
+	//var passWord = "";
 	//var cnBlog = new CNBlog(userName,passWord).Login();
 	//cnBlog.FetchPosts("qluZhao").Select(p=>p.Title).Dump();
 	//ca.Connect(cnBlog).List().Fetch().Save();
