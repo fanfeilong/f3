@@ -14,6 +14,7 @@
   - [wiki:Paxos算法](http://zh.wikipedia.org/wiki/Paxos%E7%AE%97%E6%B3%95)
   - [NEAT ALGORITHMS - PAXOS](http://harry.me/blog/2014/12/27/neat-algorithms-paxos/?hn=1)
   - [wiki:List of Distributed Computing Projects](http://en.wikipedia.org/wiki/List_of_distributed_computing_projects)
+  - [wiki:Quorum](https://en.wikipedia.org/wiki/Quorum_(distributed_computing))
 - [Principles of Distributed Computing (lecture collection)](http://dcg.ethz.ch/lectures/podc_allstars/)
   - [Distributed Systems Syllabus](http://www.cs.cmu.edu/~dga/15-440/F12/syllabus.html)
 - [wiki:MapReduce](http://zh.wikipedia.org/zh/MapReduce)
