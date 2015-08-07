@@ -471,7 +471,14 @@ end
 		`(M1=M2,N1=N2,P1=P2)/(if M1 then N1 else P1=if M2 then N2 else P2)`
 		* 序偶 `(M=N)/(ProjiM=ProjiN)` `(M=N,P=Q)/(<M,P>=<N,Q>)`
 		* 函数  `(M=N)/(λx:σ.M=λx:σ.N)` `(M=N,P=Q)/(MP=NQ)`
-		
+
+
+
+#### 《Languages Implementation Parttern》
+
+###### 第四章
+>The key idea behind an AST is the operator-operand tree structure, not the node data type. The node data type is really just how we implement ASTs. An AST contains the essence of the input token stream and the relationships between operator and operand tokens.
+
 
 #### 参考资料
 -------------
