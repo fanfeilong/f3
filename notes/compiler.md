@@ -476,6 +476,8 @@ end
 
 #### 《Languages Implementation Parttern》
 
+`Lexer`>`Parser`>`AST`>`Vistor`>`SymbolScopeTree`>`StaticTypeRule`>
+
 ###### 第四章
 >The key idea behind an AST is the operator-operand tree structure, not the node data type. The node data type is really just how we implement ASTs. An AST contains the essence of the input token stream and the relationships between operator and operand tokens.
 
