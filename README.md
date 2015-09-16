@@ -15,6 +15,7 @@ ffl's notes
 - [distributed computing](https://github.com/fanfeilong/f3/tree/master/notes/distributed-computing.md) 
 - [element pattern](https://github.com/fanfeilong/f3/tree/master/notes/element-pattern.md) 
 - [engineering](https://github.com/fanfeilong/f3/tree/master/notes/engineering.md) 
+- [encoding](https://github.com/fanfeilong/f3/tree/master/notes/encoding.md) 
 - [family books](https://github.com/fanfeilong/f3/tree/master/notes/family-books.md) 
 - [formula](https://github.com/fanfeilong/f3/tree/master/notes/formula.md) 
 - [funny](https://github.com/fanfeilong/f3/tree/master/notes/funny.md) 
