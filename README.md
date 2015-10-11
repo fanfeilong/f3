@@ -5,6 +5,8 @@ here, build life projects
 
 ffl's notes
 -----
+- [book1](https://github.com/fanfeilong/f3/tree/master/notes/book1.md) 
+- [book2](https://github.com/fanfeilong/f3/tree/master/notes/book2.md) 
 - [abstract](https://github.com/fanfeilong/f3/tree/master/notes/abstract.md) 
 - [biology](https://github.com/fanfeilong/f3/tree/master/notes/biology.md) 
 - [bolt1](https://github.com/fanfeilong/f3/tree/master/notes/bolt1.md) 
@@ -16,7 +18,6 @@ ffl's notes
 - [element pattern](https://github.com/fanfeilong/f3/tree/master/notes/element-pattern.md) 
 - [engineering](https://github.com/fanfeilong/f3/tree/master/notes/engineering.md) 
 - [encoding](https://github.com/fanfeilong/f3/tree/master/notes/encoding.md) 
-- [family books](https://github.com/fanfeilong/f3/tree/master/notes/family-books.md) 
 - [formula](https://github.com/fanfeilong/f3/tree/master/notes/formula.md) 
 - [funny](https://github.com/fanfeilong/f3/tree/master/notes/funny.md) 
 - [graphics](https://github.com/fanfeilong/f3/tree/master/notes/graphics.md) 
