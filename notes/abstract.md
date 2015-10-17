@@ -1,4 +1,4 @@
-#### OF Study (论读书）
+OF Study (论读书）
 ----------------------
 ```
 STUDIES serve for delight, for ornament, and for ability. Their chief use for delight, 
@@ -36,7 +36,7 @@ to prove and illustrate another, let him study the lawyers\' cases. So every def
 the mind, may have a special receipt.
 ```
 
-#### 译文：   
+译文：   
 ----------
 ```
 读书足以怡情，足以博彩，足以长才。
@@ -68,7 +68,7 @@ the mind, may have a special receipt.
 伦理学使人庄重，逻辑修辞之学使人善辩：凡有所学，皆成性格。
 ```
 
-#### 宽容序言
+宽容序言
 -------------
 ```
 在宁静的无知山谷里，人们过着幸福的生活。

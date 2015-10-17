@@ -60,3 +60,5 @@ private KEY:N,D，Decode: e1^D%N=m
 - [wiki:Smoothing](http://en.wikipedia.org/wiki/Smoothing)
 - [wiki:Curve Fitting](http://en.wikipedia.org/wiki/Curve_fitting)
 - [wiki:spline](http://en.wikipedia.org/wiki/Cubic_splines)
+
+<style class="fallback">body{white-space:pre;font-family:monospace}</style><script src="markdeep.min.js"></script><script src="http://casual-effects.com/markdeep/latest/markdeep.min.js"></script>
