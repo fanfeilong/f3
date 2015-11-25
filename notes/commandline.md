@@ -33,6 +33,21 @@
   - [Awk - A Tutorial and Introduction - by Bruce Barnett](http://www.grymoire.com/Unix/Awk.html)
   - [Awk in 20 minutes](http://ferd.ca/awk-in-20-minutes.html)
 
+- Linux IPTables
+  - on and off, always valid
+    - chkconfig iptables on
+    - chkconfig iptables off
+  - start and stop, invalid when restart os
+    - service iptables start
+    - service iptables stop
+  - modify iptables
+    - `vim /etc/sysconfig/iptables`
+      - `-A RH-Firewall-1-INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT`
+      - `-A RH-Firewall-1-INPUT -m state --state NEW -m tcp -p tcp --dport 22 -j ACCEPT`
+
+- count file 
+  - `ll -t|grep -|wc -l`
+
 #### script
 ---------
 - [passing arguments to a shell script](http://osr600doc.sco.com/en/SHL_automate/_Passing_to_shell_script.html)
