@@ -49,4 +49,5 @@
 * [ ] +0.1 `<<罗马人的故事>>`
 * [ ] +0.5 `<<正面管教>>`
 * [ ] +0.1 `<<自私的基因>>`
+* [x] +1.0 [Open Sources: Voices from the Open Source Revolution](http://www.oreilly.com/openbook/opensources/book/)
 
