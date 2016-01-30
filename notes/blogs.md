@@ -77,9 +77,9 @@ int main()
 0041138E  mov  byte ptr [b],cl
 ```
 数组名示意图：
-![](http://images0.cnblogs.com/blog2015/121186/201506/242004478926843.png)
+![](https://github.com/fanfeilong/f3/tree/master/imgs/242004478926843.png)
 指向数组的指针示意图：
-![](http://images0.cnblogs.com/blog2015/121186/201506/242005205495435.png)
+![](https://github.com/fanfeilong/f3/tree/master/imgs/242005205495435.png)
 
 所以，而一个函数的数组参数
 
@@ -548,7 +548,7 @@ Function
     - Lua则规定了参数的出栈入栈规则
 
 回顾一下和函数调用约定相关的有cdcel、stdcall、fastcall等。下面的图在汇编层演示了这种过程。
-![](http://images0.cnblogs.com/blog2015/121186/201506/252213156891582.png)
+![](https://github.com/fanfeilong/f3/tree/master/imgs/252213156891582.png)
 
 所以，逻辑上跨语言调用做的是在语言之间规定怎样调用对方的函数的规则，是属于函数调用的范畴。
 
@@ -617,8 +617,8 @@ send(request,function(response)
 ps：一个网络协议包可以拆开成包头和包体，而一条汇编指令、一条.NET的IL指令，一条JVM的bytecode，一个Lua的指令，也同样可以有进一步拆开成opcode+register。可以把一个网络协议包看成一条`网络汇编指令`。
 网络协议包的包头一般包含有packagetype，可以当作是opcode，包体则是register里的数据。
 ps：编程语言的指令，都喜欢把int拆开去使用，前几个位表示什么，接着几个位表示什么。网络协议包也类似。我觉的对bit的操作是编程世界里的最低粒度的`封装`和`抽象`。
-![](http://images0.cnblogs.com/blog2015/121186/201506/252309493613030.png) ![](http://images0.cnblogs.com/blog2015/121186/201506/252309546585611.png)
-![](http://images0.cnblogs.com/blog2015/121186/201506/252311295802513.png)
+![](https://github.com/fanfeilong/f3/tree/master/imgs/252309493613030.png) ![](https://github.com/fanfeilong/f3/tree/master/imgs/252309546585611.png)
+![](https://github.com/fanfeilong/f3/tree/master/imgs/252311295802513.png)
 
 
 
