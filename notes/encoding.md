@@ -50,6 +50,9 @@
 这句话的`sum of all 16-bit words`代表的是计算步骤的1-2步
 这句话的`the 16-bit one's complement of the one's complement..`代表的是计算步骤的第3步
 
+#### 喷泉码
+- [C#实现](http://www.codeproject.com/Articles/425456/Your-Digital-Fountain)
+
 
 ##### 参考资料
 --------------

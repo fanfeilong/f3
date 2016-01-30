@@ -1,3 +1,11 @@
+#### Notepad
+* 打开：Wine+r: notepad
+* 选择一整行：
+    * Home+Shilft+End
+    * End+Shift+Home
+* 查找：Ctrl+f
+* 替换：Ctrl+h
+
 #### VIM 操作最佳实践
 ---------------------
 * 字母、数字、控制键
@@ -42,7 +50,9 @@
 	* 单文件替换
 	    * %s/pattern/replace/gc
 	    * 5,6s/pattern/replace/gc
-	
+  * 查找，`/keyword`
+      * 下一个:n
+      * 上一次:shift+n	
 * 多文件
     * :vimgrep /searchpattern/ [g][j] filepattern
     * :[vim多文件替换](http://usevim.com/2012/04/06/search-and-replace-files/)
