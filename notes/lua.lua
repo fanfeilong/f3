@@ -11,7 +11,7 @@ local post = coroutine.wrap(function(arg)
   local error,r = coroutine:yield()
   if r.state=="open" then
       local pkg = r.value
-	    connection:PostPackage(pkg)
+	  connection:PostPackage(pkg)
       coroutine:yield()
   elseif r.state=="close" then
       connection:RemoveStateChangeListener(cookie)
