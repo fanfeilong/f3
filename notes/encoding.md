@@ -53,6 +53,20 @@
 #### 喷泉码
 - [C#实现](http://www.codeproject.com/Articles/425456/Your-Digital-Fountain)
 
+#### Church Encode
+```
+lambda.x.f(x) 
+lambda.x.
+	lambda.y.f(y)
+...
+```
+
+由于lambda即可被嵌套repeat，又可以被求值，所以可以用来信息的编码和解码：
+
+- [Church_encoding](https://en.wikipedia.org/wiki/Church_encoding)
+- [邱奇数](https://zh.wikipedia.org/wiki/%E9%82%B1%E5%A5%87%E6%95%B0)
+
+如果只能编码没什么，任何可以表示为0和1，并且可以repeat的都能编码，Church Code的特点是解码行为本身也可以用自己编码。
 
 ##### 参考资料
 --------------
