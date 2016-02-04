@@ -486,44 +486,6 @@ The following rules call out common nonexceptions to Rule 1.
     - reentry `dowork` function
 
 
-#### 求值顺序
-假设有函数：
-```
-function func(exp){
-   return exp+exp;
-}
-```
-
-func被调用的过程中，对参数的求值有三种可能：
-- call by name: 
-```
-func(1+1)
-=> return (1+1)+(1+1)  // 1 
-=> return 2+(1+1)      // 2 
-=> return 2+2          // 3
-=> return 4            // 4
-=> 4                   // 5
-```
-
-- call by value:
-```
-func(1+1)
-=> func(2)             // 1    
-=> return 2+2          // 2
-=> return 4            // 3
-=> 4                   // 4
-```
-
-- call by need:
-```
-func(1+1)
-=> func(v)             // where v=1+1
-=> return (v)+(v)      // 1, evaluate v=>1+1=2
-=> return 2+2          // 2
-=> return 4            // 3
-=> 4                   // 4
-```
-
 #### lua coroutine 的使用场景
 
 - 异步回调转同步：
@@ -701,6 +663,127 @@ function shedule()
 end
 ```
 
+#### 作用域
+- dynamic scoping
+```
+y=3                -- y in current scope is 3
+function test(x)
+  return function()
+    return x+y
+  end
+end
+
+local f = test(10) -- function(y) 10+y end
+y=5                -- y in current scope is 5 
+f()                -- result 5+10=15
+
+y=6                -- y in current scope is 5 
+f()                -- result 6+10=16
+```
+
+- lexical scoping
+```
+y=3                -- y in current scope is 3
+function test(x)
+  return function()
+    return x+y     -- capture the y=3 value
+  end
+end
+
+local f = test(10) -- function(y) 10+y end
+y=5                -- y in current scope is 5 
+f()                -- result 3+10=13, since `y` in test is 3, which is captured value
+
+y=6                -- y in current scope is 5 
+f()                -- result 3+10=13, since `y` in test is 3, which is captured value
+```
+
+dynamic scoping只是根据名字来判断当前符号在作用域中的值，在某些特殊场合下有用，但是对于结构化编程来说是不好的。
+如果从绑定的角度来说，可以看成是dynamic scope只bind了变量的名字，而lexical scoping则bind了变量名字和当前的值。
+
+#### 求值顺序
+假设有函数：
+```
+function func(exp){
+   return exp+exp;
+}
+```
+
+func被调用的过程中，对参数的求值有三种可能：
+- call by name: 
+```
+func(1+1)
+=> return (1+1)+(1+1)  // 1 
+=> return 2+(1+1)      // 2 
+=> return 2+2          // 3
+=> return 4            // 4
+=> 4                   // 5
+```
+
+- call by value:
+```
+func(1+1)
+=> func(2)             // 1    
+=> return 2+2          // 2
+=> return 4            // 3
+=> 4                   // 4
+```
+
+- call by need:
+```
+func(1+1)
+=> func(v)             // where v=1+1
+=> return (v)+(v)      // 1, evaluate v=>1+1=2
+=> return 2+2          // 2
+=> return 4            // 3
+=> 4                   // 4
+```
+
+#### curry function
+使用curry化，可以将多参数函数转成单参数函数，例如：
+```
+function fg(x,y)
+  return x+y
+end
+
+fg(1,2)
+```
+可以写成：
+```
+function f(x)
+  return function(y)
+    return x+y
+  end
+end
+f(1)(2)
+```
+
+#### lambda calculus
+- lambda calculus是最小的图灵完备语言
+  - variable：x
+  - application:EE'
+  - lambda abstraction: lambda.x.E
+  - grammar: E ::= x|EE'|lambda.x.E
+  - lambda：binding operator
+    - lambda.x.xy, variable x is bound, variable y is free
+
+- axioms of lambda calculus
+  - a-Equivalence: lambda.x.E=lambda.y.E[y/x], Change of bound variable name
+  - beta-Equivalence: (lambda.x.E)y = E[y/x], Application of Function to arguments
+  - yita-Equivalence: lambda.x.Ex = E, Elimination of Redundant lambda abstractions
+
+#### let-clause
+- let x = E in E'
+- (let x=E) in E'
+- (ambda.x.E')E
+
+#### Hindley-Milner Type Inference
+- 为什么命令式语言里都没怎么看到这个东西？
+http://csharpindepth.com/ViewNote.aspx?NoteID=70&printable=true
+- HM type inference is not guaranteed to terminate in a reasonable amount of time; our type inference algorithm guarantees progress every time through the loop and therefore runs in polynomial time. (Though of course, overload resolution can then be exponential in C#, which is unfortunate.)
+- HM type inference works poorly in a language which has class inheritance; it was designed for functional languages like Haskell with pattern matching rather than inheritance.
+
+
 
 #### 参考资料
 -------------
@@ -722,3 +805,4 @@ end
 - [Base-from-Member](http://en.wikibooks.org/wiki/More_C%2B%2B_Idioms/Base-from-Member)
 - [Substitution Failure Is Not An Error(SFINAE](http://en.wikibooks.org/wiki/More_C%2B%2B_Idioms/SFINAE)
 - [Non Virtual Interface(NVI)](http://en.wikibooks.org/wiki/More_C%2B%2B_Idioms/Non-Virtual_Interface)
+- [How to write an interpreter(yin wang)](http://www.yinwang.org/blog-cn/2012/08/01/interpreter/)
