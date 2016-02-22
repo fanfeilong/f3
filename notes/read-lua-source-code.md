@@ -26,6 +26,12 @@ Lua的类型标记是这样的：
 - 0-3标志位，表示大类型
 - 4-5标志位，表示子类型，比如Number下可以细分整型和浮点型
 - 6标志位表示十分可以垃圾回收。
+
+[0 000 0000]
+[6 4-5 0-3 ]
+[collectable variant-bits actual-tag]
+
+
 ```
 #define LUA_TNONE		    (-1)
 #define LUA_TNIL		    0
