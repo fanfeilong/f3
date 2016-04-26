@@ -149,3 +149,44 @@ network notes
   * tracert ? Helps identify connectivity problems between the local computer and a network address.
   * tracert – Helps  troubleshoot network connections by tracing the route to a server.
 
+#### FQA
+------------
+
+**How to get udp socket port when bind to 0**:
+http://stackoverflow.com/questions/1075399/how-to-bind-to-any-available-port
+Another option is to specify port 0 to bind(). That will allow you to bind to a specific IP address (if you have multiple installed) while still using a random port. If you need to know what port was picked, you can use getsockname() after the binding has occured.
+
+#### Ping
+------------
+
+an udp pingclient SHOULD contains two circle:
+- out circle to rebind socket.
+- inner circle to resend pingpackage using timer before response package has received.
+
+#### P2P Punchhole
+------------
+
+A,B,SA,SB where SA and SB is A and B's SuperNode
+
+synchonize:
+
+ 1. A send syn to B
+ 2. A send sncall to SA
+ 3. SA send sncallresp to A
+ 4. SA forward sncallresp to SB
+ 5. SB send sncalled to B
+ 6. B send sncalledresp to SB
+ 7. B send ack to A
+
+concurrency:
+
+ 8. A receive ack from B
+ 8. B receive syn from A 
+
+synchonize:
+
+10. A send ackack to B
+11. A enter establish state
+
+12. B receive ackack from A
+13. B enter establish state
