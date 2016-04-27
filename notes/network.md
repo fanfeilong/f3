@@ -152,9 +152,13 @@ network notes
 #### FQA
 ------------
 
-**How to get udp socket port when bind to 0**:
-http://stackoverflow.com/questions/1075399/how-to-bind-to-any-available-port
+- [How to get udp socket port when bind to 0](http://stackoverflow.com/questions/1075399/how-to-bind-to-any-available-port):
+
 Another option is to specify port 0 to bind(). That will allow you to bind to a specific IP address (if you have multiple installed) while still using a random port. If you need to know what port was picked, you can use getsockname() after the binding has occured.
+
+- [How Does 127.0.0.1 Work?](http://www.tech-faq.com/127-0-0-1.html)
+
+Establishing a network connection to the 127.0.0.1 loopback address is accomplished in the same manner as establishing one with any remote computer or device on the network. The primary difference is that the connection avoids using the local network interface hardware. System administrators and application developers commonly use 127.0.0.1 to test applications. When establishing an IPv4 connection with 127.0.0.1 will normally be assigned subnet mask 255.0.0.1. If any public switch, router, or gateway receives a packet addressed to the loopback IP address, it is required to drop the packet without logging the information. As a result, if a data packet is delivered outside of the localhost, by design it will not accidently arrive at a computer which will try to answer it. This aspect of the loopback helps ensure network security is maintained, since most computers will answer packets addressed to their respective loopback address which may also unexpectedly activate other services on a machine by responding to a stray data packet.
 
 #### Ping
 ------------
@@ -221,8 +225,4 @@ by socket1, NOT the socket2.
 |224.0.0.0/4|Multicast, commonly used in multiplayer simulations and gaming and for video distribution.|
 |240.0.0.0/4|Reserved for Future Use|
 
-
-#### [How Does 127.0.0.1 Work?](http://www.tech-faq.com/127-0-0-1.html)
-
->Establishing a network connection to the 127.0.0.1 loopback address is accomplished in the same manner as establishing one with any remote computer or device on the network. The primary difference is that the connection avoids using the local network interface hardware. System administrators and application developers commonly use 127.0.0.1 to test applications. When establishing an IPv4 connection with 127.0.0.1 will normally be assigned subnet mask 255.0.0.1. If any public switch, router, or gateway receives a packet addressed to the loopback IP address, it is required to drop the packet without logging the information. As a result, if a data packet is delivered outside of the localhost, by design it will not accidently arrive at a computer which will try to answer it. This aspect of the loopback helps ensure network security is maintained, since most computers will answer packets addressed to their respective loopback address which may also unexpectedly activate other services on a machine by responding to a stray data packet.
 
