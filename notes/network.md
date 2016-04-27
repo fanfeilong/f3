@@ -190,3 +190,39 @@ synchonize:
 
 12. B receive ackack from A
 13. B enter establish state
+
+Note that A may have multi local ip, A can bind to multi ip and then has multisockets,
+if A has two difference addresses for difference IPS, for example ip1 and ip2, then 
+A should bind two socket to ip1 and ip2, name as socket1 and socket2.
+
+Then, when B send ack to socket1, A SHOULD send ackack and continues packages to B
+by socket1, NOT the socket2.
+
+#### Special IP Address Summary Table
+
+|Address Block|Present Use|
+|:--|:--|
+|0.0.0.0/8|`This` Network|
+|10.0.0.0/8|Private-Use Networks|
+|14.0.0.0/8|Public-Data Networks|
+|24.0.0.0/8|Cable Television Networks|
+|39.0.0.0/8|Reserved, subject to allocation|
+|127.0.0.0/8|Loopback|
+|128.0.0.0/16|Reserved, subject to allocation|
+|169.254.0.0/16|Link Local|
+|172.16.0.0/12|Private-Use Networks|
+|191.255.0.0/16|Reserved, subject to allocation|
+|192.0.0.0/24|Reserved but subject to allocation|
+|192.0.2.0/24|Test-Net|
+|192.88.99.0/24|6to4 Relay Anycast|
+|192.168.0.0/16|Private-Use Networks|
+|198.18.0.0/15|Network Interconnect Device Benchmark Testing|
+|223.255.255.0/24|Reserved, subject to allocation|
+|224.0.0.0/4|Multicast, commonly used in multiplayer simulations and gaming and for video distribution.|
+|240.0.0.0/4|Reserved for Future Use|
+
+
+#### [How Does 127.0.0.1 Work?](http://www.tech-faq.com/127-0-0-1.html)
+
+>Establishing a network connection to the 127.0.0.1 loopback address is accomplished in the same manner as establishing one with any remote computer or device on the network. The primary difference is that the connection avoids using the local network interface hardware. System administrators and application developers commonly use 127.0.0.1 to test applications. When establishing an IPv4 connection with 127.0.0.1 will normally be assigned subnet mask 255.0.0.1. If any public switch, router, or gateway receives a packet addressed to the loopback IP address, it is required to drop the packet without logging the information. As a result, if a data packet is delivered outside of the localhost, by design it will not accidently arrive at a computer which will try to answer it. This aspect of the loopback helps ensure network security is maintained, since most computers will answer packets addressed to their respective loopback address which may also unexpectedly activate other services on a machine by responding to a stray data packet.
+
