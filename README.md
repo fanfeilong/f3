@@ -32,28 +32,28 @@ here, build life projects
 ## i am a programmer
 --------------------
 + multiplatform
-	- [programming in android](https://github.com/fanfeilong/f3/tree/master/notes/programming-in-android.md)
-	- [programming in linux](https://github.com/fanfeilong/f3/tree/master/notes/programming-in-linux.md) 
-	- [programming in windows](https://github.com/fanfeilong/f3/tree/master/notes/programming-in-windows.md) 
+  - [programming in android](https://github.com/fanfeilong/f3/tree/master/notes/programming-in-android.md)
+  - [programming in linux](https://github.com/fanfeilong/f3/tree/master/notes/programming-in-linux.md) 
+  - [programming in windows](https://github.com/fanfeilong/f3/tree/master/notes/programming-in-windows.md) 
 + [programming languages](https://github.com/fanfeilong/f3/tree/master/notes/programming-languages.md) 
-	- [read lua source code](https://github.com/fanfeilong/f3/tree/master/notes/read-lua-source-code.md) 
-	- [javascript](https://github.com/fanfeilong/f3/tree/master/notes/javascript.md)
+  - [read lua source code](https://github.com/fanfeilong/f3/tree/master/notes/read-lua-source-code.md) 
+  - [javascript](https://github.com/fanfeilong/f3/tree/master/notes/javascript.md)
 + algorithm
-	- [sort](https://github.com/fanfeilong/f3/tree/master/notes/sort.md) 
+  - [sort](https://github.com/fanfeilong/f3/tree/master/notes/sort.md) 
 + principle
-	- [the element of programming](https://github.com/fanfeilong/f3/tree/master/notes/the-element-of-programming.md) 
-+ [tools](https://github.com/fanfeilong/f3/tree/master/notes/tools.md) 
-	- [commandline](https://github.com/fanfeilong/f3/tree/master/notes/commandline.md) 
+  - [the element of programming](https://github.com/fanfeilong/f3/tree/master/notes/the-element-of-programming.md) 
++ tools
+  -[tools](https://github.com/fanfeilong/f3/tree/master/notes/tools.md) 
 + library
-	- [bolt1](https://github.com/fanfeilong/f3/tree/master/notes/bolt1.md) 
+  - [bolt1](https://github.com/fanfeilong/f3/tree/master/notes/bolt1.md) 
 + catogories
-	- [compiler](https://github.com/fanfeilong/f3/tree/master/notes/compiler.md) 
-	- [encoding](https://github.com/fanfeilong/f3/tree/master/notes/encoding.md) 
-	- [security](https://github.com/fanfeilong/f3/tree/master/notes/security.md) 
-	- [graphics](https://github.com/fanfeilong/f3/tree/master/notes/graphics.md)
-	- [network](https://github.com/fanfeilong/f3/tree/master/notes/network.md) 
-	- [engineering](https://github.com/fanfeilong/f3/tree/master/notes/engineering.md)  
-	- [distributed computing](https://github.com/fanfeilong/f3/tree/master/notes/distributed-computing.md) 
+  - [compiler](https://github.com/fanfeilong/f3/tree/master/notes/compiler.md) 
+  - [encoding](https://github.com/fanfeilong/f3/tree/master/notes/encoding.md) 
+  - [security](https://github.com/fanfeilong/f3/tree/master/notes/security.md) 
+  - [graphics](https://github.com/fanfeilong/f3/tree/master/notes/graphics.md)
+  - [network](https://github.com/fanfeilong/f3/tree/master/notes/network.md) 
+  - [engineering](https://github.com/fanfeilong/f3/tree/master/notes/engineering.md)  
+  - [distributed computing](https://github.com/fanfeilong/f3/tree/master/notes/distributed-computing.md) 
 
 ## i am a reseacher
 --------------------
