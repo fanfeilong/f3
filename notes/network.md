@@ -54,73 +54,6 @@ network notes
   6. Host B receives ACK.
   7. TCP socket connection is ESTABLISHED.
 
-- 参考资料
-  - [What is the Internet?](http://www.inetdaemon.com/tutorials/internet/index.shtml)
-  - [RFC: A TCP/IP Tutorial](http://www.rfcreader.com/#rfc1180)
-  - [wiki:互联网工程任务组（IETF）发布的征求修正意见书（RFC）](http://zh.wikipedia.org/wiki/RFC)
-  - [wiki:网络地址转换（NAT）](http://zh.wikipedia.org/wiki/网络地址转换)
-  - [wiki:NAT穿透](http://zh.wikipedia.org/wiki/NAT穿透)
-  - [wiki:域名系统/动态域名服务（DNS）](http://zh.wikipedia.org/wiki/域名系统)
-  - [wiki:网络传输协议](http://zh.wikipedia.org/wiki/網絡傳輸協議)
-  - [wiki:TCP/IP协议](http://zh.wikipedia.org/wiki/TCP/IP协议)
-  - [wiki:OSI7层模型](http://zh.wikipedia.org/wiki/OSI模型)
-  - [wiki:超文本传输协议（HTTP）](http://zh.wikipedia.org/wiki/HTTP)
-  - [wiki:HTTPS协议](http://zh.wikipedia.org/wiki/HTTPS)
-  - [wiki:Goolge-SPDY协议](http://zh.wikipedia.org/wiki/SPDY)
-  - [wiki:DHCP](http://zh.wikipedia.org/wiki/DHCP)
-  - [wiki:Wi-Fi](http://zh.wikipedia.org/wiki/Wi-Fi)
-  - [wiki:地址解析协议（ARP）](http://zh.wikipedia.org/wiki/地址解析协议)
-  - [wiki:ARP欺騙](http://zh.wikipedia.org/wiki/ARP欺騙)
-  - [wiki:分散式阻斷服務攻擊（DDoS）](http://zh.wikipedia.org/wiki/分散式阻斷服務攻擊)
-  * [IPV4Packet](http://en.wikipedia.org/wiki/IPv4)
-  * [TCPPacket](http://en.wikipedia.org/wiki/Transmission_Control_Protocol)
-    * [PUSH-ACK](https://ask.wireshark.org/questions/20423/pshack-wireshark-capture) 
-  * [HTTPPacket](http://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol)
-  * [HTTP state codes](http://en.wikipedia.org/wiki/List_of_HTTP_status_codes)
-  * [Understanding tcp sequence acknowledgment numbers](http://packetlife.net/blog/2010/jun/7/understanding-tcp-sequence-acknowledgment-numbers/)
-  * [The TIME-WAIT state in TCP and Its Effect on Busy Servers](http://www.isi.edu/touch/pubs/infocomm99/infocomm99-web/)
-  * [How to Calculate IP/TCP/UDP Checksum–Part 1 Theory](http://www.roman10.net/how-to-calculate-iptcpudp-checksumpart-1-theory/)
-  * [Introduce to HyperText Transfer Protocol ](http://www.ntu.edu.sg/home/ehchua/programming/webprogramming/HTTP_Basics.html) 
-  * [CoolShell:TCP/IP那些事儿（上）](http://coolshell.cn/articles/11564.html) 
-  * [CoolShell:TCP/IP那些事儿（下）](http://coolshell.cn/articles/11609.html)
-  * [网络基本功（一）：细说网络传输](https://community.emc.com/thread/197851)
-  * [协议森林](http://www.cnblogs.com/vamei/tag/%E7%BD%91%E7%BB%9C/)
-  * [15 New TCP Implements](http://intronetworks.cs.luc.edu/current/html/newtcps.html)
-  * [Raw socket, Packet socket and Zero copy networking in Linux](http://yusufonlinux.blogspot.jp/2010/11/data-link-access-and-zero-copy.html)
-  * [using sockets rather like using files](http://www.cplusplus.com/forum/general/58677/)
-  * [How$speedy$is$SPDY?](https://www.usenix.org/sites/default/files/conference/protected-files/nsdi14_slides_wang.pdf)
-  * [Do routers verify UDP and TCP checksums?](http://serverfault.com/questions/644289/do-routers-verify-udp-and-tcp-checksums)
-
-
-#### P2P Network 
-----------------
-- Basic
-  - [wiki:peer 2 peer](http://en.wikipedia.org/wiki/Peer-to-peer)
-  - [bittorrent protocol](http://www.bittorrent.org/beps/bep_0005.html)
-  - [wiki:DHT](http://en.wikipedia.org/wiki/Distributed_hash_table)
-  - [p2p NAT](http://www.brynosaurus.com/pub/net/p2pnat/)
-- Freedomlayer
-  - [Intro to the Internet and current issues](http://www.freedomlayer.org/articles/intro_internet.html)
-  - [The Mesh Question](http://www.freedomlayer.org/articles/mesh_question.html)
-  - [Intro to Distributed Hash Tables (DHTs)](http://www.freedomlayer.org/articles/dht_intro.html)
-  - [Stabilizing Chord](http://www.freedomlayer.org/articles/chord_stabilize.html)
-  - [Basic DHT security concepts](http://www.freedomlayer.org/articles/dht_basic_security.html)
-  - [Sqrt(n) mesh routing](http://www.freedomlayer.org/articles/dht_basic_security.html)
-  - [Experimenting with Virtual DHT Routing](http://www.freedomlayer.org/articles/exp_virtual_dht_routing.html)
-  - [The Distributed Post Office: Instant hierarchy for mesh networks](http://www.freedomlayer.org/articles/dist_post_office.html)
-
-- P2P Network
-  - [P2P-01-Introduce](http://www.cs.helsinki.fi/u/jakangas/Teaching/PrintOuts/08s-P2P-01-Introduction.pdf)
-  - [P2P-02-Systems](http://www.cs.helsinki.fi/u/jakangas/Teaching/PrintOuts/08s-P2P-02-Systems.pdf)
-  - [P2P-03-Net+DHTs](http://www.cs.helsinki.fi/u/jakangas/Teaching/PrintOuts/08s-P2P-03-Net+DHTs.pdf)
-  - [P2P-04-Storage](http://www.cs.helsinki.fi/u/jakangas/Teaching/PrintOuts/08s-P2P-04-Storage.pdf)
-  - [P2P-05-Reliablility](http://www.cs.helsinki.fi/u/jakangas/Teaching/PrintOuts/08s-P2P-05-Reliability.pdf)
-  - [P2P-06-ContentDistribution](http://www.cs.helsinki.fi/u/jakangas/Teaching/PrintOuts/08s-P2P-06-ContentDistribution.pdf)
-  - [P2P-07-Issues](http://www.cs.helsinki.fi/u/jakangas/Teaching/PrintOuts/08s-P2P-07-Issues.pdf)
-  - [P2P-08-Consession](http://www.cs.helsinki.fi/u/jakangas/Teaching/PrintOuts/08s-congestion-intro.pdf)
- 
-- P2P Application
-  - [crawl in dht - zhcn](http://codemacro.com/2013/05/19/crawl-dht/)
   
 #### 杂项
 ----------
@@ -202,7 +135,101 @@ A should bind two socket to ip1 and ip2, name as socket1 and socket2.
 Then, when B send ack to socket1, A SHOULD send ackack and continues packages to B
 by socket1, NOT the socket2.
 
-#### Special IP Address Summary Table
+#### Congestion Controller
+---------------------
+
+Congestion controller:
+
+- send timer
+  - send packages
+    - with timer
+      - timout 
+        - resend
+        - bad feedback
+- feedback
+  - update history data
+  - filter history data
+  - do cc strategy
+  	- good feedback -> award 
+      - slow start, inc window or speed by step
+      - congestion avoid, inc window or speed with damping
+    - bad feedback  -> punish
+      - fast resend packages
+      - dec window or speed by means of discount
+  - send packages
+
+
+
+#### Refeences
+-------------
+
+- TCP/IP references
+  - [What is the Internet?](http://www.inetdaemon.com/tutorials/internet/index.shtml)
+  - [RFC: A TCP/IP Tutorial](http://www.rfcreader.com/#rfc1180)
+  - [wiki:互联网工程任务组（IETF）发布的征求修正意见书（RFC）](http://zh.wikipedia.org/wiki/RFC)
+  - [wiki:网络地址转换（NAT）](http://zh.wikipedia.org/wiki/网络地址转换)
+  - [wiki:NAT穿透](http://zh.wikipedia.org/wiki/NAT穿透)
+  - [wiki:域名系统/动态域名服务（DNS）](http://zh.wikipedia.org/wiki/域名系统)
+  - [wiki:网络传输协议](http://zh.wikipedia.org/wiki/網絡傳輸協議)
+  - [wiki:TCP/IP协议](http://zh.wikipedia.org/wiki/TCP/IP协议)
+  - [wiki:OSI7层模型](http://zh.wikipedia.org/wiki/OSI模型)
+  - [wiki:超文本传输协议（HTTP）](http://zh.wikipedia.org/wiki/HTTP)
+  - [wiki:HTTPS协议](http://zh.wikipedia.org/wiki/HTTPS)
+  - [wiki:Goolge-SPDY协议](http://zh.wikipedia.org/wiki/SPDY)
+  - [wiki:DHCP](http://zh.wikipedia.org/wiki/DHCP)
+  - [wiki:Wi-Fi](http://zh.wikipedia.org/wiki/Wi-Fi)
+  - [wiki:地址解析协议（ARP）](http://zh.wikipedia.org/wiki/地址解析协议)
+  - [wiki:ARP欺騙](http://zh.wikipedia.org/wiki/ARP欺騙)
+  - [wiki:分散式阻斷服務攻擊（DDoS）](http://zh.wikipedia.org/wiki/分散式阻斷服務攻擊)
+  * [IPV4Packet](http://en.wikipedia.org/wiki/IPv4)
+  * [TCPPacket](http://en.wikipedia.org/wiki/Transmission_Control_Protocol)
+    * [PUSH-ACK](https://ask.wireshark.org/questions/20423/pshack-wireshark-capture) 
+  * [HTTPPacket](http://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol)
+  * [HTTP state codes](http://en.wikipedia.org/wiki/List_of_HTTP_status_codes)
+  * [Understanding tcp sequence acknowledgment numbers](http://packetlife.net/blog/2010/jun/7/understanding-tcp-sequence-acknowledgment-numbers/)
+  * [The TIME-WAIT state in TCP and Its Effect on Busy Servers](http://www.isi.edu/touch/pubs/infocomm99/infocomm99-web/)
+  * [How to Calculate IP/TCP/UDP Checksum–Part 1 Theory](http://www.roman10.net/how-to-calculate-iptcpudp-checksumpart-1-theory/)
+  * [Introduce to HyperText Transfer Protocol ](http://www.ntu.edu.sg/home/ehchua/programming/webprogramming/HTTP_Basics.html) 
+  * [CoolShell:TCP/IP那些事儿（上）](http://coolshell.cn/articles/11564.html) 
+  * [CoolShell:TCP/IP那些事儿（下）](http://coolshell.cn/articles/11609.html)
+  * [网络基本功（一）：细说网络传输](https://community.emc.com/thread/197851)
+  * [协议森林](http://www.cnblogs.com/vamei/tag/%E7%BD%91%E7%BB%9C/)
+  * [15 New TCP Implements](http://intronetworks.cs.luc.edu/current/html/newtcps.html)
+  * [Raw socket, Packet socket and Zero copy networking in Linux](http://yusufonlinux.blogspot.jp/2010/11/data-link-access-and-zero-copy.html)
+  * [using sockets rather like using files](http://www.cplusplus.com/forum/general/58677/)
+  * [How$speedy$is$SPDY?](https://www.usenix.org/sites/default/files/conference/protected-files/nsdi14_slides_wang.pdf)
+  * [Do routers verify UDP and TCP checksums?](http://serverfault.com/questions/644289/do-routers-verify-udp-and-tcp-checksums)
++ P2P references
+  - Basic
+    - [wiki:peer 2 peer](http://en.wikipedia.org/wiki/Peer-to-peer)
+    - [bittorrent protocol](http://www.bittorrent.org/beps/bep_0005.html)
+    - [wiki:DHT](http://en.wikipedia.org/wiki/Distributed_hash_table)
+    - [p2p NAT](http://www.brynosaurus.com/pub/net/p2pnat/)
+  - Freedomlayer
+    - [Intro to the Internet and current issues](http://www.freedomlayer.org/articles/intro_internet.html)
+    - [The Mesh Question](http://www.freedomlayer.org/articles/mesh_question.html)
+    - [Intro to Distributed Hash Tables (DHTs)](http://www.freedomlayer.org/articles/dht_intro.html)
+    - [Stabilizing Chord](http://www.freedomlayer.org/articles/chord_stabilize.html)
+    - [Basic DHT security concepts](http://www.freedomlayer.org/articles/dht_basic_security.html)
+    - [Sqrt(n) mesh routing](http://www.freedomlayer.org/articles/dht_basic_security.html)
+    - [Experimenting with Virtual DHT Routing](http://www.freedomlayer.org/articles/exp_virtual_dht_routing.html)
+    - [The Distributed Post Office: Instant hierarchy for mesh networks](http://www.freedomlayer.org/articles/dist_post_office.html)
+  - P2P Network
+    - [P2P-01-Introduce](http://www.cs.helsinki.fi/u/jakangas/Teaching/PrintOuts/08s-P2P-01-Introduction.pdf)
+    - [P2P-02-Systems](http://www.cs.helsinki.fi/u/jakangas/Teaching/PrintOuts/08s-P2P-02-Systems.pdf)
+    - [P2P-03-Net+DHTs](http://www.cs.helsinki.fi/u/jakangas/Teaching/PrintOuts/08s-P2P-03-Net+DHTs.pdf)
+    - [P2P-04-Storage](http://www.cs.helsinki.fi/u/jakangas/Teaching/PrintOuts/08s-P2P-04-Storage.pdf)
+    - [P2P-05-Reliablility](http://www.cs.helsinki.fi/u/jakangas/Teaching/PrintOuts/08s-P2P-05-Reliability.pdf)
+    - [P2P-06-ContentDistribution](http://www.cs.helsinki.fi/u/jakangas/Teaching/PrintOuts/08s-P2P-06-ContentDistribution.pdf)
+    - [P2P-07-Issues](http://www.cs.helsinki.fi/u/jakangas/Teaching/PrintOuts/08s-P2P-07-Issues.pdf)
+    - [P2P-08-Consession](http://www.cs.helsinki.fi/u/jakangas/Teaching/PrintOuts/08s-congestion-intro.pdf)
+  - P2P Application
+    - [crawl in dht - zhcn](http://codemacro.com/2013/05/19/crawl-dht/)
+
+#### Tables
+------------
+
+##### Special IP Address Summary Table
 
 |Address Block|Present Use|
 |:--|:--|
@@ -224,5 +251,3 @@ by socket1, NOT the socket2.
 |223.255.255.0/24|Reserved, subject to allocation|
 |224.0.0.0/4|Multicast, commonly used in multiplayer simulations and gaming and for video distribution.|
 |240.0.0.0/4|Reserved for Future Use|
-
-
