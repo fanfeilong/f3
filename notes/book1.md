@@ -3,7 +3,7 @@
 * [x] +1.0 `<<The Litter Schemer>>`
 * [ ] +0.2 `<<SICP>>`
 * [ ] +0.1 `<<程序语言设计理论基础>>` 
-* [ ] +0.3 `<<编译原理龙书>>`
+* [ ] +0.5 `<<编译原理龙书>>`
 * [ ] +0.7 `<<Lua源码剖析 云风版>>`
 * [ ] +0.0 `<<Parser Technology>>`
 * [ ] +0.0 `<<Enginering a Compiler>>` 
@@ -40,5 +40,11 @@
 * [ ] +0.1 `<<罗马人的故事>>`
 * [ ] +0.5 `<<正面管教>>`
 * [ ] +0.1 `<<自私的基因>>`
+* [x] +1.0 `<<疯狂实验史II>>`
+* [x] +1.0 `<<科学>>`
 * [x] +1.0 [Open Sources: Voices from the Open Source Revolution](http://www.oreilly.com/openbook/opensources/book/)
+* [x] +1.0 [Operating Systems: Three Easy Pieces](http://pages.cs.wisc.edu/~remzi/OSTEP/)
+* [x] +1.0 `<<沉默的大多数>>`
+* [ ] +0.2 `<<白银时代>>`
+* [ ] +0.0 `<<人件>>`
 
