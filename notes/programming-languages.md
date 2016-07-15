@@ -783,6 +783,10 @@ http://csharpindepth.com/ViewNote.aspx?NoteID=70&printable=true
 - HM type inference is not guaranteed to terminate in a reasonable amount of time; our type inference algorithm guarantees progress every time through the loop and therefore runs in polynomial time. (Though of course, overload resolution can then be exponential in C#, which is unfortunate.)
 - HM type inference works poorly in a language which has class inheritance; it was designed for functional languages like Haskell with pattern matching rather than inheritance.
 
+#### 文法
+- [python grammar](https://docs.python.org/3/reference/grammar.html)
+- [lua grammar](https://www.lua.org/manual/5.3/manual.html#9)
+  - lua的exp并不是stat，这和其他语言并不相同，例如python里有exp_stat
 
 
 #### 参考资料
