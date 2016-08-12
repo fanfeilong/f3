@@ -1,5 +1,6 @@
 ## gdb
 ---------------
++ [gdb Debugging Full Example (Tutorial): ncurses](http://www.brendangregg.com/blog/2016-08-09/gdb-example-ncurses.html)
 + [debugging with gdb](http://sourceware.org/gdb/current/onlinedocs/gdb/)
   - [A Sample gdb Session](https://sourceware.org/gdb/current/onlinedocs/gdb/Sample-Session.html#Sample-Session)
     - start 
