@@ -5,8 +5,15 @@
   - [A Sample gdb Session](https://sourceware.org/gdb/current/onlinedocs/gdb/Sample-Session.html#Sample-Session)
     - start 
       - `gdb program` 
+      - `set args parameters` 
+      - `r`
       - `gdb program core_dump`
       - `gdb -p processid`
+    - navigator
+      - `info threads` show threads
+      - `t i` switch to thread
+      - `f i` switch to frame
+      - `info args` show arguments
     - break and step into
       - `break functionname`
       - `n`(next, F10 for visualstudio)
