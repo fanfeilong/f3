@@ -47,7 +47,7 @@
 * [ ] +0.0 `<<写给大家看的设计书>>`
 * [ ] +0.0 `<<小楼与大师：科学殿堂的人和事>>`, `<<从奇点到虫洞>>` 卢昌海科普系列
 
-* [ ] +0.0 Computer Sience booklist
+* [ ] +0.0 Computer Science booklist
 	* [ ] +0.0 Cook's Travels and Other Salesmen's Tales - Dick Karp
 	* [ ] +0.0 Partition in a Pair Tree - Rabin and Scott
 	* [ ] +0.0 The Ten Best Algorithms of 1979
