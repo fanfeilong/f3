@@ -54,6 +54,13 @@ network notes
   6. Host B receives ACK.
   7. TCP socket connection is ESTABLISHED.
 
+- QUIC(Quick Udp Internet Connection)
+  - https://www.chromium.org/quic
+  - https://docs.google.com/document/d/1gY9-YNDNAB1eip-RTPbqphgySwSNSDHLq9D5Bty4FSU/edit
+  - https://docs.google.com/document/d/1WJvyZflAO2pq77yOLbp9NsGjC1CHetAXV8I0fQe-B_U/edit#
+  - https://docs.google.com/document/d/1F2YfdDXKpy20WVKJueEf4abn_LVZHhMUMS5gX6Pgjl4/edit
+  - https://tools.ietf.org/html/draft-tsvwg-quic-protocol-02
+
   
 #### 杂项
 ----------

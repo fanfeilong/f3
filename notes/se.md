@@ -1,0 +1,1 @@
+- [the unexpected outcoms of code review](http://michaelrbernste.in/2013/10/16/the-unexpected-outcomes-of-code-review.html)
