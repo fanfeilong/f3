@@ -1,7 +1,14 @@
 <Query Kind="Program">
+  <Reference>&lt;RuntimeDirectory&gt;\System.Windows.Forms.dll</Reference>
+  <Reference>&lt;RuntimeDirectory&gt;\System.Security.dll</Reference>
+  <Reference>&lt;RuntimeDirectory&gt;\System.Configuration.dll</Reference>
+  <Reference>&lt;RuntimeDirectory&gt;\Accessibility.dll</Reference>
+  <Reference>&lt;RuntimeDirectory&gt;\System.Deployment.dll</Reference>
+  <Reference>&lt;RuntimeDirectory&gt;\System.Runtime.Serialization.Formatters.Soap.dll</Reference>
   <Namespace>System</Namespace>
   <Namespace>System.Drawing</Namespace>
   <Namespace>System.Drawing.Imaging</Namespace>
+  <Namespace>System.Windows.Forms</Namespace>
 </Query>
 
 void Main(){
@@ -24,24 +31,46 @@ void Main(){
         Color.Yellow,
         Color.DarkGray
     };
-	
-    // Plot Curvers
-	plot.Reset()
-        .Axis()
-	    .Curve("AHPW-AIR",x,y,Color.Green,Color.Blue)
-		.Curve("LOF-AIR",y,x,Color.Red,Color.Blue)
-        .Dump()
-    
-    // Plot Histogram
-        .Reset()
+
+	var plotcurve = new Action(() => {
+		plot.Reset()
 		.Axis()
-        .Histogram("test",x,y,Color.LightGray,Color.LightBlue)
-        .Dump()
-        
-    // Plot Pie
-        .Reset()
-        .Pie("test",x,names,colors)
+		.Curve("AHPW-AIR", x, y, Color.Green, Color.Blue)
+		.Curve("LOF-AIR", y, x, Color.Red, Color.Blue)
 		.Dump();
+	});
+
+	var plothistogram = new Action(() => {
+		plot.Reset()
+			.Axis()
+			.Histogram("test", x, y, Color.LightGray, Color.LightBlue)
+			.Dump();
+	});
+
+	var plotpie = new Action(() => {
+		plot.Reset()
+			.Pie("test", x, names, colors)
+			.Dump();
+	});
+
+	int i = 0;
+	var timer = 300.0.SetTimer(() => {
+		switch (i) {
+			case 0: plotcurve(); break;
+			case 1: plothistogram(); break;
+			case 2: plotpie(); break;
+			default:break;
+		}
+		i++;
+		if(i>2) i=0;
+	});
+	plot.Start();
+
+	plot.Close =() => {
+		timer.KillTimer();
+		plot.Stop();
+	};
+
 }
 
 // Define other methods and classes here
@@ -168,11 +197,81 @@ public class Plot{
 		}
 	}
 
+	private Panel Panel { get; set; }
+	public Action Close { get; set;}
+
+	private bool Animation { get; set; }
+	public void Stop() {
+		Animation = false;
+	}
+	public void Start() {
+		Animation = true;
+	}
+
 	public Plot(int marginX,int marginY,int xstep,int ystep,int xsize,int ysize){
 		Width  = marginX*2+xstep*xsize+xstep/2;
 		Height = marginY*2+ystep*ysize+ystep/2;
-		Canvas = new Canvas(marginX,marginY,Width,Height,xstep,ystep);
-    }
+		Canvas = new Canvas(marginX, marginY, Width, Height, xstep, ystep);
+		Panel = new Panel();
+		
+		var close = new RectangleF(0,0,20,20);
+		var bar = new RectangleF(close.X, close.Y, close.Width, Height);
+		var mousemove = false;
+		
+		Panel.Paint += (sender, args) => {
+			using (var g = Panel.CreateGraphics()) {
+				g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
+				g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+
+				g.Clear(Color.LightYellow);
+				g.DrawRectangle(new Pen(Color.DarkBlue), close.X, close.Y, close.Width, Height);
+				if (mousemove) {
+					g.FillRectangle(new SolidBrush(Color.LightGreen), bar);
+					if (Animation) {
+						ShowStop(g, close,Color.Red);
+					}
+				} else {
+					g.FillRectangle(new SolidBrush(Color.Gray), bar);
+					if (Animation) {
+						ShowStop(g, close,Color.Pink);
+					}
+				}
+
+				g.ImageAt(Bitmap, close.Right +3, 3, Math.Min(Width,Height));
+			}
+		};
+		Panel.MouseClick += (sender, args) => {
+			if (args.X >= close.Left && args.X < close.Right) {
+				if (args.Y >= close.Top && args.Y < close.Bottom) {
+					if (Close != null) {
+						Close();
+						Panel.Invalidate();
+					}
+				}
+			}
+		};
+		
+		
+		Panel.MouseMove += (sender, args) => {
+			var move = false;
+			if (args.X >= bar.Left && args.X < bar.Right) {
+				if (args.Y >= bar.Top && args.Y < bar.Bottom) {
+					move = true;
+				}
+			}
+			if (mousemove != move) {
+				mousemove = move;
+				Panel.Invalidate(new Region(bar));
+			}			
+		};
+		PanelManager.DisplayControl(Panel);
+	}
+
+	private void ShowStop(Graphics g, RectangleF close,Color c) {
+		g.DrawEllipse(new Pen(c, 2), close);
+		g.DrawLine(new Pen(c, 1), close.X, close.Y + close.Height / 2, close.X + close.Width, close.Y + close.Height / 2);
+	}
+	
     public Plot Reset() {
         var c = Canvas;
         using (var r = c.AsRender()) {
@@ -337,14 +436,40 @@ public class Plot{
 
     }
 
-    public Plot Dump() {
-        Bitmap.Dump();
-        return this;
-    }
+	public Plot Dump() {
+		Panel.Invalidate();
+		return this;
+	}
 }
 
 public static class Extension {
-    public static Graphics DrawArrow(this Graphics g, Pen p, int x1, int y1, int x2, int y2, int x3, int y3) {
+	public static void Display(this IEnumerable<Image> bitmaps) {
+		var panel = new Panel();
+		panel.Paint += (sender, args) => {
+			using (var g = panel.CreateGraphics()) {
+				int x = 0;
+				int r = 300;
+				int marginx = 5;
+				foreach (var bitmap in bitmaps) {
+					g.ImageAt(bitmap, x, 0, r);
+					x += r + marginx;
+				}
+			}
+		};
+		PanelManager.DisplayControl(panel);
+	}
+	public static void ImageAt(this Graphics g, Image bitmap, float x, float y, float r) {
+		var ow = bitmap.Width;
+		var oh = bitmap.Height;
+		var max = Math.Max(ow, oh);
+		var neww = ow * r / max;
+		var newh = oh * r / max;
+		var newx = x + (r - neww) / 2;
+		var newy = y + (r - newh) / 2;
+		g.DrawImage(bitmap, newx, newy, neww, newh);
+	}
+	
+	public static Graphics DrawArrow(this Graphics g, Pen p, int x1, int y1, int x2, int y2, int x3, int y3) {
         g.DrawLines(p, new Point[]{
             new Point(x1,y1),
             new Point(x2,y2),
@@ -500,5 +625,27 @@ public static class Extension {
 		imgTag += "width=\"" + bmp.Width.ToString() + "\" ";
 		imgTag += "height=\"" + bmp.Height.ToString() + "\" />";
 		return imgTag;
+	}
+}
+
+public static class TimerExtension {
+	public static System.Timers.Timer SetTimer(this double interval,Action callback) {
+		var timer = new System.Timers.Timer(interval);
+		timer.Elapsed+= (sender, args) => callback();
+		timer.Enabled = true;
+		return timer;
+	}
+	public static void KillTimer(this System.Timers.Timer timer) {
+		timer.Stop();
+		return;
+	}
+	public static System.Timers.Timer SetOnceTimer(this double interval, Action callback) {
+		var timer = new System.Timers.Timer(interval);
+		timer.Elapsed += (sender, args) => {
+			timer.Stop();
+			callback();
+		};
+		timer.Enabled = true;
+		return timer;
 	}
 }
