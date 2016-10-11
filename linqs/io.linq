@@ -176,4 +176,15 @@ public static class IOExtension{
 		}
 		return len;
 	}
+
+    public static void XCopy(this string input, string output) {
+        //Now Create all of the directories
+        foreach (string dirPath in Directory.GetDirectories(input, "*", SearchOption.AllDirectories)) {
+            Directory.CreateDirectory(dirPath.Replace(input, output));
+        }
+        //Copy all the files & Replaces any files with the same name
+        foreach (string newPath in Directory.GetFiles(input, "*.*", SearchOption.AllDirectories)) {
+            File.Copy(newPath, newPath.Replace(input, output), true);
+        }
+    }
 }

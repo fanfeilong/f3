@@ -1,14 +1,5 @@
 `+n`表示完整看完次数，评论代表本人真实看法
 
-* [x] +1.0 `<<The Litter Schemer>>`
-* [ ] +0.2 `<<SICP>>`
-* [ ] +0.1 `<<程序语言设计理论基础>>` 
-* [ ] +0.5 `<<编译原理龙书>>`
-* [ ] +0.7 `<<Lua源码剖析 云风版>>`
-* [ ] +0.0 `<<Parser Technology>>`
-* [ ] +0.0 `<<Enginering a Compiler>>` 
-* [ ] +0.5 `<<Language Implementation Partten>>`
-* [x] +1.0 `<<Compilation of Functional Programming Languages using GCC Tail Calls>>`了解GCC中间层的一些侧面，不错。
 * [x] +1.0 `<<微战争——对决细菌、病毒>>`, `<<微战争——对决鼠疫、天花、黄热病>>`, `<<微战争——对决疟疾、艾滋病、流感>>` 很好的科普书。
 * [ ] +0.1 `<<多处理器编程的艺术>>`，晦涩难懂。
 * [x] +1.0 `<<浪潮之巅>>`, `<<数学之美>>`, `<<文明之光>>`, `<<大学之路>>`, `<<构建之法>>`, `<<硅谷之谜>>`, `<<暗时间>>` JustPub系列，吴军的书每本的核心观点就1-2个，展开充分易读。邹欣的书偏技术和过程层面剖析目标的达成、解决的问题、个人和团队的构建。刘未鹏偏思辨，基于心理学基础的思辨，提供独特的视角。
@@ -38,44 +29,26 @@
 * [ ] +0.5 `<<正面管教>>`
 * [ ] +0.1 `<<自私的基因>>` , `<<社会契约论>>`, `<<论进犯行为>>`, `<<魔鬼的牧师>>`
 * [x] +1.0 `<<疯狂实验史I>>`,`<<疯狂实验史II>>` 有一半左右的实验毫无意义
-* [x] +1.0 [Open Sources: Voices from the Open Source Revolution](http://www.oreilly.com/openbook/opensources/book/)
-* [x] +1.0 [Operating Systems: Three Easy Pieces](http://pages.cs.wisc.edu/~remzi/OSTEP/)
-* [ ] +1/6 [Neural Networks and Deep Learning](http://neuralnetworksanddeeplearning.com/)
+
 * [x] +1.0 `<<沉默的大多数>>`
 * [ ] +0.2 `<<白银时代>>`，看不下去，感觉并不好读
 * [ ] +0.1 `<<人件>>`
 * [ ] +0.0 `<<写给大家看的设计书>>`
 * [ ] +0.9 `<<小楼与大师：科学殿堂的人和事>>`, `<<从奇点到虫洞-广义相对论专题选讲>>` ,`<<因为星星在那里>>`，`<<那颗星星不在星图上-寻找太阳的疆界>>`，`<<上下百亿年-太阳的故事>>`，`<<霍金的派对>>`，`<<黎曼猜想漫谈>>`
+* [x] +2.0 `<<极简欧洲史>>`
+* [x] +1.0 `<<being logical>>`
+* [x] +1.0 `<<乌合之众>>`
+* [ ] +0.0 `<<隐藏的模式>>`
+* [ ] +0.0 `<<功利主义>>`
+* [ ] +0.0 `<<>>`
 
-* [ ] +0.0 Computer Science booklist
-	* [ ] +0.0 Cook's Travels and Other Salesmen's Tales - Dick Karp
-	* [ ] +0.0 Partition in a Pair Tree - Rabin and Scott
-	* [ ] +0.0 The Ten Best Algorithms of 1979
-	* [ ] +0.0 Ava's Hop Croft - J. D. Ullman
-	* [ ] +0.0 A Hoary Sort of Life - I. M. Quick
-	* [ ] +0.0 Basic Jumping - Uneda Goto
-	* [ ] +0.0 The Joy of Unix - wnj@ucbvax
-	* [ ] +0.0 Cossack Dances in Log Time - Arlazarov, Dinic, Kronrod, and Faradzev
-	* [ ] +0.0 Hamming it Up - D. Slepian
-	* [ ] +0.0 In Search of Perfect Hash - Craig Claiborne
-	* [ ] +0.0 The Humble Programmer - E. W. Dijkstra
-	* [ ] +0.0 Veni, Dividi, Vici - Trajan, R. E. (Roman Emperor)
-	* [ ] +0.0 A Visit from St. Nicholas - J. Ichbiah
-	* [ ] +0.0 Favorite Pebble Games - R. Sethi
-	* [ ] +0.0 The Curse of Floating Point - W. Kahan
-	* [ ] +0.0 Her Brand of Universe - Martin Davis
-	* [ ] +0.0 Death in the Wine Garden - R. Tennent
-	* [ ] +0.0 Manna from Heaven: Eventually, Why Not Now? - Stanford Saviors Circle
-	* [ ] +0.0 Modern Bayonet, Vol. 2: Fixed Point Methods - FOCS Field Manual
-	* [ ] +0.0 Johnson's Complete Works - P. Space
-	* [ ] +0.0 Crossing the Bar - J. Hartmanis
-	* [ ] +0.0 My Sin - E. Feigenbaum
-	* [ ] +0.0 The Fellowship of Bacchus - P. Naur
-	* [ ] +0.0 Balanced Logging in Binary Forests - D. E. Knuth
-	* [ ] +0.0 Gedanken Experiments Concerning Flows at High Reynolds Number - W. Burge
-	* [ ] +0.0 Black Lists and Funargs: Reliving the McCarthy Era - D. R. Hofstadter
-	* [ ] +0.0 The Importance of Being Earnest - Abrahams and Wegner
-	* [ ] +0.0 Drei Groschen Oper - Sammet, Denning, and Brandin
-	* [ ] +0.0 Fuzzylocks and the Three Fuzzy Bears - L. Zadeh
-	* [ ] +0.0 Briefing for a Recursive Descent into Hell - Benoit Mandelbrot
-	* [ ] +0.0 Eminent Programming Languages - Strachey
+
+
+
+
+
+
+
+
+
+

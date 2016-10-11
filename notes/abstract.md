@@ -158,3 +158,10 @@ the mind, may have a special receipt.
 石上还写明，它是由前来感恩朝礼的后代所建。
 这样的事情发生在过去，也发生在现在，不过将来（我们希望）这样的事不再发生了。
 ```
+
+Agreeing to Disagree
+--------------------
+```
+Robert Aumann
+If two people have the same priors, and their posteriors for an event A are common knowledge, then these posteriors are equal.
+```

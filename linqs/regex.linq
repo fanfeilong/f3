@@ -20,45 +20,46 @@ public static class u {
 }
 
 public static class RegexExtensions {
-	public static string Replace(this MatchCollection matches, string source, string replacement) {
-		var inversMatches = new Stack<Match>();
-		foreach (var match in matches.Cast<Match>()) {
-			inversMatches.Push(match);
-		}
-		while(inversMatches.Any()){
-			var match = inversMatches.Pop();
-			source = match.Replace(source, replacement);
-		}
-		return source;
-	}
-	public static string Replace(this MatchCollection matches, string source, string replacement,int index) {
-		Match match = null;
-		int i = 0;
-		foreach (var m in matches.Cast<Match>()) {
-			if (i == index) {
-				match = m;
-			}
-			i++;
-		}
-		if (match != null) {
-			source = match.Replace(source, replacement);
-			return source;
-		} else {
-			return null;
-		}
-	}
-	public static string Replace(this Match match, string source, string replacement) {
-		return source.Substring(0, match.Index) + replacement + source.Substring(match.Index + match.Length);
-	}
-	public static string ValueAt(this Match match, int index) {
-		if (match.Captures.Count == 0) {
-			return null;
-		} else {
-			if (match.Groups.Count > index) {
-				return match.Groups[index].Value;
-			} else {
-				return null;
-			}
-		}
-	}
+    public static string Replace(this MatchCollection matches, string source, string replacement, int groupIndex) {
+        var inversMatches = new Stack<Match>();
+        foreach (var match in matches.Cast<Match>()) {
+            inversMatches.Push(match);
+        }
+        while (inversMatches.Any()) {
+            var match = inversMatches.Pop();
+            source = match.Replace(source, replacement, groupIndex);
+        }
+        return source;
+    }
+    public static string Replace(this MatchCollection matches, string source, string replacement, int matchIndex, int groupIndex) {
+        Match match = null;
+        int i = 0;
+        foreach (var m in matches.Cast<Match>()) {
+            if (i == matchIndex) {
+                match = m;
+            }
+            i++;
+        }
+        if (match != null) {
+            source = match.Replace(source, replacement, groupIndex);
+            return source;
+        } else {
+            return null;
+        }
+    }
+    public static string Replace(this Match match, string source, string replacement, int index) {
+        var g = match.Groups[index];
+        return source.Substring(0, g.Index) + replacement + source.Substring(g.Index + g.Length);
+    }
+    public static string ValueAt(this Match match, int index) {
+        if (match.Captures.Count == 0) {
+            return null;
+        } else {
+            if (match.Groups.Count > index) {
+                return match.Groups[index].Value;
+            } else {
+                return null;
+            }
+        }
+    }
 }
