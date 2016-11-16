@@ -46,3 +46,6 @@
   - [wiki:levelDB](http://zh.wikipedia.org/wiki/LevelDB)
   - [SQLite](http://www.sqlite.org/)
   - [Dblinq](http://dblinq.codeplex.com/)
+
+- Consistent
+  - [raft animation](http://thesecretlivesofdata.com/raft/)
