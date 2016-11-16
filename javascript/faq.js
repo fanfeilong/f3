@@ -163,6 +163,108 @@ var parse = JSON.parse(stringify, (k, v) => {
 });
 
 /**************************************
+ * Q: How to validate json (1)
+ * A: using jsonschema
+ * C: https://github.com/tdegrunt/jsonschema
+ **************************************/
+var Validator = require('jsonschema').Validator;
+var v = new Validator();
+
+// Address, to be embedded on Person
+var addressSchema = {
+	"id": "/SimpleAddress",
+	"type": "object",
+	"properties": {
+		"lines": {
+			"type": "array",
+			"items": {"type": "string"}
+		},
+		"zip": {"type": "string"},
+		"city": {"type": "string"},
+		"country": {"type": "string"}
+	},
+	"required": ["country"]
+};
+
+// Person
+var schema = {
+	"id": "/SimplePerson",
+	"type": "object",
+	"properties": {
+		"name": {"type": "string"},
+		"address": {"$ref": "/SimpleAddress"},
+		"votes": {"type": "integer", "minimum": 1}
+	}
+};
+
+var p = {
+	"name": "Barack Obama",
+	"address": {
+		"lines": [ "1600 Pennsylvania Avenue Northwest" ],
+		"zip": "DC 20500",
+		"city": "Washington",
+		"country": "USA"
+	},
+	"votes": "lots"
+};
+
+v.addSchema(addressSchema, '/SimpleAddress');
+console.log(v.validate(p, schema));
+
+/**************************************
+ * Q: How to validate json (2)
+ * A: using z-schema
+ * C: https://github.com/zaggino/z-schema
+ **************************************/
+var ZSchema = require("z-schema");
+var options = {}
+var validator = new ZSchema(options);
+var schemas = [
+	{
+	    id: "personDetails",
+	    type: "object",
+	    properties: {
+	        firstName: { type: "string" },
+	        lastName: { type: "string" }
+	    },
+	    required: ["firstName", "lastName"]
+	},
+	{
+        id: "addressDetails",
+        type: "object",
+        properties: {
+            street: { type: "string" },
+            city: { type: "string" }
+        },
+        required: ["street", "city"]
+    },
+    {
+        id: "personWithAddress",
+        allOf: [
+            { $ref: "personDetails" },
+            { $ref: "addressDetails" }
+        ]
+    }
+];
+
+var json = {
+    firstName: "Martin",
+    lastName: "Zagora",
+    street: "George St",
+    city: "Sydney"
+};
+
+validator.validate(json, schema, function (err, valid) {
+	if(err){
+		console.log("validate error:"+err);
+		return;
+	}
+    validator.validate(json,schema[1],function(err,valid){
+    	//...
+    });
+});
+
+/**************************************
  * Q: How to sequence asynchronize callbacks (1)
  * A: step it
  * C: https://github.com/creationix/step
