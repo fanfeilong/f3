@@ -5,6 +5,14 @@
 ----------------------------------------
 
 ----------------------------------------
+-- Q: Where is the manual
+-- A: lua.org
+-- C: http://lua-users.org/wiki/TutorialDirectory
+--    https://www.lua.org/manual/5.3/
+--    http://pgl.yoyo.org/luai/i/lua_pushstring
+----------------------------------------
+
+----------------------------------------
 -- Q: how to sort dict (1)
 -- A: use array indexs and dict
 -- C: 1. sort before loop
