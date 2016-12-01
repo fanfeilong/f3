@@ -3,4 +3,7 @@
   - [concurrency vs parallelism](https://blogs.oracle.com/yuanlin/entry/concurrency_vs_parallelism_concurrent_programming)
   - [concurrency下的生产者消费者schedule](http://www.smashcompany.com/technology/a-parable-about-concurrency-demonstrated-with-comical-cartoons)
 
-- 
+- 内存栅栏
+内存栅栏分为完全内存栅栏Full Barrier，保证前面的指令一定在后面指令之前执行Aquire Barrier，保证后面语句一定在前面语句之后执行的Release Barrier
+  - [acquire-and-release-semantics](http://preshing.com/20120913/acquire-and-release-semantics/)
+  -  无锁数据结构和算法的基础
