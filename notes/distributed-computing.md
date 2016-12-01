@@ -1,9 +1,33 @@
-#### 描述
----------
-分布式系统，分布式算法，分布式计算，虚拟化技术
+(1) 状态机拜占庭系统
+====================
 
-#### 参考资料
--------------
+特点
+------
+同一时刻只能执行一个请求，因此服务器之间执行请求顺序要求完全一致。
+
+协议
+------
+- PBFT(Practical Byzantine Fault Tolerance),实用拜占庭容错，由Castro 和 Liskov 在 1999年提出。
+
+在 N ≥ 3F + 1 的情况下一致性是可能解决。其中，N为计算机总数，F为有问题计算机总数。信息在计算机间互相交换后，各计算机列出所有得到的信息，以大多数的结果作为解决办法。
+
+(2) Quorum投票系统
+=====================
+
+特点
+-----
+指共享数据存储在一组服务器上，通过访问服务器的一个大小恒定的子集(quorum)来提供读/写操作。这类协议都含有一个特性：规定访问的子集大小后，任何一个这样的子集都包含最新的数据，并且一定可以读出来。
+
+协议
+------
+- paxos
+- Zookeeper, ZAB
+- Viewstamped Replication(VR)
+- Facebook, raft
+- multi-paxos
+
+参考资料
+==============
 - [Awesome Courses,(Systems,PL-Compile,Algorithm)](https://github.com/prakhar1989/awesome-courses/blob/master/README.md)
 - [wiki:Paxos](http://en.wikipedia.org/wiki/Paxos_(computer_science))
   - [wiki:Leslie Lamport](http://en.wikipedia.org/wiki/Leslie_Lamport)
