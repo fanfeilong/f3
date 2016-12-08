@@ -59,4 +59,5 @@ here, build life projects
 --------------------
 - [research](https://github.com/fanfeilong/f3/tree/master/notes/research.md)
 
+This is write in vim installed in termux on Android.
 
