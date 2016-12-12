@@ -100,6 +100,11 @@ private KEY:N,D，Decode: e1^D%N=m
     - [Nicolas Bourbaki](https://en.wikipedia.org/wiki/Nicolas_Bourbaki)
     - [computable function](https://en.wikipedia.org/wiki/Computable_function)
 
+#### Approximation Theory
+数值逼近里有：拉格朗日插值、牛顿插值、样条函数逼近、最佳一致逼近、最佳平分逼近（最小二乘），这些基础的。样条里，有beizier和b-spline逼近。逼近简单说就是把目标函数在指定空间的基函数上求一个线性展开（表出），让这个逼近函数和原函数在某种范式下的差距足够小。例如，可以在傅里叶基函数上展开，可以在小波基函数上展开，还有小波变换的各种变体，例如斜小波之类的，这种变体一般一组unit之间不再是线性无关的基函数，而是带有一定的冗余，冗余的好处是不必所有基函数上都有权重，适合在一些压缩感知领域上使用。像神经网络能计算任意能表示成傅里叶基函数展开的函数，是因为神经网络可以计算傅里叶函数的基函数，那么再线性组合也不是难事。跟逼近相关的数学方向有：逼近论、数值逼近、计算几何等，例如这里有逼近论会用到的各种概念的一个小字典：http://www.emis.de/journals/SAT/concepts.pdf，核心其实就是基函数、误差范式、各种线性表出恒等式等。
+
+- [History of Approximation Theory](http://www.math.technion.ac.il/hat/)
+- [Journal of Approximation Theory](https://people.math.osu.edu/nevai.1/JAT/)
 
 #### 参考资料
 -------------
