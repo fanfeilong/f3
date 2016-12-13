@@ -1,5 +1,4 @@
-#### 加密算法
--------------
+## 单向哈希函数
 - [wiki:MD5](http://en.wikipedia.org/wiki/MD5)
   - 1992年，MIT的`Ronald Rivest`教授（RSA中的R就是他，图灵奖获得者，算法导论作者之一）提出MD5算法用以替代MD4
   - 1993年，`Den Boer`和`Bosselaers`发现MD5`伪碰撞`：两个不同的初始化向量可以产生相同的MD5摘要
@@ -118,5 +117,31 @@
 - [SHA-2](http://en.wikipedia.org/wiki/SHA-2)
 - [SHA-3](http://en.wikipedia.org/wiki/SHA-3)
 
-#### 加密协议
--------------
+## 对称密码
+- DES
+- AES
+- Rijndael
+
+## 中间人攻击
+
+## 非对称密码
+- 公/私钥
+- RSA
+
+## 消息认证
+- 摘要
+- 哈希验证
+
+## 数字签名
+- 证书
+- PKI
+- 数字签名的漏洞
+
+## 伪随机数生成器
+- 线性同余算法
+
+## PGP
+- 一个人的开发
+
+## SSL/TLS
+- 复杂的握手协议
