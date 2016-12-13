@@ -5,8 +5,9 @@ here, build life projects
 
 ## i am a reader
 ---------------
-- [book1](https://github.com/fanfeilong/f3/tree/master/notes/book1.md) 
-- [book2](https://github.com/fanfeilong/f3/tree/master/notes/book2.md) 
+- [books for understanding](https://github.com/fanfeilong/f3/tree/master/notes/book1.md) 
+- [books for `computer science`/`software enginer`/`programming`](https://github.com/fanfeilong/f3/tree/master/notes/book2.md) 
+- [books for kids](https://github.com/fanfeilong/f3/tree/master/notes/book3.md) 
 - [abstract](https://github.com/fanfeilong/f3/tree/master/notes/abstract.md) 
 - [the beauty of math](https://github.com/fanfeilong/f3/tree/master/notes/the-beauty-of-math.md) 
 - [element pattern](https://github.com/fanfeilong/f3/tree/master/notes/element-pattern.md) 
