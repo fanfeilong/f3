@@ -37,8 +37,14 @@ here, build life projects
   - [programming in linux](https://github.com/fanfeilong/f3/tree/master/notes/programming-in-linux.md) 
   - [programming in windows](https://github.com/fanfeilong/f3/tree/master/notes/programming-in-windows.md) 
 + [programming languages](https://github.com/fanfeilong/f3/tree/master/notes/programming-languages.md) 
-  - [read lua source code](https://github.com/fanfeilong/f3/tree/master/notes/read-lua-source-code.md) 
-  - [javascript](https://github.com/fanfeilong/f3/tree/master/notes/javascript.md)
+  - [read lua source code](https://github.com/fanfeilong/f3/tree/master/notes/read-lua-source-code.md)
+    - [lua object system](https://github.com/fanfeilong/f3/tree/master/codes/lua_object_system.md)
+    - [lua adt of tvalue](https://github.com/fanfeilong/f3/tree/master/codes/lua_adt_of_tvalue.md)
+    - [lua state](https://github.com/fanfeilong/f3/tree/master/codes/lua_state.md)
+    - [lua global state](https://github.com/fanfeilong/f3/tree/master/codes/lua_global_state.md)
+    - [lua gc (1)](https://github.com/fanfeilong/f3/tree/master/codes/lua_gc_1.md)
+  - [faq.js](https://github.com/fanfeilong/f3/tree/master/faq/faq.js)
+  - [faq.lua](https://github.com/fanfeilong/f3/tree/master/faq/faq.lua)
 + algorithm
   - [sort](https://github.com/fanfeilong/f3/tree/master/notes/sort.md) 
 + principle
