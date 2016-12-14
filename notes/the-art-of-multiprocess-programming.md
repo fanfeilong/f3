@@ -312,12 +312,12 @@ p和q单独看都符合顺序一致，但，如果存在一种重排，使得p�
 我们用标记：<p.enq(x),A> -> <q.deq(x),B>表示任意的顺序执行必须使得A对p的入队x操作先于B对q的出队x操作
 
 程序次序说明：
-- <p.enq(x),A> -> <q.enq(x),A>
-- <q.enq(y),B> -> <p.enq(y),B>
+- `<p.enq(x),A> -> <q.enq(x),A>`
+- `<q.enq(y),B> -> <p.enq(y),B>`
 
 复合顺序一致要求：
-- <p.enq(y),B> -> <p.enq(x),A> 因为p是FIFO且A从p中出队y，则y肯定在x之前入队
-- <q.enq(x),A> -> <q.enq(y),B> 同理
+- `<p.enq(y),B> -> <p.enq(x),A>` 因为p是FIFO且A从p中出队y，则y肯定在x之前入队
+- `<q.enq(x),A> -> <q.enq(y),B>` 同理
 
 但这四个构成一个环，矛盾
 
