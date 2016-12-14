@@ -8,12 +8,12 @@ NOTES 4: `<<The Art Of Multiprocess Programming>>`
 
 - 分析并发计算的实质就是分析时间。有时希望事件同时发生，有时希望事件在不同时间发生。需要对各种复杂情形进行分析，包括多个时间片应该怎样交叉重叠，或者相互之间不允许重叠
 - 所有线程共享一个共同的时间（不必是一个公共时钟）。一个线程是一个状态机，其状态的转换称为事件
-- 事件是瞬时的：它们在单个瞬间发生。线程A产生了一个事件序列a0,a1,...
-- aij表示ai事件的第j次发生
-- 事件a在事件b之前发生，则称a先于b，记作a->b
-- 令a0和a1表示事件，且a0->a1，则IA=interval(a0,a1)表示a0和a1之间的间隔。
-- 如果a0->a1->b0->b1,則interval(a0,a1)->interval(b0,b1)，即(I,A)->(I,B)
-- I(A,j)表示(I,A)的第j次执行
+- 事件是瞬时的：它们在单个瞬间发生。线程A产生了一个事件序列`a(0),a(1),...`
+- `a(i,j)`表示`a(i)`事件的第`j`次发生
+- 事件`a`在事件`b`之前发生，则称`a`先于`b`，记作`a->b`
+- 令`a(0)`和`a(1)`表示事件，且`a(0)->a(1)`，则`I(A)=interval(a(0),a(1))`表示`a(0)`和`a(1)`之间的间隔。
+- 如果`a(0)->a(1)->b(0)->b(1)`,則`interval(a(0),a(1))->interval(b(0),b(1))`，即`I(A)->I(B)`
+- `I(A,j)`表示`(I,A)`的第`j`次执行
 
 **临界区**:
 - 两个线程同时访问`start of danger zone`和`end of danger zone`之间的共享变量，就出现资源竞争
@@ -24,7 +24,7 @@ NOTES 4: `<<The Art Of Multiprocess Programming>>`
 - 令CS(A,j)是A第j次执行临界区的时间段
 
 **锁**：
-- 互斥：不同线程的临界区之间没有重叠。对于线程A、B以及整数j、k，或者CS(A,k)->CS(B,j)或者CS(B,j)->CS(A,k)
+- 互斥：不同线程的临界区之间没有重叠。对于线程`A`、`B`以及整数`j`、`k`，或者`CS(A,k)->CS(B,j)`或者`CS(B,j)->CS(A,k)`
 - 无死锁：如果一个线程正在尝试获得一个锁，那么， 总会成功地获得这个锁。若线程A调用Lock但无法获得锁，则一定存在其他线程正在无穷次地执行临界区。
 - 无饥饿：每个试图获得锁的线程最终都能成功。每个Lock调用最终都能返回。
 
@@ -50,12 +50,12 @@ class lock_one{
 ```
 
 互斥证明：
-- 假设CS(A)和CS(B)会同时发生
-- write(A,flag[A]=true)->read(A,flag[B]==false)->CS(A), A线程进入临界区必然会有前面的write和read操作
-- write(B,flag[B]=true)->read(B,flag[A]==false)->CS(B)，B线程进入临界区必然会有前面的write和read操作
-- 根据假设CS(A)和CS(B)能同时发生，则必然有read(A,flag[B]==false)->write(B,flag[B]=true)，否则flag[B]=true后，无法进入CS(A)
-- 但是，此时上述三个时序将推导出最后一次调用lock时：write(A,flag[A]=true)->read(A,flag[B]==false)->write(B,flag[B]=true)->read(B,flag[A]==false)
-- 上述时序中，flag[A]不可能从true变成false，矛盾
+- 假设`CS(A)`和`CS(B)`会同时发生
+- `write(A,flag[A]=true)->read(A,flag[B]==false)->CS(A)`, A线程进入临界区必然会有前面的`write`和`read`操作
+- `write(B,flag[B]=true)->read(B,flag[A]==false)->CS(B)`，B线程进入临界区必然会有前面的`write`和`read`操作
+- 根据假设`CS(A)`和`CS(B)`能同时发生，则必然有`read(A,flag[B]==false)->write(B,flag[B]=true)`，否则`flag[B]=true`后，无法进入CS(A)
+- 但是，此时上述三个时序将推导出最后一次调用lock时：`write(A,flag[A]=true)->read(A,flag[B]==false)->write(B,flag[B]=true)->read(B,flag[A]==false)`
+- 上述时序中，`flag[A]`不可能从`true`变成`false`，矛盾
 
 
 ```
@@ -72,11 +72,11 @@ class lock_two{
 ```
 
 互斥证明：
-- 假设CS(A)和CS(B)会同时发生
-- write(A,victim=A)->read(A,victim==B)->CS(A)，A线程进入临界区必然会有前面的时序
-- write(B,victim=B)->read(B,victim==A)->CS(B)，B线程进入临界区必然会有前面的时序
-- 那么，A线程在获得victim==B之前，必然需要B线程将victim写成B，所以有write(A,victim=A)->write(B,victim=B)->read(A,victim==B)
-- 然而，此时B线程将无法得到victim==A的结果，从而CS(B)无法进入，矛盾
+- 假设`CS(A)`和`CS(B)`会同时发生
+- `write(A,victim=A)->read(A,victim==B)->CS(A)`，A线程进入临界区必然会有前面的时序
+- `write(B,victim=B)->read(B,victim==A)->CS(B)`，B线程进入临界区必然会有前面的时序
+- 那么，A线程在获得`victim==B`之前，必然需要B线程将victim写成B，所以有`write(A,victim=A)->write(B,victim=B)->read(A,victim==B)`
+- 然而，此时B线程将无法得到`victim==A`的结果，从而`CS(B)`无法进入，矛盾
 
 ```
 /* 混合lock one和lock two，得到无饥饿的双线程互斥算法 */
@@ -98,11 +98,11 @@ class lock_peterson{
 ```
 
 互斥证明：
-- 假设CS(A)和CS(B)会同时发生
-- write(A,flag[A]=true)->write(A,victim=A)->read(A,flag[B]==false)->read(A,victim==B)->CS(A)，A线程进入临界区必然会有前面的时序
-- write(B,flag[B]=true)->write(B,victim=B)->read(B,flag[A]==false)->read(B,victim==A)->CS(B)，B线程进入临界区必然会有前面的时序
-- 假设线程A先进入临界区，那么一定有write(B,victim=B)->write(A,victim=A),但是此时
-- write(A,flag[A]=true)->write(B,victim=B)->write(A,victim=A)->read(B,flag[A]==false)
+- 假设`CS(A)`和`CS(B)`会同时发生
+- `write(A,flag[A]=true)->write(A,victim=A)->read(A,flag[B]==false)->read(A,victim==B)->CS(A)`，A线程进入临界区必然会有前面的时序
+- `write(B,flag[B]=true)->write(B,victim=B)->read(B,flag[A]==false)->read(B,victim==A)->CS(B)`，B线程进入临界区必然会有前面的时序
+- 假设线程A先进入临界区，那么一定有`write(B,victim=B)->write(A,victim=A)`,但是此时
+- `write(A,flag[A]=true)->write(B,victim=B)->write(A,victim=A)->read(B,flag[A]==false)`
 - 矛盾
 
 上面的都只能做两个线程之间的锁，泛化双线程锁，即可得到多线程锁，多线程锁的互斥、无饥饿证明也用反证法通过时序引出矛盾，但是由于引入多层，需要用数学归纳法。
@@ -141,11 +141,11 @@ class lock_filter(N){
 - 无饥饿意味着无死锁
 
 考虑公平性，无饥饿特性能保证每一个调用lock的线程都最终能进入临界区，但并不保证进入临界区需要多长时间。改进的做法是，将lock方法的代码划分为两部分：
-1. 门廊区，其执行区间D(A)由有限个操作组成。
-2. 等待区，其执行区间W(A)可能包括无穷个操作步。
+1. 门廊区，其执行区间`D(A)`由有限个操作组成。
+2. 等待区，其执行区间`W(A)`可能包括无穷个操作步。
 由此，引出**公平性**定义：
 >满足下面条件的锁称之为先来先服务的：如果线程A门廊区的结束在线程B门廊区的开始之前完成，那么线程A必定不会被线程B赶超。也就是说，对于线程A、B及整数j、k：
-若D(A,j)->D(B,k)，则CS(A,j)->CS(B,k)
+若`D(A,j)->D(B,k)`，则`CS(A,j)->CS(B,k)`
 
 Bakery算法：每个线程在门廊区得到一个序号，然后一直等待，直到再没有序号比自己更早的线程尝试进入临界区为止。
 ```
@@ -194,19 +194,19 @@ class lock_bakery(N){
 ```
 
 无死锁证明：
-- 正在等待的线程中，必定存在某个线程A具有唯一的最小(label[a],A)，那么这个线程决不会等待其他线程。
+- 正在等待的线程中，必定存在某个线程A具有唯一的最小`(label[a],A)`，那么这个线程决不会等待其他线程。
 
 FIFO证明：
-- 如果A的门廊先于B的门廊，D(A)->D(B)，那么A的label必然小于B的label，因为
-- write(A,label[A])->read(B,label[A])->write(B,label[B])->read(B,flag[A])
-- 所以，当flag[A]为true时，B被封锁在外面。
+- 如果A的门廊先于B的门廊，`D(A)->D(B)`，那么A的label必然小于B的label，因为
+- `write(A,label[A])->read(B,label[A])->write(B,label[B])->read(B,flag[A])`
+- 所以，当`flag[A]`为true时，B被封锁在外面。
 
 互斥证明：
-- 假设CS(A)和CS(B)同时发生
-- 不妨，假设A和B进入临界区的时，(label[A],A)<<(label[B],B)
-- 则B进入临界区要么flag[A]==false,要么(label[B],B)<<(label[A],A)，则只能是flag[A]=false
-- 从而，write(B,label[B])->read(B,flag[A])->write(A,flag[A])->write(A,label[A])
-- 但此时，(label[B],B)<<(label[A],A)，矛盾
+- 假设`CS(A)`和`CS(B)`同时发生
+- 不妨，假设A和B进入临界区的时，`(label[A],A)<<(label[B],B)`
+- 则B进入临界区要么`flag[A]==false`,要么`(label[B],B)<<(label[A],A)`，则只能是`flag[A]=false`
+- 从而，`write(B,label[B])->read(B,flag[A])->write(A,flag[A])->write(A,label[A])`
+- 但此时，`(label[B],B)<<(label[A],A)`，矛盾
 
 **有界时间戳**：
 Bakery中的label严格递增，肯定会溢出，这个做法的本质是
@@ -309,7 +309,7 @@ A:--p.enq(x)--------q.enq(x)--------p.deq(y)----------
 B:----------q.enq(y)--------p.enq(y)--------q.deq(x)--
 ```
 p和q单独看都符合顺序一致，但，如果存在一种重排，使得p、q的复合是顺序一致的，也就是方法的调用能够以一种与程序次序相一致的次序进行排序，
-我们用标记：<p.enq(x),A> -> <q.deq(x),B>表示任意的顺序执行必须使得A对p的入队x操作先于B对q的出队x操作
+我们用标记：`<p.enq(x),A> -> <q.deq(x),B>`表示任意的顺序执行必须使得A对p的入队x操作先于B对q的出队x操作
 
 程序次序说明：
 - `<p.enq(x),A> -> <q.enq(x),A>`
@@ -373,8 +373,8 @@ class WaitFreeQueue<T>{
 可线性化非常适合大型系统的组建，在这种系统中各个组件必须独立地实现和验证。此外，并发对象所用的技术全都是可线性化的，可线性化是非阻塞又是可复合的。
 
 **形式化**：
-- 方法的一次调用：<x.m(a*),A>，其中x是对象，m是方法名，a*是参数，A是线程
-- 方法调用的一次响应：<x.t(r*),A>，其中x是对象，t是响应，r*是结果序列，A是线程
+- 方法的一次调用：`<x.m(a*),A>`，其中x是对象，m是方法名，a*是参数，A是线程
+- 方法调用的一次响应：`<x.t(r*),A>`，其中x是对象，t是响应，r*是结果序列，A是线程
 - 若一次调用于一个响应都具有相同的对象和线程，则称这个响应匹配这次调用
 - 并发系统的一次执行过程可以采用经历（History）模型来描述，经历是一方法调用事件和响应事件的一个有限序列
 - 经历H的子经历就是H的事件序列的一个子序列
@@ -387,7 +387,7 @@ class WaitFreeQueue<T>{
 
 形式化描述：
 >如果经历H存在一个扩展H',以及一个合法的顺序经历S，并使得
-（1）complete（H')与S等价，且
+（1）`complete（H')`与S等价，且
 （2）若H中方法调用m0先于m1，则在S中也成立
 则称H是可线性化的。
 
