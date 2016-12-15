@@ -394,6 +394,311 @@ class WaitFreeQueue<T>{
 
 ### 共享存储基础
 
+**顺序计算**:
+>顺序计算基础是由Alan Turing和Alonzo Church在20世纪30年代所奠定的，他们各自独立地提出了`丘奇-图灵`论题：
+能被计算的所有事情，都能由图灵机（或等价的丘奇lambda演算）计算。任何由图灵机不能解的问题（比如判定一个程序
+对任意的输入是否会停机），对实际的计算设备也是不可解的。图灵论题是一个论题而不是定理，因为“什么是可计算”这一概念
+不可能用精确的、数学上严谨的方式来定义。
+
+顺序计算理论的发展过程：
+- 有穷自动机
+- 下推自动机
+- 图灵机
+
+一个共享存储器的计算由多个线程构成，每个线程自身是一个顺序程序，它们相互之间通过驻留在共享存储器中的对象进行通信。线程是异步的，它们各自以不同的速度执行，
+且在任意时刻可以停止一个不可预测的时间间隔。
+
+**寄存器空间**：
+理解线程间通信的一种办法就是对硬件原语进行抽象，把通信看作是通过读/写`并发共享对象`实现。
+
+一种说明方式就是依靠互斥来定义并发方法调用：使用互斥锁来保护每个寄存器，要求每次read和write调用都必须首先获得锁，然而不幸的是，在多处理器系统结构中，不能使用互斥来实现共享对象的并发调用：
+- 上一章讲述了如何利用寄存器来实现互斥，因此再通过互斥来实现寄存器几乎没有任何意义
+- 若通过互斥来实现寄存器，即使这种实现是无死锁或无饥饿的，计算的演进仍然依赖于OS的调度器
+
+如果对象的每个方法调用都能在有限步内完成，并且每个方法调用执行都与它和其他并发的方法调用之间的交互无关，则称这个对象的实现是无等待的。
+
+**原子寄存器**：
+所谓原子寄存器就是顺序寄存器类的一种可线性化实现，原子寄存器每一个读操作都返回“最后”一次写入的值。各个线程通过读/写原子寄存器进行通信的模型很久以来一直作为并发计算的标准模型。
+- 单读者-单写者：SRSW
+- 多读者-多写者：MRMW
+
+**安全寄存器**:
+一个单写者-多读者寄存器的实现是“安全”的，如果：
+- 与write调用不相重叠的read调用，其返回值是最近一次write调用所写入的值
+- 如果read和write调用相互重叠，则read调用可以返回该寄存器所允许范围内的任意值
+
+**规则寄存器**:
+规则寄存器是一种多读者-单写者寄存器，其中写操作不是原子的，
+- 当write调用正在执行的时候，若旧值还没有完全被新值所替代，那么读到的值可能在旧值和新值之间“闪动”
+- 规则寄存器是安全的，因此任意一个不与write调用重叠的read调用都返回最近一次被写入的值
+- 假设一个read调用与一个多个write调用重叠，另v^0是最后一次write调用所写入的值，v^1,v^2,...,v^k为重叠的write调用所写入的值的序列，那么read调用可能返回任意的v^i
+
+那么：
+- 规则寄存器必定是静态一致的，但反过来不成立
+- 规则寄存器是单写者顺序寄存器
+
+为了便于分析规则和原则寄存器的实现算法，从现在开始只考虑这样的经历：
+- 各个read调用返回的值必定是被某个write调用写入的值
+- W(i)->W(j)
+- R(i)->R(j)
+
+可以对规则寄存器和原子寄存器形式化：
+1. 绝不可能存在R(i)->W(i)，读调用不会返回将来的值
+2. 对于某个值j，绝不会存在W(i)->W(j)->R(i)，读调用不会返回更远的过去值
+3. 若R(i)->R(j)，则i<=j,
+满足1,2的是规则寄存器，满足规则1,2,3的是原子寄存器
+
+利用安全SRSW构造安全MRSW
+```
+class SafeMRSWRegister(capacity){
+	bool s_table[capacity]; // array of safe SRSW registers
+	bool read(){
+		return s_table[get_current_thread_id()];
+	}
+	void write(bool x){
+		for(int i=0;i<s_table.length;i++){
+			s_table[i] = x;
+		}
+	}
+}
+```
+- 若线程A的read调用不与任意write重叠，那么read返回最后一次写入s_table的值
+- 若线程A的read调用和write重叠，则对多个SRSW的复合结果还是安全的
+
+利用安全MRSW构造规则MRSW
+```
+class RegularMRSWRegister(capacity){
+	therad_local<bool> last;
+	bool s_value; // safe MRSW register
+	bool read(){
+		return s_value;
+	}
+	write(bool x){
+		if(x!=last.get()){
+			last.set(x);
+			s_value = x;
+		}
+	}
+}
+```
+对于bool寄存器而言，只有当要写入的新值x与久值一样时，安全的bool寄存器与规则的bool寄存器之间才会有区别：
+- 规则寄存器只能返回x
+- 安全寄存器可以返回任意一个bool值
+因此，只要确保写入的新值与原先写入值不同时才允许修改，就可以解决这个问题
+- 如果一个read带哦用不与任何write调用重叠，则返回最近一次写入的值
+- 若调用有重叠，则要考虑
+    - 如果要写入的值与最后一次写入的值相同，那么写者不对该安全寄存器写，从而确保读者读到正确的值
+    - 如果要写入的值与最后一次写入的值不公，则由于是bool寄存器，那么值必定为true或false，并发的读者将
+    返回寄存器取值范围呢id某个值，或者是true，或者是false，且都是正确的，因此是规则的。
+
+NOTE：这个证明太精彩了！
+
+进而，可以构造M-值MRSW规则寄存器
+```
+class RegularMRSWRegister(capacity){
+	int RANGE = Byte.MAX_VALUE-Byte.MIN_VALUE+1;
+	bool r_bit[RANGE]; // regular bool MRSW
+	RegularMRSWRegister(){
+		r_bit[0]=true;
+	}
+	Byte read(){
+		for(int i=0;i<RANGE;i++){
+			if(r_bit[i]){
+				return i;
+			}
+		}
+		return -1;
+	}	
+	void write(Byte x){
+		r_bit[x] = true;
+		for(int i=x-1;i>0;i--){
+			r_bit[i]=false;
+		}
+	}
+}
+```
+先证明read调用总能返回一个值，该值对应于0-M-1之间由某个write调用所设置的一个位。若一个读者正在读r_bit[j]，则必定有某个索引号大于等于j的位被一个write调用设置为true，这可以使用数学归纳法证明。
+
+接着看如何使用SRSW规则寄存器构造SRSW原子寄存器。由于SRSW规则寄存器并不存在并发读，所以违背原子寄存器要求3的情景是：
+两个读与一个写重叠且读到次序颠倒的值。为此，我们加入时间戳解决这个问题：
+```
+class AutomicSRSWRegister<T>{
+	thread_local<long> last_stamp;
+	thread_local<stamp<T>> last_read;
+	stamp<T> r_value;  // regular SRSW timestmp-value pair
+	T read(){
+		stamp<T> value = r_value;
+		stamp<T> last = last_read.get();
+		stamp<T> result = max_bystamp(value,last); // get max stamp for current value and last read value
+		last_read.set(result);                     // save last read value
+		return result.value;
+	}
+	void write(T v){
+		long now = last_stamp.get()+1;
+		r_value = new stamp<T>(now,v); // save value and stamp
+		last_stamp.set(now);           // save last write stamp
+	}
+}
+```
+
+MRSW原子寄存器，做法是通过2维度的时间戳矩阵
+```
+class AtomicMRSWRegister<T>(N){
+	thread_local<long> last_stamp; // each entry is SRSW atomic
+	stamp<T> a_table[N][N];
+	T read(){
+		int me = get_current_thread_id();
+		stamp<T> value = a_table[me][me];
+		for(int i=0;i<a_table.length;i++){
+			value = max_bystamp(value,a_table[i][me]);
+		}
+		for(int i=0;i<a_table.length;i++){
+			a_table[me][i] = value;
+		}
+		return value;
+	}
+	void write(T v){
+		long stamp = last_stamp.get()+1;
+		stamp<T> value = new stamp<T>(stamp,v);
+		for(int i=0;i<a_table.length;i++){
+			a_table[i][i] = value;
+		}
+	}
+}
+```
+
+MRMW原子寄存器：
+```
+class AtomicMRMWRegister<T>(N){
+	stamp<T> a_table[N]; // array of atomic MRSW register
+	T read(){
+		stamp<T> max = stamp.MIN_VALUE;
+		for(int i=0;i<a_table.length;i++){
+			max = max_bystamp(max,a_table[i]);
+		}
+		return max.value;
+	}
+	void write(T v){
+		int me = get_current_thread_id();
+		stamp<T> max = stamp.MIN_VALUE;
+		for(int i=0;i<a_table.length;i++){
+			max = max_bystamp(max,a_table[i]);
+		}
+		a_table[me] = new stamp<T>(max.stamp+1,v);
+	}
+}
+```
+
+抽象的力量，虽然这些实现并没有效率，但是在理论上，我们知道了如何一步步从两个维度层层逼近原子性：
+1. 安全->规则->原子
+2. 单写单读->单写多读->多读多写
+在这两个维度做叉乘，步步逼近
+
+**原子快照**:
+同样的，既然搞定了单个寄存器的值，就接着搞原子地读多寄存器的值，称为原子快照，快照应该等价于如下的顺序规范
+```
+class SeqSnapshot<T>(N){
+	T a_value[N];
+	void update(T v){
+		autolock();
+		a_value[get_current_thread_id()] = v;
+	}
+	T[] scan(){
+		autolock();
+		T result[N];
+		for(int i=0;i<a_value.length;i++){
+			result[i]=a_value[i];
+		}
+		return result;
+	}
+}
+```
+
+无障碍快照：update无等待，sacn无障碍
+```
+class SimpleSnapshot<T>(N){
+	stamp<T> a_table[N]; // array of atomic MRSW registers
+	void update(T v){
+		int me = get_current_thread_id();
+		stamp<T> old = a_table[me];
+		stamp<T> new = new stamp<T>(old.stamp+1,v);
+		a_table[me]=new;
+	}
+	stamp<T>[] collect(){
+		stamp<T> copy[N];
+		for(int j=0;j<a_table.length;j++){
+			copy[j] = a_table[j];
+		}
+		return copy;
+	}
+	T[] scan(){
+		stamp<T> olds[N],news[N];
+		olds = collect();
+		while(true){
+			news = collect();
+			if(!olds.equal(news)){ // 比较时间戳
+				olds = news;
+				continue;
+			}
+			// 双重干净收集，可以返回
+			T result[N];
+			for(int i=0;i<a_table.length;i++){
+				result[i]=news[i].value;
+			}
+			return result;
+		}
+	}
+}
+```
+
+无等待快照：若一个正在扫描的线程A在它进行重复收集的同时看到线程B迁移两次，则B必定在A的scan过程中执行了一次完整的update调用，这样A可以正确的使用B的快照
+```
+class WFSnapshot<T>(N){
+	stamp<T> a_table[N]; // array of atomic MRSW registers
+	void update(T v){
+		int me = get_current_thread_id();
+		stamp<T> old = a_table[me];
+		stamp<T> new = new stamp<T>(old.stamp+1,v);
+		a_table[me]=new;
+	}
+	stamp<T>[] collect(){
+		stamp<T> copy[N];
+		for(int j=0;j<a_table.length;j++){
+			copy[j] = a_table[j];
+		}
+		return copy;
+	}
+	T[] scan(){
+		stamp<T> olds[N],news[N];
+		bool moved[N];
+		olds = collect();
+		while(true){
+			news = collect();
+			for(int j=0;j<a_table.length;j++){
+				if(olds[j].stamp!=news[j].stamp){ // 比较时间戳
+					if(moved[j]){                 // 如果看到两次更新，就用它的快照
+						return olds.snap;
+					}else{
+						moved[j]=true;            // 否则就先记录下
+						olds = news;
+						continue;
+					}
+				}
+			}
+
+			// 双重干净收集，可以返回
+			T result[N];
+			for(int i=0;i<a_table.length;i++){
+				result[i]=news[i].value;
+			}
+			return result;
+		}
+	}
+}
+```
+
+看到这里，感觉好精彩，欲罢不能，接着往下看好了。
+
 ### 同步原子操作的相对能力
 
 ### 一致性的通用性
