@@ -705,6 +705,280 @@ class WFSnapshot<T>(N){
 
 ### 同步原子操作的相对能力
 
+下面这组话，几乎没法删减：
+
+>假设你在负责设计一种新的多处理器，应该将那种原子指令包含进来呢？我们的目标是找出一组基本的同步操作原语，用于解决实际中可能出现的各种同步问题。
+
+>如果一个并发对象的每次调用都能在有限步内完成，则称该并发对象的实现是无等待的。如果能保证某个方法的无限次调用都能在有限步内完成，则称该方法是无锁的。
+
+>评测同步指令能力的一种方法就是评价同步指令对于共享对象（如队列、栈、树）的实现的支持程度如何。我们只评测那些能够保证状态的演进不依赖外界支持的解决方法。
+
+>如果把同步原子指令看作是其对外的方法就是指令本身的对象，则可以证明存在一种由同步原语组成的无限层次的层次结构，任一层的原语都不能用在更高层原语的无等待或无锁实现中。
+
+>定义一致数：在这种层次中，每个类都有一个相关的一致数，所谓的一致数就是这个类的对象解决基本的同步问题时所能针对的最大线程数。
+
+>在一个有n个或更多个并发线程的系统中，不可能使用一致数小于n的对象构造一个一致数wein的对象的无等待或无锁实现。
+
+**一致数**：
+```
+class Consensus<T>{
+	T decide(T v);
+}
+```
+每个线程以输入v最多调用decide一次，一致性对象的decide方法将返回一个满足下列条件的值
+- 一致性：所有的线程都决定同一个值
+- 有效性：这个共同决定值是某个线程的输入
+
+换句话说并发一致性对象可以被线性化为一个串行一致性对象，其中值被选中的线程首先完成它的decide调用。
+- 如果存在一种使用类C的任何数量的对象和原子寄存器的一致性协议，则能够解决n线程一致性问题
+- 类C的一致数是指用这个类来解决n线程一致性时所能针对的最大n值，如果n值不存在，则称这个类的一致数是无限的。
+- 假设类C的一个对象可以通过类D的一个或多个对象以及一定数量的原子寄存器实现，如果类C可以解决n线程一致性，那么类D也可以
+
+**状态和价**:
+每个线程在调用decide之前都处于一个状态，调用decide称之为一次迁移，初始状态是指所有线程开始迁移之前的协议状态，结束状态是指所有线程结束以后的协议状态。
+
+考虑最简单的情形：双线程的二进制一致性（输入为0或1）
+```
+// 此处书上只画了个二叉示意图，不是很清楚每个节点的迁移，待确定
+A(0)->A(1)->B(1)->B(1)
+A(0)->B(1)->A(1)->B(1)
+A(0)->B(1)->B(0)->A(0)
+
+B(1)->A(1)->A(1)->B(1)
+B(1)->A(1)->B(1)->A(1)
+B(1)->B(1)->A(1)->A(1)
+```
+
+推论：
+- 每个双线程一致性协议都存在一个二价的初始状态
+- 每个n线程一致性协议都存在一个二价的初始状态
+- 每个无等待的一致性协议都有一个临界状态（二价+如果任何一个线程迁移，改协议状态将变为单价的）
+
+**原子寄存器的一致性为1**
+证明：假设存在一个针对线程A、B的二进制一致性协议，只有三种可能
+- A准备读，B可能读写同一个寄存器或者读写不同寄存器，1-s'和0-s''对B来说是不可区分的，A的读只改变自己的局部线程状态，对B是不可见的
+```
+s->A读->B执行一个操作->0-s''->B独奏->0
+s->B执行一个操作->1-s'->B独奏->1
+```
+- A和B写不同的寄存器，A和B无法确定对方是否比自己先写，但结果却有两种，矛盾
+```
+s->A写r0->B写r1->0-s'
+s->B写r1->A写r0->1-s'
+```
+- A和B写同一个寄存器，问题是B独奏的时候无法区分0-s''和1-s''，因为之前B都写过r，插除了A的痕迹，但结果却有两种，矛盾
+```
+s->A写r->B写r->0-s'->B独奏->0-s''
+s->B写r->1-s''->B独奏->1-s''
+```
+
+**一致性协议**：
+```
+class ConsensusProtocol<T>(N){
+	T proposed[N];
+	
+	// announce my input value to the other threads
+	void propose(T v){
+		proposed[get_current_thread_id()]=v;
+	}
+
+	// figure out which thread was first
+	T decide(T v);
+}
+```
+
+**FIFO**:
+双出队列者FIFO队列类的一致性数至少为2，例如
+```
+class BinaryQueueConsensus<T>(N) : extends ConsensusProtocol<T>(N){
+	int WIN =0;
+	int LOSE = 1;
+	Queue queue={WIN,LOSE};
+	T decide(T v){
+		propose(v); // 
+		int status = queue.deq();
+		int i = get_current_thread_id();
+		if(status==WIN){
+			return proposed[i];
+		}else{
+			return proposed[1-i];
+		}
+	}
+}
+```
+If p.deq(WIN,A)->p.deq(LOSE<B), then decide v0 input from A, for example:
+```
+p.propose(v0,A)->p.propose(v1,B)->p.deq(WIN,A)->p.decide(v0,A)->p.deq(LOSE,B)->p.decide(v0,B)
+```
+ELSE decide input from B, for example:
+```
+p.propose(v0,A)->p.propose(v1,B)->p.deq(WIN,B)->p.decide(v1,B)->p.deq(LOSE,A)->p.decide(v1,A)
+```
+
+推论1：不能用一组原子寄存器构造出针对双出队者的FIFO队列的无等待实现
+>证明：如果每个线程都返回它自己的输入，那么他们必须都让WIN出队，这将违背FIFO队列的定义
+如果每个线程都返回其他线程的输入，那么它们必须都让LOSE出队，同样也违背了FIFO队列的定义
+因此，让WIN出队的线程，在任何值出队之前必须已经把自己的输入存放在数组proposed[]中。（原书里就是这段话，此处不理解，
+是否因为用了proposed数组，而这个数组是多值的，根据上一章，而原子快照只对单个域赋值对多个域原子读是有等待的，应该是这样的，书上这个不写明导致理解困难）
+
+推论2：一组原子寄存器不可能构造队列、栈、优先级队列、集合或链表的无等待实现
+
+FIFO队列的一致数为2，反证法：假设存在一个针对线程A、B、C的一致性协议，则该协议会有一个临界状态s，假设A的下一个迁移将使该协议达到一个0-一价状态，而B的下一个
+迁移将使该协议达到一个1-一价状态
+
+A和B的未决迁移不能交换，着意味着它们都将调用同一对象的方法，FIFO里只能调队列方法。
+
+```
+// A和B都掉deq，则C无法区分
+s->A.deq->B.deq->0-s'->C独奏->0-s''
+s->B.deq->A.deq->1-s'->C独奏->1->s''
+
+// A和B分别掉enq和deq，
+// 如果队列非空，由于enq和的deq可交换（在队列的开头和结尾），C无法区分
+s->A.enq->B.deq->C独奏
+s->A.enq->C独奏
+
+// A和B分别掉enq和deq，
+// 如果队列为空，则同样C不可区分，B的deq对C不可见
+s->B.deq->A.enq->C独奏
+s->A.enq->C独奏
+
+// A和B都enq，则会有如下C不区分的分支
+s->A.enq(a)->B.enq(b)->运行A直到deq(a)->运行B直到deq(b)->C独奏
+s->B.enq(b)->A.enq(a)->运行A直到deq(b)->运行B直到deq(a)->C独奏
+
+```
+
+**多重赋值对象**：
+令n>=m>1，给定一个具有n个域的对象，多重赋值接口如下：
+
+- assign(T v0,T v1,...,T vm, int i0, int i1,...,int im);
+- read(int i);
+
+该问题是原子快照的对偶问题，在原子快照对象中，是对单个域赋值而对多个域进行原子地读，由于快照可以采用读写寄存器实现，所以隐含地说明
+快照对象的一致数为1.
+
+多重赋值对象的一个例子
+```
+class Assign23{
+	int r[3];
+	void assign(T v0, T v1, int i0, int i1){
+		r[i0]=v0;
+		r[i1]=v1;
+	}
+	int read(int i){
+		return r[i];
+	}
+}
+```
+
+对任意的n>m>1,不存在通过原子寄存器构造的(m,n)-赋值对象的无等待实现。
+证明:
+>对于一个给定的(2,3)-赋值对象以及两个线程，只需证明能够解决双线程一致性即可。
+>如下代码，A线程写0，1域，B线程写1，2域
+
+```
+class MultiConsensus<T>(N) : extends ConsensusProtocol<T>(N){
+	Assign23 assign2;
+	T decide(T v){
+		int i = get_current_thread_id();
+		int j = 1 - i;
+		// double assignment
+		int other = assign23.read((i+2)%3);
+		if(other==NULL||other==assign23.read(1)){
+			return proposed[i]; // I win
+		}else{
+			return proposed[j]; // I lose
+		}
+	}
+}
+```
+
+对于n>1，原子的(n,n(n+1)/2)寄存器赋值的一致数至少为n
+证明：
+>同MultiConsensus做法，设置n个域，i线程写的寄存器标记为ri，一共有n(n-1)/2个域rij使得i和j线程都在写
+
+**读-改-写操作**:
+由多处理器硬件所提供的大多数经典同步操作可以表示为读-改-写（RMW）操作。考虑一个将整数值封装起来的RMW寄存器，令F为从整数到整数的映射函数集。
+对于某个f in F，如果一个方法能够用f(v)原子的替换寄存器的当前值v，并返回寄存器的先前值，则称该方法是一个对于函数集F的RMW操作。
+例如java.util.concurrent下的
+- getAndSet
+- getAndIncrement
+- getAndAdd
+- compareAndSet
+
+由于RMW方法有可能成为潜在的硬件原语，所以人们十分关注这些被刻在硅片上而不是刻在石头上的RMW方法的研究工作。
+
+如果在一个RMW方法的函数集中至少包含一个非恒等函数，那么该方法是非平凡的。
+非平凡RMW寄存器的一致数至少为2
+证明：
+>考察双线程一致性协议，由于在F中必定存在f为非恒等函数，那么必定存在值v使得f(v)!=v。在decide方法中，propose(v)先将线程的输入v写入
+数组proposed[]中，然后每个线程对一个共享寄存器调用该RMW方法，如果线程的调用返回v，那么它被线性化为第一个，并且决定自己的值，否则，它
+被线性化为第二个，并且决定另一个线程的值。
+
+```
+class RMWConsensus<T>(N) extends ConsensusProtocol<T>(N){
+	RMWRegister r;
+	T decide(T v){
+		propose(v);
+		int i = get_current_thread_id();  // my index
+		int j = 1-i;                      // other's index
+		if(r.rmw()==v){ 
+			return proposed[i];           // I win
+		}else{
+			return proposed[j];           // I lose
+		}
+	}
+}
+```
+
+对于两个或两个以上的线程，使用原子寄存器不可能为它们构造出任意非平凡RMW方法的无等待实现。
+
+**Common2 RMW 寄存器**:
+这种寄存器是20世纪末大多数处理器所支持的常用同步原语，虽然Common2寄存器和非平凡的RMW寄存器一样，具有比原子寄存器更为
+强大的能力，但仍能证明它的一致数恰好为2.
+
+对于任意的值v以及函数集F中的函数fi和fj，如果它们满足下面的条件之一：
+- fi和fj可交换：fi(fj(v))=fj(fi(v))
+- 一个函数重写另一个函数：fi(fj(v))=fi(v)或fj(fi(v))=fj(v)
+则称函数集F属于Common2
+
+如果一个RMW寄存器的函数集F属于Common2，则该寄存器也属于Common2
+
+getAndSet使用常量函数来重写任意的先前值，getAndIncrement和getAndAdd方法是用了可交换函数
+
+Common2RMW寄存器不能解决3线程一致性问题：
+第一个获胜线程总能识别出它是第一个，第二个和第三个失败线程也能够识别出它们是失败者，然而由于
+用来定义Common2操作后的协议状态的函数是可交换或可重写的，因此失败者无法识别出其他线程中的哪个首先执行，又因为
+协议是无等待的，所以它不可能一直等待直到找出哪个是获胜者为止。
+
+**compareAndSet**：
+或者compareAndSwap，是多种现代系统结构所支持的一种同步操作，将期望值和更新值作为参数，如果寄存器的当前值等于期望值，则用更新值替换，否则值不变。
+
+能够支持compareAndSet和get方法的寄存器，其一致数是无限的。
+```
+class CASConsensus<T>{
+	int FIRST=-1;
+	AtomicInterger r(FIRST);
+	T decide(T v){
+		propose(v);
+		int i = get_current_thread_id();
+		if(r.compareAndSet(FIRST,i)){ // I won
+			return proposed[i];
+		}else{                        // I lose
+			return proposed[r.get()];
+		}
+	}
+}
+```
+
+仅支持compareAndSet方法的寄存器具有无限的一致数，这种原语操作的机器是顺序计算图灵机异步计算等价机器：
+对于任意的并发对象，如果它是可实现的，则必定能在这种机器上以无等待的方式实现。
+
+用Maurice Sendak的话说，compareAndSet是“万物之首”
+
+NOTE：如果不看这些原理，compareAndSet也就只是囫囵吞枣过去了
+
 ### 一致性的通用性
 
 ## 实践
