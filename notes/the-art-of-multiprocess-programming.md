@@ -819,7 +819,9 @@ p.propose(v0,A)->p.propose(v1,B)->p.deq(WIN,B)->p.decide(v1,B)->p.deq(LOSE,A)->p
 >证明：如果每个线程都返回它自己的输入，那么他们必须都让WIN出队，这将违背FIFO队列的定义
 如果每个线程都返回其他线程的输入，那么它们必须都让LOSE出队，同样也违背了FIFO队列的定义
 因此，让WIN出队的线程，在任何值出队之前必须已经把自己的输入存放在数组proposed[]中。（原书里就是这段话，此处不理解，
-是否因为用了proposed数组，而这个数组是多值的，根据上一章，而原子快照只对单个域赋值对多个域原子读是有等待的，应该是这样的，书上这个不写明导致理解困难）
+是否因为用了proposed数组，而这个数组是多值的，根据上一章，而原子快照只对单个域赋值对多个域原子读是有等待的？再仔细一想，并不是，proposed虽然是数组，
+但是此处使用并没有使用原子快照操作，实际上，关键的地方在于对status的比较，就是说这个过程无论如何都绕不开读、改、写、比较等操作的组合，
+这个组合操作能在多少个线程内保持原子性，是能否构造原子无等待实现并发对象的关键）
 
 推论2：一组原子寄存器不可能构造队列、栈、优先级队列、集合或链表的无等待实现
 
@@ -980,6 +982,134 @@ class CASConsensus<T>{
 NOTE：如果不看这些原理，compareAndSet也就只是囫囵吞枣过去了
 
 ### 一致性的通用性
+
+上一节的核心是证明：“不存在通过Y构造X的无等待实现”这种命题的简单方法。
+
+考虑构造这样的一种对象的层次结构，在这种结构中，无法使用某一层的对象来实现更高层的对象，这是因为，每个对象都有
+一个与之相关的一致数，它是该对象能够解决一致性问题所针对的最大线程数。而在一个有n个或更多个并发线程的系统中，
+不可能使用一致数小于n的对象构造一种一致数wein的对象的无等待实现。该结论也适用于无锁实现。
+
+反之，在一个n线性系统中，当且仅当一个类的一致数大于或等于n时，这个类是通用的。例如提供compareAndSet操作的现代多处理器机器
+对任意数量的线程都是通用的，它们能以无等待方式实现任何并发对象。
+
+**通用的顺序对象**：
+```
+interface SeqObject{
+	Response apply(Invocation invoc); // 通用的顺序对象，apply方法执行调用并返回一个响应
+}
+```
+**状态和日志**：
+- 假设顺序对象是确定的：如果调用某一特定状态的对象的方法，则只有一个响应和一种可能的新对象状态。
+- 可以将任意对象看作是处于初始状态的顺序对象和日志的结合。
+- 日志是一个由节点组成的链表，描述了该对象的方法调用序列。
+- 线程通过在表头增加一个描述本次调用的新节点来执行一次方法调用
+- 然后，线程从尾到头反向遍历链表，对该对象的私有方法执行方法调用
+- 最终，线程返回只执行了它自己操作的结果
+- 关键是要理解只有日志是变的，初始状态和日志头的前驱结点决不会改变
+
+**n线程一致性协议**：
+- 试图调用apply的线程创建一个节点来保存它的调用
+- n线程互相竞争以将它们各自的节点加入到日志头，它们通过运行n线程一致性协议，决定哪个节点被添加到日志中
+- 该一致性协议的输入是对这些线程节点的引用，而输出则是唯一的获胜节点
+- 获胜线程继续计算它的响应：
+    - 首先创建该顺序对象的一个局部拷贝
+    - 按照next引用从尾到头反向遍历日志
+    - 在日志中对它的局部拷贝执行操作
+    - 返回与她自己的调用相关的响应
+
+**通用无锁算法**:
+```
+class Node(Invoc v){
+	Invoc invoc=v;
+	Consensus<Node> decideNext;
+	Node next;
+	int seq=0;
+    static Node max(Node[] array){
+    	Node max = array[0];
+    	for(int i=1;i<array.length;i++){
+    		if(max.seq<array[i].seq){
+    			max = array[i];
+    		}
+    	}
+	}
+}
+class Universal{
+	Node[] head;
+	Node tail;
+	Universal(){
+		tail = new Node();
+		tail.seq = 1;
+		for(int i=0;i<n;i++){
+			head[i]=tail;
+		}
+	}
+	Response apply(Invoc invoc){
+		int i = get_current_thread_id();
+		Node prefer = new Node(invoc);
+		while(prefer.seq==0){
+			Node before = Node.max(head);
+			Node after = before.decideNext.decide(prefer);
+			before.next = after;
+			after.seq = before.seq + 1;
+			head[i]=after; // 只有其他线程不停成功，该线程才会被饿死
+		}
+		SeqObject myObject = new SeqObject();
+		current = tail.next;
+		while(current!=prefer){
+			myObject.apply(current.invoc);
+			current = current.next;
+		}
+		return myObject.apply(current.invoc);
+	}
+}
+```
+
+**通用无等待构造**：
+```
+class Universal{
+	Node[] announce;
+	Node[] head;
+	Node tail;
+	Node prefer;
+	Universal(){
+		tail = new Node();
+		tail.seq = 1;
+		for(int i=0;i<n;i++){
+			head[i]=tail;
+			announce[i]=tail;
+		}
+	}
+	Response apply(Invoc invoc){
+		int i= get_current_thread_id();
+		announce[i] = new Node(invoc);
+		head[i] = new Node(invoc);
+		head[i] = Node.max(head);
+		while(announce[i].seq==0){
+			Node before = head[i];
+			Node help = announce[(before.seq+1)%n];
+			if(help.seq==0){
+				prefer = help;
+			}else{
+				prefer = announce[i];
+			}
+			after = before.decideNext.decide(prefer);
+			before.next = after;
+			after.seq = before.seq + 1;
+			head[i] = after;
+		}
+
+		SeqObject myObject = new SeqObject();
+		current = tail.next;
+		while(current!=announce[i]){
+			myObject.apply(current.invoc);
+			current = current.next;
+		}
+		head[i] = announce[i];
+		return myObject.apply(current.invoc);
+	}
+}
+```
+
 
 ## 实践
 

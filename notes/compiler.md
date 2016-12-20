@@ -490,4 +490,5 @@ end
 4. [Programming in Martin-L¨of ’s Type Theory](http://www.cse.chalmers.se/research/group/logic/book/book.pdf)
 5. [Beginner's Guide to Linkers](http://www.lurklurk.org/linkers/linkers.html)
 6. [The difference between top-down parsing and bottom-up parsing](http://qntm.org/top)
+7. [An Incremental Approach to Compiler Construction](http://schemeworkshop.org/2006/11-ghuloum.pdf)
 
