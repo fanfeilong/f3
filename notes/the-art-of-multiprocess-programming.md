@@ -1051,7 +1051,7 @@ class Universal{
 			Node after = before.decideNext.decide(prefer);
 			before.next = after;
 			after.seq = before.seq + 1;
-			head[i]=after; // 只有其他线程不停成功，该线程才会被饿死
+			head[i]=after; // 只有其他线程不停成功，该线程才会被饿死，所以该算法是无锁的
 		}
 		SeqObject myObject = new SeqObject();
 		current = tail.next;
@@ -1081,12 +1081,12 @@ class Universal{
 	}
 	Response apply(Invoc invoc){
 		int i= get_current_thread_id();
-		announce[i] = new Node(invoc);
+		announce[i] = new Node(invoc);                 // 为了无等待，我们总是需要一个辅助的数组让本线程试图加入到日志头的Node被其他线程看到
 		head[i] = new Node(invoc);
 		head[i] = Node.max(head);
 		while(announce[i].seq==0){
 			Node before = head[i];
-			Node help = announce[(before.seq+1)%n];
+			Node help = announce[(before.seq+1)%n];    // 有机会看到其他线程的Node，出于公平考虑，帮他一下，是不是和TCP拥赛控制的主动避让有点像
 			if(help.seq==0){
 				prefer = help;
 			}else{
@@ -1110,10 +1110,290 @@ class Universal{
 }
 ```
 
+可见，无等待一种核心操作就是：
+1. 主动让本线程试图尝试的节点被其他线程看到
+2. 每个线程有机会优先帮助其他线程加对方的节点到日志头
+
+这算是一种无等待实现方面的“拥赛控制，主动避让”
 
 ## 实践
 
 ### 自旋锁与争用
+
+**CC**:
+任何互斥协议都会产生一个问题：如果不能获得锁，应该怎么做？
+- 继续尝试，这种锁称为自旋锁，对锁的反复测试过程称为旋转或忙等待，Filter和Bakery算法都属于自旋锁
+- 挂起自己，请求操作系统调度器在处理器上调度另一个线程，这种方式称为阻塞
+
+由于从一个线程切换到另一个线程的代价较大，所以只有在允许锁延迟较长的情况下，阻塞才有意义。许多操作
+系统将这两种策略综合起来使用，先旋转一个小的时间段然后再阻塞。
+
+NOTE：网络调用的延迟远大于锁阻塞的时间的情况下，直接用阻塞锁即可了，自旋锁没必要。
+
+**顺序一致**：
+之前Filter和Peterson锁在证明的时候假设了代码的顺序一致，但是现代多处理器事实上并不是这样的，所以要让它们可用
+就需要通过内存栅栏、原子getAndSet、compareAndSet这样的一组同步指令保证顺序一致。
+
+```
+// test and set，注意上一节说过getAndSet的一致数为2，所以不可能用getAndSet构造无等待互斥算法
+// TASLock和TTASLock都是有等待的，它们的互斥证明参考Filter、Peterson算法的证明
+class TASLock{
+	AtomicBool state=false;
+	void lock(){
+		while(state.getAndSet(true));
+	}
+	void unlock(){
+		state.set(false);
+	}
+}
+
+// test test and set
+class TTASLock{
+	AtomicBool state=false;
+	void lock(){
+		while(true){
+			while(state.get());
+			if(!state.getAndSet(true)) return;
+		}
+	}
+	void unlock(){
+		state.set(false);
+	}
+}
+```
+n个线程固定地执行一段时间临界区所需要的时间，上述两个算法都不太好，TTAS稍微好一些。
+
+**缓存**：
+可以用现代多处理器系统结构来解释这些差异。
+- 现代多处理器中包含多种形式的系统结构，因此不能过于抽象
+- 但几乎所有的现代系统结构都存在着高速缓存和局部性问题
+
+考虑一种典型的多处理器系统结构：
+- 处理器之间是通过一种称为总线的共享广播媒介进行通信
+- 处理器和存储控制器都可以在总线上广播，但一个时刻只能有一个处理器在总线上广播
+- 所有的处理器都可以监听
+- 每个处理器都有一个cache，它是一种高速的小容量存储器
+- 对内存的访问通常要比对cache的访问多出几个数量级的机器周期
+
+当处理器从内存地址中读数据时，首先检查该地址及其所存储的数据是否已在它的cache
+中，如果在cache中，那么处理器产生一个cache命中，并可以立即加载这个值。如果不在，
+则产生一个cache缺失，且必须在内存或另一个处理器的cache中查找这个数据。接着，处理器
+在总线上广播这个地址，其他的处理器监听总线，如果某个处理器在自己的cache中发现这个地址，
+则广播该地址及其值来做出响应，如果所有的处理器中都没有该地址，则以内存中该地址所对应的
+值来进行响应。
+
+
+**TASLock**：
+- 每个getAndSet调用实际上是总线上的一个广播，由于所有线程都必须通过总线和内存进行通信，所以getAndSet
+调用将会延迟所有的线程，包括那些没有等待锁的线程。
+- 更为糟糕的是，getAndSet调用能够迫使其他的处理器丢弃它们自己的cache中的锁副本，这样每一个正在自旋的
+线程几乎都会遇到一个cache缺失，并且必须通过总线来获取新的没有被修改的值。
+- 比这更糟糕的是，当持有锁的线程试图释放锁时，由于总线被正在自旋的线程所独占，该线程有可能会被延迟
+
+这是TASLock性能差的原因
+
+**TTASLock**：
+- 当线程B第一次读锁时，发生cache缺失，从而阻塞等待值被载入它的cache中
+- 只要A持有锁，B就不断地重读该值，且每次都命中cache，这样B不产生总线流量，而且也不会降低其他线程的内存访问速度
+- 此外，锁的释放也不会被正在该锁上旋转的线程所延迟
+- 然而，当锁被释放时的情况却并不理想，锁的持有者将false值写入锁变量来释放锁，该操作将会使自旋线程的
+cache副本立刻失效，每个线程都将发生一次cache缺失并重读新值，它们都几乎同时调用getAndSet以获取锁，第一个成功
+的线程将使其他线程失效，这些失效线程接下来又重读那些值，从而引起一场总线流量风暴
+- 最终，所有线程再次平静，进入本地旋转。
+- 本地旋转指线程反复地重读被缓存的值，而不是反复地使用总线，这个概念是一个重要的原则，对设计高效的自旋锁非常关键
+
+NOTE：为什么要学习计算机体系结构，这是因为许多OS提供的东西，都和计算机体系结构相关，要正确理解它们，就需要建立
+在对计算机体系结构的理解上，否则容易把它们当作黑盒子，当作黑魔法去使用，只知道要这么用，对它的性能和机理不知。
+
+
+显然，在TTASLock里，如果一个线程通过了while(get)操作，而自旋在while(getAndSet)上，此时又退化到了TASLock的地步，
+进入高争用的地步，性能下降。
+
+一种改进就是，在出现这种情况时，让线程睡眠一段时间，给其他竞争线程让出机会
+```
+class Backoff{
+	int minDelay;
+	int maxDelay;
+	int limit;
+	Random random;
+	BackOff(int min,int max){
+		minDelay = min;
+		maxDelay = max;
+		limit = minDelay;
+		random = new Random;
+	}
+	void backoff(){
+		int delay = random.next(limit);      // 以limit为种子随机化
+		limit = Math.min(maxDelay,2*limit);  // 让limit指数增加，有点像TCP拥赛控制重传的时间机制
+		Thread.sleep(dealy);
+	}
+}
+class BackoffLock{
+	AtomicBool state;
+	void lock(){
+		Backoff backoff = new BackOff(MIN,MAX);
+		while(true){
+			while(state.get());
+			if(!state.get()) return;
+			backoff.backoff(); // 主动避让
+		}
+	}
+	void unlock(){
+		state.set(false);
+	}
+}
+```
+
+但是Backoff锁的问题有两个：
+- cache一致性流量，所有线程都在同一个共享存储单元上旋转，每一层成功的锁访问都会产生cache一致性流量（尽管比TASLock低）
+- 临界区利用率低：线程延迟过长，导致临界区利用率低下
+
+可以将线程组织成一个队列来克服这些缺点：
+- 在队列中，每个线程检测其前驱线程是否已完成来判断是否轮到自己
+- 每个线程在不同的存储单元上旋转，
+
+优点是：
+- 减低cache一致性流量
+- 并且提高了临界区利用率
+- 队列提供先到先服务的公平性，可获得与Bakery算法同样高级别公平性
+
+实现：
+
+```
+// 基于数组的锁
+class ALock{
+	ThreadLocal<Interger> mySlotIndex = new ThreadLocal<Interger>()(){
+		protected Interger initialValue(){return 0;}
+	};
+	AtomicInterger tail;
+	boolean[] flag;
+	int size;
+	ALock(int capacity){
+		size = capacity;
+		tail = new AtomicInterger(0);
+		flag = new boolean[capacity];
+		flag[0] = true;
+	}
+	void lock(){
+		int slot = tail.getAndIncrement()%size;
+		mySlotIndex.set(slot);
+		while(!flag[slot]);
+	}
+	void unlock(){
+		int slot = mySlotIndex.get();
+		flag[slot] = false;
+		flag[(slot+1)%size] = true;
+	}
+}
+```
+
+mySlotIndex是线程的局部变量，线程的局部变量与线程的常规变量不同，对于每个局部变量，线程都有它自己的独立初始化副本，局部变量不需要
+保存在共享存储器中，不需要同步，也不会产生任何一致性流量，因为它们只能被一个线程访问。通常使用get和set方法来访问线程局部变量的值
+
+数组flag是被多个线程共享的，但在任意给定时间，由于每个线程都是在一个数字存储单元的本地cache副本上旋转，大大降低了无效流量，
+从而使得对数组存储单元的争用达到最小。
+
+但是争用仍然可能发生，其原因在于存在一种成为假共享的现象，当相邻的数据项（如数组元素）共享单一cache线时，会发生这种现象。
+对一个数据项的写会使得该数据项的cache线无效，对于那些恰好进入同一cache线的未改变但很近的数据项来说，这种写会引起正在旋转
+的处理器的无效流量。
+
+避免假共享的一种办法就是填补数组元素，以使得不同的元素被映射到不同的cache线中。例如将数组大小增加4倍，间隔4个字来隔开存储单元。
+
+ALock与TASLock和BackoffLock不同，该算法能够确保无饥饿性，同时也确保先来先服务的公平性。然而，ALock不是空间有效的，它要求并发
+线程的最大个数为一个已知的界限n，同时为每个锁分配一个与该界限大小相同的数组，因此即使一个线程每次只访问一个锁，同步L个不同
+对象也需要O(Ln)大小的空间。
+
+
+**队列锁**：
+
+```
+class QNode{
+	boolean locked = false;
+}
+class CHLLock{
+	AtomicReference<QNode> tail = new AtomicRefernce<QNode>(new QNode());
+	ThreadLocal<QNode> myPred = new QNode();
+	ThreadLocal<QNode> myNode = null;
+	void lock(){
+		QNode qnode = myNode.get();
+		qnode.locked = true;
+		QNode pred = tail.getAndSet(qnode);
+		myPred.set(pred);
+		while(pred.locked);	
+	}
+	void unlock(){
+		QNode qnode = myNode.get();
+		qnode.locked = false;
+		myNode.set(myPred.get()); //pred已经无用了，设置给myNode使用，myNode的旧值就会被垃圾回收，使得空间只需要O(L+n)
+	}
+}
+```
+
+```
+calss QNode{
+	boolean locked = false;
+	QNode next = null;
+}
+class MCSLock{
+	AtomicReference<QNode> tail = new AtomicReference<QNode>(null);
+	ThreadLocal<QNode> myNode = new QNode();
+	void lock(){
+		QNode qnode = myNode.get();
+		QNode pred = tail.getAndSet(qnode);
+		if(pred!=null){
+			qnode.locked = true;
+			pred.next = qnode;
+			while(qnode.locked);
+		}
+	}
+	void unlock(){
+		QNode qnode = myNode.get();
+		if(qnode.next==null){
+			if(tail.compareAndSet(qnode,null))return;
+			while(qnode.next==null){} // wait until predecessor fills in its next field
+		}
+		qnode.next.locked = false;
+		qnode.next = null;
+	}
+}
+```
+
+**时限队列锁**：
+```
+class TryLock{
+	boolean tryLock(long time,time unit){
+		long start = timegetnow();
+		long patience = time*unit;
+		QNode qnode = new QNode();
+		myNode.set(qnode);
+		qnode.pred = null;
+		QNode myPred = tail.getAndSet(qnode);
+		if(myPred==null||myPred.pred==AVAILABLE){
+			return true;
+		}
+		while(timegetnow()-start<patience){
+			QNode predPred = myPred.pred;
+			if(predPred==AVAILABLE){
+				return true;
+			}else if(predPred!=null){
+				myPred = predPred;
+			}
+		}
+		if(!tail.compareAndSet(qnode,myPred)){
+			qnode.pred = myPred;
+		}
+		return false;
+	}
+	void unlock(){
+		QNode qnode = myNode.get();
+		if(!tail.compareAndSet(qnode,null)){
+			qnode.pred = AVAILABLE;
+		}
+	}
+}
+```
+
+
 
 ### 管道和阻塞同步
 

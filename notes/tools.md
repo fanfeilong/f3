@@ -1,4 +1,7 @@
-#### Notepad
+## Notepad
+---------------------
+
+#### operations
 * 打开：Wine+r: notepad
 * 选择一整行：
     * Home+Shilft+End
@@ -6,8 +9,9 @@
 * 查找：Ctrl+f
 * 替换：Ctrl+h
 
-#### VIM 操作最佳实践
+## VIM 操作最佳实践
 ---------------------
+#### operations
 * 字母、数字、控制键
     * `h`，`j`，`k`，`l`四个方向键：`h`向左，`j`向下，`k`向上，`l`向右，这四个键让手不离盲打区域。
     * `gg`和`G`：`gg`是回到文本文件的第一行，`G`是定位到文本文件的最后一行。
@@ -61,7 +65,8 @@
         * arglist
         * argdo
         * argdo %s/pattern/replace/ge | update
-* 参考资料
+
+#### references
   1. [Vim Regular Expressions 101](http://vimregex.com/)
   2. [VIM IDE STEP BY STEP](http://blog.csdn.net/wooin/article/details/1858917)
   3. [coming-home-to-vim](http://stevelosh.com/blog/2010/09/coming-home-to-vim/)
@@ -73,8 +78,10 @@
   9. [gvim+ctags in windows](http://hi.baidu.com/zengzhaonong/item/e6eb514af9b16cacde2a9f67)
   10. [gvim+cscope in windows](http://hi.baidu.com/zengzhaonong/item/69d9dc325170d4c01a969667)
 
-#### Visual Studio
+## Visual Studio
 ------------------
+
+#### operations
 * 快捷键
 	* `Ctrl`+`Enter` 在上面打开新一行
     * `Ctrl`+`Shift`+`Enter` 在下面打开新一行
@@ -83,85 +90,93 @@
     * `Ctrl+u, Ctrl+U` 切换选中文本大小写
     * `Ctrl+w` 选中单词
     * 当你在光标停留行使用快捷键`Ctrl+C`，`Ctrl+X`，`Ctrl+L`时，可以复制，剪切，删除整行内容。
-* 插件
-	* [AddIns文件夹位置](http://www.mztools.com/articles/2008/MZ2008001.aspx)
-* Visual Studio 2008 多行批量替换
-	1. Alt+F8
-	2. Click `Samples->Utilities`
-	3. Right Click `FindLine`,Click`Edit`
-	4. Modify the `FindLine Macro`：
-	```
-	'' Add the following code
-	DTE.Find.ReplaceWith = textSelection.Text
-
-	```
-	5. Save and close the macro edit window
-	6. Select the multiline `Find What` code 
-		- Double Click `FindLine` Macro
-		- Close the Find Dialog
-	7. Select the multiline `Replace With` code
-		- Double Click `FindLine` Macro
-		- Click the `Quick Replace` Tab in the Find Dialog
-		- Select `Find What` code from context menu
-		- Select `Replace With` code from context menu
-		- Click `FindNext`
-		- Test click `Replace`
-		- Now you can click `Replace All`
-		
 * Visual Studio 2008禁用智能提示
 	1. 打开目录C:\Program Files (x86)\Microsoft Visual Studio 9.0\VC\vcpackages 
 	2. 重命名feacp.dll为feacp_disable.dll，或者删除之
 	3. Visual Studio自带的智能提示总是会卡，而且会导致IDE经常死掉，还是禁用掉，用VA的
-	
 * Visual Studio 2008设置代码导航线
 	1. 打开注册表，找到HKEY_CURRENT_USER\Software\Microsoft\VisualStudio\9.0\Text Editor
 	2. 新建项Guides
 	3. 写入值RGB(128,128,128) 4,75,80
 	4. 其中，RGB表示颜色，4,75,80表示导航线的列位置，用逗号隔开，可以加入任意多条线
-	
 * Visual Studio 2008美观设置
 	1. 字体Lucida Console或者Source Code Pro
 	2. LineNumber，背景色淡绿色，字体深灰色
 	3. VA，当前行高亮采用DottedBox
 	4. 在Addin目录下安装插件[WordLight](http://code.google.com/p/wordlight/)，高亮文件内选中文本的匹配项
 	5. VA或者其他插件设置右侧地图式滚动面板
-* Visusl Studio Debug变慢的原因    
-```You may need to delete all your breakpoints---note that you need to click the "delete all breakpoints" button (or use Ctrl-Shft-F9), NOT just delete them one by one. If Visual Studio has mangled your solution settings the latter will not work. You may need to add a breakpoint first, in order for this to work (clever, eh?).If worst comes to worst, you may need to delete your .suo file and let Visual Studio start a new one from scratch. Note that you will lose your personal solution configuration settings, however (only for this solution, not any others). However, you may want to move/rename the file temporarily until you determine whether or not this is the problem; that way, you can always move it back. I have seen some online resources recommend deleting (moving/renaming) the .ncb file as well.```
     
-    
-#### Chrome
+## Chrome
 -----------
+
+#### operations
 * 快捷键
     * `Ctrl`+`Shift`+`n`：新建隐身窗口
     
-#### Windows文件管理器
+## Windows文件管理器
 ----------------------
+
+#### operations
 * `Win`+`e`：打开新文件夹
 * `Win`+`r`：运行
 * `Win`+`l`：锁定屏幕
 * `Win`+`i`：Windows8右侧栏
 * 安装基于Chromium开发的Tab式文件管理器[Clover](http://cn.ejie.me/)
 
-#### SVN
+## SVN
 --------
+
+#### operations
 * 如果本地进行了一堆复杂操作后，发现提交的时候很多missing之类的冲突，最简单的办法是：
 	1. 将当前文件夹的文件和子文件夹都`cut`到某个空目录x
 	2. 对当前文件夹做`svn revert`
 	3. 将x文件夹下的备份内容`copy`回当前文件夹
 	4. 重新执行`svn commit`
-	
-#### IM
+
+## GIT
+--------
+#### git log
+```
+git config --global alias.lm  "log --no-merges --color --date=format:'%Y-%m-%d %H:%M:%S' --author='fanfeilong' --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Cblue %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit"
+
+git config --global alias.lms  "log --no-merges --color --stat --date=format:'%Y-%m-%d %H:%M:%S' --author='fanfeilong' --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Cblue %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit"
+
+git config --global alias.ls "log --no-merges --color --graph --date=format:'%Y-%m-%d %H:%M:%S' --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Cblue %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit"
+
+git config --global alias.lss "log --no-merges --color --stat --graph --date=format:'%Y-%m-%d %H:%M:%S' --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Cblue %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit"
+```
+
+#### references
+- [Commit Often, Perfect Later, Publish Once: Git Best Practices](https://sethrobertson.github.io/GitBestPractices/)
+- [Understanding the GitHub Flow](https://guides.github.com/introduction/flow/)
+- [A successful Git branching model](http://nvie.com/posts/a-successful-git-branching-model/)
+- [How to Write a Git Commit Message](http://chris.beams.io/posts/git-commit/)
+- [Keeping Commit Histories Clean](https://www.reviewboard.org/docs/codebase/dev/git/clean-commits/)
+- [What's the best visual merge tool for Git?](http://stackoverflow.com/questions/137102/whats-the-best-visual-merge-tool-for-git)
+- [visual diff](http://meldmerge.org/)
+
+## IM
 -------
+
+#### operations
 * 对于QQ群，如果不想浪费时间的话，一定要把人多水多的群设置为「只显示消息数目，不弹出消息」，切记切记
 
-#### DOT & Graphviz
+## DOT & Graphviz
 -------------------
+
+#### operations
+
+#### references
 - [wiki:Graphviz](http://en.wikipedia.org/wiki/Graphviz)
 - [wiki:DOT language](http://en.wikipedia.org/wiki/DOT_(graph_description_language))
 - [Drawing Graphs using Dot and Graphviz](http://www.tonyballantyne.com/graphs.html)
 
-#### LaTeX
+## LaTeX
 ----------
+
+#### operations
+
+#### references
 - [TeX example](http://www.texample.net/)
 - [TeX wikibook](http://www.wikibooks.org//wiki/LaTeX)
 - [TeX stackxchange](http://tex.stackexchange.com/)
@@ -182,3 +197,18 @@
 - [TeXMacs (What you see is what you get)](http://www.texmacs.org/tmweb/home/welcome.en.html)
 - [Visual Debugging in TEX](http://www.pragma-ade.com/articles/art-visi.pdf)
 
+## MarkDown
+----------
+
+#### operations
+
+#### references
+- [MarkDown Math in Visual Studio Code](https://github.com/goessner/mdmath)
+
+## UML
+----------
+
+#### operations
+
+#### references
+- [js sequence diagrams](https://bramp.github.io/js-sequence-diagrams/)
