@@ -7,3 +7,9 @@
 内存栅栏分为完全内存栅栏Full Barrier，保证前面的指令一定在后面指令之前执行Aquire Barrier，保证后面语句一定在前面语句之后执行的Release Barrier
   - [acquire-and-release-semantics](http://preshing.com/20120913/acquire-and-release-semantics/)
   -  无锁数据结构和算法的基础
+
+- 算法可视化
+  - [Algorithm Visualizer by Jason Park](http://devmastery.us13.list-manage.com/track/click?u=f1b8bfb7fc725a93f6e83bc85&id=740499797f&e=4486d1fe0e)
+
+- 数据结构与算法
+  - [Skip Lists: Done Right](http://ticki.github.io/blog/skip-lists-done-right/)

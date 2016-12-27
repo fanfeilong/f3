@@ -68,6 +68,9 @@ lambda.x.
 
 如果只能编码没什么，任何可以表示为0和1，并且可以repeat的都能编码，Church Code的特点是解码行为本身也可以用自己编码。
 
+#### string
+- [netstring](http://cr.yp.to/proto/netstrings.txt)
+
 ##### 参考资料
 --------------
 * [字符编码常识及常见问题解析 ](http://mp.weixin.qq.com/s?__biz=MzA5MTY2NTcwNw==&mid=201226425&idx=1&sn=5a9846e6cc18012ef5b1f5216c2addbd#rd)
@@ -75,3 +78,4 @@ lambda.x.
 * [wiki:UTF16](http://en.wikipedia.org/wiki/UTF16)
 * [wiki:UTF32](http://en.wikipedia.org/wiki/UTF32)
 * [wiki:UTF8](http://en.wikipedia.org/wiki/UTF8)
+* [Information Geometry](http://math.ucr.edu/home/baez/information/)

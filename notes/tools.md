@@ -67,16 +67,17 @@
         * argdo %s/pattern/replace/ge | update
 
 #### references
-  1. [Vim Regular Expressions 101](http://vimregex.com/)
-  2. [VIM IDE STEP BY STEP](http://blog.csdn.net/wooin/article/details/1858917)
-  3. [coming-home-to-vim](http://stevelosh.com/blog/2010/09/coming-home-to-vim/)
-  4. [VIM 练级攻略](http://coolshell.cn/articles/5426.html)
-  5. [VimRepress 用VIM写WordPress博客](http://www.vim.org/scripts/script.php?script_id=3510)
-  6. [豆瓣HJKL小组](http://www.douban.com/group/hjkl/)
-  7. [初学者简易.vimrc编写指南](http://edyfox.codecarver.org/html/_vimrc_for_beginners.html)
-  8. [vim color schemes](http://code.google.com/p/vimcolorschemetest/)
-  9. [gvim+ctags in windows](http://hi.baidu.com/zengzhaonong/item/e6eb514af9b16cacde2a9f67)
-  10. [gvim+cscope in windows](http://hi.baidu.com/zengzhaonong/item/69d9dc325170d4c01a969667)
+  - [Vim Regular Expressions 101](http://vimregex.com/)
+  - [VIM IDE STEP BY STEP](http://blog.csdn.net/wooin/article/details/1858917)
+  - [coming-home-to-vim](http://stevelosh.com/blog/2010/09/coming-home-to-vim/)
+  - [VIM 练级攻略](http://coolshell.cn/articles/5426.html)
+  - [VimRepress 用VIM写WordPress博客](http://www.vim.org/scripts/script.php?script_id=3510)
+  - [豆瓣HJKL小组](http://www.douban.com/group/hjkl/)
+  - [初学者简易.vimrc编写指南](http://edyfox.codecarver.org/html/_vimrc_for_beginners.html)
+  - [vim color schemes](http://code.google.com/p/vimcolorschemetest/)
+  - [gvim+ctags in windows](http://hi.baidu.com/zengzhaonong/item/e6eb514af9b16cacde2a9f67)
+  - [gvim+cscope in windows](http://hi.baidu.com/zengzhaonong/item/69d9dc325170d4c01a969667)
+  - [What is your most productive shortcut with Vim?](http://stackoverflow.com/questions/1218390/what-is-your-most-productive-shortcut-with-vim/1220118#1220118)
 
 ## Visual Studio
 ------------------
@@ -154,6 +155,7 @@ git config --global alias.lss "log --no-merges --color --stat --graph --date=for
 - [Keeping Commit Histories Clean](https://www.reviewboard.org/docs/codebase/dev/git/clean-commits/)
 - [What's the best visual merge tool for Git?](http://stackoverflow.com/questions/137102/whats-the-best-visual-merge-tool-for-git)
 - [visual diff](http://meldmerge.org/)
+- [the core conception of git](https://lufficc.com/blog/the-core-conception-of-git)
 
 ## IM
 -------

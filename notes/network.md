@@ -179,6 +179,7 @@ Congestion controller:
   - [wiki:域名系统/动态域名服务（DNS）](http://zh.wikipedia.org/wiki/域名系统)
   - [wiki:网络传输协议](http://zh.wikipedia.org/wiki/網絡傳輸協議)
   - [wiki:TCP/IP协议](http://zh.wikipedia.org/wiki/TCP/IP协议)
+  - [wiki:TCP拥赛控制](https://en.wikipedia.org/wiki/TCP_congestion_control)
   - [wiki:OSI7层模型](http://zh.wikipedia.org/wiki/OSI模型)
   - [wiki:超文本传输协议（HTTP）](http://zh.wikipedia.org/wiki/HTTP)
   - [wiki:HTTPS协议](http://zh.wikipedia.org/wiki/HTTPS)

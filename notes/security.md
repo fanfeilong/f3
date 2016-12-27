@@ -145,7 +145,18 @@
 - 一个人的开发
 
 ## SSL/TLS
-- 复杂的握手协议
+网络传输协议里，在可靠传输协议和应用层协议之间有单独的安全层：
+>Transport Layer Security (TLS) and its predecessor, Secure Sockets Layer (SSL), both frequently referred to as "SSL", are cryptographic protocols that provide communications security over a computer network.[1] Several versions of the protocols find widespread use in applications such as web browsing, email, Internet faxing, instant messaging, and voice-over-IP (VoIP). Websites use TLS to secure all communications between their servers and web browsers.
+
+目前的版本有，最新广泛使用的是TLS2.0：
+- SSL 1.0
+- SSL 2.0
+- SSL 3.0
+- TLS 1.0
+- TLS 2.0 
+- TLS 3.0
+
+#### 复杂的握手协议
 
 ## OAuthor
 
