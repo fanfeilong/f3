@@ -127,6 +127,8 @@
 ## 非对称密码
 - 公/私钥
 - RSA
+    - [RSA算法原理1](http://www.ruanyifeng.com/blog/2013/06/rsa_algorithm_part_one.html)
+    - [RSQ算法原理2](http://www.ruanyifeng.com/blog/2013/07/rsa_algorithm_part_two.html)
 
 ## 消息认证
 - 摘要
@@ -157,6 +159,8 @@
 - TLS 3.0
 
 #### 复杂的握手协议
+
+- [图解SSL/TLS协议](http://www.ruanyifeng.com/blog/2014/09/illustration-ssl.html)
 
 ## OAuthor
 

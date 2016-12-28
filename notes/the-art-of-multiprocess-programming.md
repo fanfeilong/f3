@@ -1,5 +1,8 @@
 NOTES 4: `<<The Art Of Multiprocess Programming>>`
 
+## relative references
+- [Scaling Synchronization in Multicore Programs](http://queue.acm.org/detail.cfm?id=2991130)
+
 ## 原理
 
 ### 互斥
