@@ -141,5 +141,15 @@ http://csharpindepth.com/ViewNote.aspx?NoteID=70&printable=true
 - HM type inference is not guaranteed to terminate in a reasonable amount of time; our type inference algorithm guarantees progress every time through the loop and therefore runs in polynomial time. (Though of course, overload resolution can then be exponential in C#, which is unfortunate.)
 - HM type inference works poorly in a language which has class inheritance; it was designed for functional languages like Haskell with pattern matching rather than inheritance.
 
+#### Monad
+>In pure functional programming languages you aren't allowed to cause side effects. The only way a function can 'interact' with the outside world is to return something. So if you have a function that needs to return a number, but has a certain side effect, the only way to do this is to return the number and return some data 'containing' the side effect. But that's a pain in the ass - you have to write all of your code to return multiple values, and you have to write plumbing code to pass these side-effect containing values around. What monads can do is give a uniform API to side-effect containing data so you can just concentrate on the number that you want to return, and have the side-effect carried along automatically in the background. What's neat about monads is the same API can be used for many different problems, not just handling side-effects.
+
+基于集合论的结构：群、环、域、模、拓扑空间、算子、单子等。唯一目的就是寻找这样的集合，其元素在给定几条公理化操作下，保持某些不变的性质。
+这样的集合结构上可以建立公理、推导引理、推导定理，使得只要是这种结构的集合，就可以使用这些公理、引理、定理证明其拥有怎样的性质和结论。
+
+单子(Monad)，正是这样一种结构，只是其刚好被这帮搞lisp的人用在了以函数为元素的集合上，并且这样的一种结构刚好能用解决函数级别的抽象封装问题。
+想清楚这点，就不至于陷入细节而不知其所以然。
+
+
 
 

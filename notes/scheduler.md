@@ -97,3 +97,48 @@ How to:
 - http://pages.cs.wisc.edu/~remzi/OSTEP/cpu-sched.pdf
 - http://pages.cs.wisc.edu/~remzi/OSTEP/cpu-sched-mlfq.pdf
 - http://www.cs.montana.edu/~chandrima.sarkar/AdvancedOS/CSCI560_Proj_main/
+
+#### 调度状态机
+
+假设有如下队列
+```
+function Queue:Push(arg) end
+function Queue:Pop() end
+function Queue:Size() end
+```
+
+假设有一个异步消费队列的调用，我们可以做异步链式调用：
+```
+local queue = ...
+function shedule()
+  local item = queue:Pop()
+  if item then
+    dosomethinig_async(item,function()
+      --// 在回调里异步调度下一个
+      async(function()
+        shedule() 
+      end)
+    end)
+  end
+end
+```
+
+但我们也可以用状态机调度
+```
+local queue = ...
+function shedule()
+  --// 定时刷帧，如果窗口不为0，就批量调度一部分item
+  start_timer(function()
+    local cc = congestion_controller
+    if cc:current_window()>0 then
+      while cc.dec_winidow() do
+        local item = queue:Pop()
+        --// 回调里只要更新cc状态即可
+        dosomethinig_async(item,function() 
+          cc.update() 
+        end)
+      end
+    end
+  end,1000)
+end
+```

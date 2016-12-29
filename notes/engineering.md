@@ -92,6 +92,35 @@
   - 释放后，未将指针NULL化，野指针问题
   - 函数有多个提前返回的分支，未使用do{}while(fale);或者AutoXXX等确保内存/资源的自动释放。
 
+- 初始化和反初始化
+  - 确保所有的资源都有正确的初始化
+  - 确保所有的资源都有正确的反初始化
+  - 明确资源的所有权模式
+  - 为非内存资源提供正确的打开和关闭行为
+  
+- 抽象
+  - 编程是一项严格的活动。编写结构清晰、意图明显的代码是困难的。困难一部分源于要选择正确的抽象。
+  - 为了对付复杂的情况，我们使用了“分而治之”（divide and conquer）的方法，我们把复杂的问题分解成简单一些的子问题，然后解决这些子问题。
+
+#### 编程实践
+- Values
+  - Communication(Readable)
+  - Simplicity
+  - Flexibility 
+- Principles
+  - Local Consquences
+  - Minimize Repetition
+  - Logic and Data Together
+  - Symmetry
+  - Declarative Expression
+  - Rate of Change
+- Cost of software
+  - Cost of Develop
+  - Cose of Maintain
+    - Cost of Understand
+    - Cost of Change
+    - Cost of Test
+    - Cost of Deploy
 - [编程的关键步骤](http://www.drdobbs.com/cpp/why-is-software-so-hard-to-develop/240168832)
   1. You are confident that you know what you want the computer to do.
   2. Your knowledge is correct and complete.
@@ -102,16 +131,6 @@
   7. The program performs well enough for its intended use.
   8. If the program's output is intended to be approximate, the approximation is close enough.
   9. The program behaves reasonably when it encounters absurd or malicious input.
-
-- 初始化和反初始化
-  - 确保所有的资源都有正确的初始化
-  - 确保所有的资源都有正确的反初始化
-  - 明确资源的所有权模式
-  - 为非内存资源提供正确的打开和关闭行为
-  
-- 抽象
-  - 编程是一项严格的活动。编写结构清晰、意图明显的代码是困难的。困难一部分源于要选择正确的抽象。
-  - 为了对付复杂的情况，我们使用了“分而治之”（divide and conquer）的方法，我们把复杂的问题分解成简单一些的子问题，然后解决这些子问题。
 
 #### 兵器谱
 -----------
