@@ -100,6 +100,8 @@ network notes
 * [using sockets rather like using files](http://www.cplusplus.com/forum/general/58677/)
 * [How$speedy$is$SPDY?](https://www.usenix.org/sites/default/files/conference/protected-files/nsdi14_slides_wang.pdf)
 * [Do routers verify UDP and TCP checksums?](http://serverfault.com/questions/644289/do-routers-verify-udp-and-tcp-checksums)
+* [UDP vs TCP](http://gafferongames.com/networking-for-game-programmers/udp-vs-tcp/)
+* [Characteristics of UDP Packet Loss: Effect of TCP Traffic](http://www.isoc.org/INET97/proceedings/F3/F3_1.HTM)
 
 ## operations
 
