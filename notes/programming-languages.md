@@ -211,6 +211,44 @@ func(1+1)
 - 提出“乖函数”的概念。
 - 利用尾递归技术，实现一定程度的热更新。
 
+#### Go
+读了rob pike的这篇[Less is exponentially more](https://commandcenter.blogspot.jp/2012/06/less-is-exponentially-more.html)，作者谈了Go的设计初衷和理念。还分析了为什么一开始使用Go的从Python、Ruby说社区来的多，而从C++来的少。两种不同的设计理念。
+- regular syntax (don't need a symbol table to parse)
+- garbage collection (only)
+- no header files
+- explicit dependencies
+- no circular dependencies
+- constants are just numbers
+- int and int32 are distinct types
+- letter case sets visibility
+- methods for any type (no classes)
+- no subtype inheritance (no subclasses)
+- package-level initialization and well-defined order of initialization
+- files compiled together in a package
+- package-level globals presented in any order
+- no arithmetic conversions (constants help)
+- interfaces are implicit (no "implements" declaration)
+- embedding (no promotion to superclass)
+- methods are declared as functions (no special location)
+- methods are just functions
+- interfaces are just methods (no data)
+- methods match by name only (not by type)
+- no constructors or destructors
+- postincrement and postdecrement are statements, not expressions
+- no preincrement or predecrement
+- assignment is not an expression
+- evaluation order defined in assignment, function call (no "sequence point")
+- no pointer arithmetic
+- memory is always zeroed
+- legal to take address of local variable
+- no "this" in methods
+- segmented stacks
+- no const or other type annotations
+- no templates
+- no exceptions
+- builtin string, slice, map
+- array bounds checking
+
 ## 参考资料
 -------------
 - [Monads in C ](http://blog.sigfpe.com/2007/03/monads-in-c-pt-iii.html)
