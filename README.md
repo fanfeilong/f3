@@ -29,6 +29,7 @@ here, build life projects
 - [physical](https://github.com/fanfeilong/f3/tree/master/notes/physical.md) 
 - [psychology](https://github.com/fanfeilong/f3/tree/master/notes/psychology.md) 
 - [ted](https://github.com/fanfeilong/f3/tree/master/notes/ted.md) 
+- [fiction](https://github.com/fanfeilong/f3/tree/master/notes/fiction.md)
 
 ## i am a programmer
 --------------------
@@ -46,26 +47,24 @@ here, build life projects
     - [lua coroutine](https://github.com/fanfeilong/f3/tree/master/codes/lua_coroutine.md)
   - [faq.js](https://github.com/fanfeilong/f3/tree/master/faq/faq.js)
   - [faq.lua](https://github.com/fanfeilong/f3/tree/master/faq/faq.lua)
-+ algorithm
++ [algorithm](https://github.com/fanfeilong/f3/tree/master/notes/algorithum.md)
   - [sort](https://github.com/fanfeilong/f3/tree/master/notes/sort.md) 
+  - [scheduler](https://github.com/fanfeilong/f3/tree/master/notes/scheduler.md)
+  - [todo:parser]()
 + principle
   - [the element of programming](https://github.com/fanfeilong/f3/tree/master/notes/the-element-of-programming.md) 
-+ tools
-  -[tools](https://github.com/fanfeilong/f3/tree/master/notes/tools.md) 
-+ library
-  - [bolt1](https://github.com/fanfeilong/f3/tree/master/notes/bolt1.md) 
-+ catogories
++ practice
+  - [tools](https://github.com/fanfeilong/f3/tree/master/notes/tools.md) 
+  - [engineering](https://github.com/fanfeilong/f3/tree/master/notes/engineering.md)  
++ computer science
   - [compiler](https://github.com/fanfeilong/f3/tree/master/notes/compiler.md) 
   - [encoding](https://github.com/fanfeilong/f3/tree/master/notes/encoding.md) 
   - [security](https://github.com/fanfeilong/f3/tree/master/notes/security.md) 
   - [graphics](https://github.com/fanfeilong/f3/tree/master/notes/graphics.md)
   - [network](https://github.com/fanfeilong/f3/tree/master/notes/network.md) 
-  - [engineering](https://github.com/fanfeilong/f3/tree/master/notes/engineering.md)  
   - [distributed computing](https://github.com/fanfeilong/f3/tree/master/notes/distributed-computing.md) 
 
 ## i am a reseacher
 --------------------
 - [research](https://github.com/fanfeilong/f3/tree/master/notes/research.md)
-
-This is write in vim installed in termux on Android.
 

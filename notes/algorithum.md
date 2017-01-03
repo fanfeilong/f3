@@ -13,3 +13,6 @@
 
 - 数据结构与算法
   - [Skip Lists: Done Right](http://ticki.github.io/blog/skip-lists-done-right/)
+  - [Why Recursive Data Structures?](http://raganwald.com/2016/12/27/recursive-data-structures.html)
+
+- 搜索

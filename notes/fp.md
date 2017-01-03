@@ -150,6 +150,12 @@ http://csharpindepth.com/ViewNote.aspx?NoteID=70&printable=true
 单子(Monad)，正是这样一种结构，只是其刚好被这帮搞lisp的人用在了以函数为元素的集合上，并且这样的一种结构刚好能用解决函数级别的抽象封装问题。
 想清楚这点，就不至于陷入细节而不知其所以然。
 
+- [Call-with-current-continuation](https://en.wikipedia.org/wiki/Call-with-current-continuation)
+
+>In Scheme programming, the function call-with-current-continuation, abbreviated call/cc, is a control operator. It has been adopted by several other programming languages.
+
+- [简单易懂的程序语言入门小册子](http://www.cnblogs.com/skabyy/p/3670193.html)
+
 
 
 

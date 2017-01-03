@@ -79,3 +79,7 @@ lambda.x.
 * [wiki:UTF32](http://en.wikipedia.org/wiki/UTF32)
 * [wiki:UTF8](http://en.wikipedia.org/wiki/UTF8)
 * [Information Geometry](http://math.ucr.edu/home/baez/information/)
+
+#### 趣味编码
+- [单词拼写都是错的也能读](http://geon.github.io/programming/2016/03/03/dsxyliea)
+- [眼球Parser](http://www.kuaidula.com/)

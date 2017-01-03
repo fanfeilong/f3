@@ -251,6 +251,7 @@ func(1+1)
 
 ## 参考资料
 -------------
+- [A list of programming languages that are actively developed on GitHub](https://github.com/showcases/programming-languages)
 - [Monads in C ](http://blog.sigfpe.com/2007/03/monads-in-c-pt-iii.html)
 - [Monads in C++](http://bartoszmilewski.com/2011/07/11/monads-in-c/)
 - [Introduction to Category Theory](http://www.cs.nott.ac.uk/~gmh/cat.html)
@@ -271,3 +272,6 @@ func(1+1)
 - [Non Virtual Interface(NVI)](http://en.wikibooks.org/wiki/More_C%2B%2B_Idioms/Non-Virtual_Interface)
 - [How to write an interpreter(yin wang)](http://www.yinwang.org/blog-cn/2012/08/01/interpreter/)
 - [Bad Engineering Properties of Object-Oriented Languages](http://doc.cat-v.org/programming/bad_properties_of_OO)
+
+## 趣味编程
+- [编程语言伪简史](http://www.ithome.com/html/it/46432.htm) [A brief incomplete and mostly wrong history of programming languages](http://james-iry.blogspot.co.at/2009/05/brief-incomplete-and-mostly-wrong.html)

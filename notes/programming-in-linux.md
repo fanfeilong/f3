@@ -69,6 +69,8 @@
   - `sysctl -p`
 + tcpdump
   - `tcpdump -i eth1 -vnn udp and host destip -w output.cap`
+  - [tcpdump usage examples](http://rationallyparanoid.com/articles/tcpdump.html)
+  - [smartsniff:capture tcp/ip packets on your network adapter](http://www.nirsoft.net/utils/smsniff.html)
 
 ## shell
 -----------------

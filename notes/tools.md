@@ -148,6 +148,8 @@ git config --global alias.lss "log --no-merges --color --stat --graph --date=for
 ```
 
 #### references
+- [git - 简明指南](http://rogerdudler.github.io/git-guide/index.zh.html)
+- [常用 Git 命令清单](http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html)
 - [Commit Often, Perfect Later, Publish Once: Git Best Practices](https://sethrobertson.github.io/GitBestPractices/)
 - [Understanding the GitHub Flow](https://guides.github.com/introduction/flow/)
 - [A successful Git branching model](http://nvie.com/posts/a-successful-git-branching-model/)
@@ -156,6 +158,7 @@ git config --global alias.lss "log --no-merges --color --stat --graph --date=for
 - [What's the best visual merge tool for Git?](http://stackoverflow.com/questions/137102/whats-the-best-visual-merge-tool-for-git)
 - [visual diff](http://meldmerge.org/)
 - [the core conception of git](https://lufficc.com/blog/the-core-conception-of-git)
+- [Git from the inside out](https://maryrosecook.com/blog/post/git-from-the-inside-out)
 
 ## IM
 -------
@@ -205,7 +208,12 @@ git config --global alias.lss "log --no-merges --color --stat --graph --date=for
 #### operations
 
 #### references
+- [wiki:MarkDown](http://en.wikipedia.org/wiki/Markdown)
 - [MarkDown Math in Visual Studio Code](https://github.com/goessner/mdmath)
+- [MarkDown Editor: stackeditor](https://stackedit.io/)
+- [Excel to MarkDown Table: exceltk](https://github.com/fanfeilong/exceltk)
+- [mastering-markdown](https://guides.github.com/features/mastering-markdown/)
+- [极简MarkDown排版介绍（How to）](http://www.cnblogs.com/math/p/se-tools-001.html)
 
 ## UML
 ----------
@@ -214,3 +222,35 @@ git config --global alias.lss "log --no-merges --color --stat --graph --date=for
 
 #### references
 - [js sequence diagrams](https://bramp.github.io/js-sequence-diagrams/)
+- [yuml](http://yuml.me/diagram/scruffy/class/samples)
+
+## Regex
+
+#### operations
+
+#### references
+- [正则表达式30分钟入门教程](http://deerchao.net/tutorials/regex/regex.htm)
+- [Word使用正则表达式查找替换](http://office.microsoft.com/zh-cn/word-help/HA102350661.aspx)
+- [Regexper](http://regexper.com/#)
+- [Regular Expressions in grep](http://www.robelle.com/smugbook/regexpr.html)
+
+## Image
+#### operations
+
+#### references
+- [image magic](http://www.imagemagick.org/script/index.php)
+
+## PDF
+#### operations
+
+#### references
+- [pdftk](http://pdftk.com/)
+
+## typeing
+#### operations
+
+#### references
+- [Simple, adaptive, computer-generated typing lessons that will teach you how to type faster and with fewer errors](http://www.keybr.com/#!game)
+
+## bash
+- [Batsh - A language that compiles to Bash and Windows Batch](http://batsh.org/#)

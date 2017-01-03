@@ -9,7 +9,9 @@
   - [wiki:中文字体](http://zh.wikipedia.org/zh/字体)
   - [wiki:Font](http://en.wikipedia.org/wiki/Font)
   - [CSS Font](http://yusugomori.com/projects/css-sans/fonts)
-  
+  - [font for programmer:source code pro](https://github.com/adobe/source-code-pro)
+  - [google fonts](https://fonts.google.com/)
+
 - 反锯齿
   - [antigrain](http://www.antigrain.com/)
   - [wiki: antigrain-geometry(AGG)](http://en.wikipedia.org/wiki/Anti-Grain_Geometry)
@@ -29,5 +31,6 @@
 - 趣味图形
   - [Tessellations](http://www.tessellations.org/)
   - [齿轮](http://nathanfriend.io/inspirograph/)
+  - [Vega is a declarative format for creating, saving, and sharing visualization designs](http://vega.github.io/)
   
 
