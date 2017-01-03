@@ -21,13 +21,14 @@
   - [逃出你的肖申克（七）：改变的科学和科学的改变](http://mindhacks.cn/2016/12/18/escape-from-your-shawshank-part7-science-of-change/)
 
 
-## 专有名词
+## 理论
 - [Disinhibition(去抑制化)](http://en.wikipedia.org/wiki/Disinhibition)
 - [Theory of mind](https://en.wikipedia.org/wiki/Theory_of_mind)
 - [List of cognitive biases](https://en.wikipedia.org/wiki/List_of_cognitive_biases)
 - [认知发展论](http://zh.wikipedia.org/wiki/%E8%AA%8D%E7%9F%A5%E7%99%BC%E5%B1%95%E8%AB%96)
 - [发展心理学](http://zh.wikipedia.org/wiki/%E5%8F%91%E5%B1%95%E5%BF%83%E7%90%86%E5%AD%A6)
-- [让·皮亚杰](http://zh.wikipedia.org/wiki/%E8%AE%93%C2%B7%E7%9A%AE%E4%BA%9E%E5%82%91)
+- [归因理论](http://itgroup.blueshop.com.tw/creeds2239/iceboy?n=convew&i=4110)
+- [展望理论](http://zh.wikipedia.org/wiki/%E5%B1%95%E6%9C%9B%E7%90%86%E8%AE%BA)
 
 ## 知乎问题
 - [从心理学角度来看，为什么网络上容易出现极端行为？](http://www.zhihu.com/question/27425890/answer/36601915?utm_campaign=official_account&utm_source=weibo&utm_medium=zhihu&utm_content=answer)
@@ -37,6 +38,20 @@
 - [The Way We Were: 10 Crucial Child Psychology Studies](http://www.spring.org.uk/2008/07/way-we-were-10-crucial-child-psychology.php)
 - [The Relationship between Intelligence and Anxiety: An Association with Subcortical White Matter Metabolism](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3269637/)
 - [How the brain controls sleep](http://news.mit.edu/2015/brain-controls-sleep-1013)
+
+## 原理、法则、效应
+- [弗林效应](http://zh.wikipedia.org/wiki/%E5%BC%97%E6%9E%97%E6%95%88%E5%BA%94)
+- [帕累托法则](http://zh.wikipedia.org/wiki/%E5%B8%95%E9%9B%B7%E6%89%98%E6%B3%95%E5%88%99)
+- [马太效应](http://zh.wikipedia.org/wiki/%E9%A9%AC%E5%A4%AA%E6%95%88%E5%BA%94)
+- [奥卡姆剃刀](http://zh.wikipedia.org/wiki/%E5%A5%A5%E5%8D%A1%E5%A7%86%E5%89%83%E5%88%80)
+- [休谟公理的概率表述](http://blog.sina.com.cn/s/blog_49341a2c010007mk.html)
+- [休谟断头台](http://blog.sina.com.cn/s/blog_6d9713960100ougj.html)
+- [自利性偏差](http://zh.wikipedia.org/wiki/%E8%87%AA%E5%88%A9%E6%80%A7%E5%81%8F%E5%B7%AE)
+- [萨丕尔-沃夫假说](http://zh.wikipedia.org/wiki/%E8%90%A8%E4%B8%95%E5%B0%94-%E6%B2%83%E5%A4%AB%E5%81%87%E8%AF%B4)
+- [Herbert Heinrish's Law](https://en.wikipedia.org/wiki/Herbert_William_Heinrich)
+
+## 心理学家
+- [让·皮亚杰](http://zh.wikipedia.org/wiki/%E8%AE%93%C2%B7%E7%9A%AE%E4%BA%9E%E5%82%91)
 
 ## books
 - [x] +1.0 `<<暗时间>>`
