@@ -245,6 +245,8 @@ git config --global alias.lss "log --no-merges --color --stat --graph --date=for
 
 #### references
 - [pdftk](http://pdftk.com/)
+- [code2pdf](https://github.com/tushar-rishav/code2pdf)
+- [docs.com](https://docs.com)
 
 ## typeing
 #### operations
@@ -254,3 +256,5 @@ git config --global alias.lss "log --no-merges --color --stat --graph --date=for
 
 ## bash
 - [Batsh - A language that compiles to Bash and Windows Batch](http://batsh.org/#)
+- [The art of command line](https://github.com/jlevy/the-art-of-command-line)
+- [bash hand book](https://github.com/denysdovhan/bash-handbook)

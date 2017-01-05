@@ -32,6 +32,8 @@
   - [visualizing projections](http://shaunlebron.github.io/visualizing-projections/)
 - 格拉斯曼
 - 黎曼几何
+- 分形
+  - [A turtle can draw fractals](http://blog.klipse.tech/python/2017/01/04/python-turtle-fractal.html)
 
 ## 分析学
 - 数学分析
