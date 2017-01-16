@@ -2,6 +2,7 @@ NOTES 4: `<<The Art Of Multiprocess Programming>>`
 
 ## relative references
 - [Scaling Synchronization in Multicore Programs](http://queue.acm.org/detail.cfm?id=2991130)
+- [Lock-Free Bugs](https://research.swtch.com/lockfree)
 
 ## 原理
 

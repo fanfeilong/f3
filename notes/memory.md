@@ -102,3 +102,6 @@ The following rules call out common nonexceptions to Rule 1.
     - From a COM client's perspective, reference-counting is always a per-interface concept. Clients should never assume that an object uses the same reference count for all interfaces.
     - The return values of AddRef and Release should not be relied upon, and should be used only for debugging purposes.
     - Pointer stability; see details in the OLE Help file under "Reference-Counting Rules," subsection "Stabilizing the this Pointer and Keeping it Valid."
+
+#### references
+- [The memory models that underlie programming languages](http://canonical.org/~kragen/memory-models/)

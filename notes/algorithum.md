@@ -17,3 +17,6 @@
   - [Why Recursive Data Structures?](http://raganwald.com/2016/12/27/recursive-data-structures.html)
 
 - 搜索
+
+- NP Problems
+  - [116-page survey article on P vs. NP: better late than never](http://www.scottaaronson.com/blog/?p=3095)

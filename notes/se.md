@@ -7,3 +7,5 @@
 - [Oblique Strategies](https://en.wikipedia.org/wiki/Oblique_Strategies)
 - [Learning How to Teach a Class](http://blog.katworksgames.com/2016/08/07/learning-how-to-teach-a-class/)
 - [How to Evaluate PaaS Services](http://www.timecockpit.com/blog/2016/12/30/How-to-Evaluate-PaaS-Services)
+- [How to ask good questions](https://jvns.ca/blog/good-questions/)
+- [Top 100 Best Software Engineering Books, Ever](http://noop.nl/2008/06/top-100-best-software-engineering-books-ever.html)
