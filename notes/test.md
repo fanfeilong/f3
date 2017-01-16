@@ -192,3 +192,11 @@ You should create unique identifiers for transactions that involve processing ac
 
 ### Monitoring and Logging Complement Each Other
 a monitoring alert is simply a trigger for you to start an investigation. Monitoring shows the symptoms of problems. Logs provide details and state on individual transactions
+
+# [software-testing](https://www.lucidchart.com/techblog/category/software-testing/)
+
+- [FLAKY TESTS: THE TESTER’S F WORD](https://www.lucidchart.com/techblog/2016/12/28/flaky-the-testers-f-word/)
+
+- [DEVELOPERS AND TESTERS: NEMESES OR SOULMATES](https://www.lucidchart.com/techblog/2016/10/05/developers-and-testers-nemeses-or-soulmates/)
+
+>This particular relationship hits home for us since my husband is a developer, and I am a tester at the same software company. 

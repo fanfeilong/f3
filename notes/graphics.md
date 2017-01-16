@@ -23,6 +23,7 @@
   - [wiki: Precision Graphics Markup Language(PGML)](http://en.wikipedia.org/wiki/Precision_Graphics_Markup_Language)
   - [wiki: Vector Markup Language(VML)](http://en.wikipedia.org/wiki/Vector_Markup_Language)
   - [wiki: Scalable Vector Graphics(SVG)](http://en.wikipedia.org/wiki/Scalable_Vector_Graphics)
+  - [building-better-interfaces-with-svg](http://slides.com/sarasoueidan/building-better-interfaces-with-svg#/)
   
 - 数学基础
   - [Vector Math for 3D Computer Graphics](http://programmedlessons.org/VectorLessons/)
@@ -32,5 +33,6 @@
   - [Tessellations](http://www.tessellations.org/)
   - [齿轮](http://nathanfriend.io/inspirograph/)
   - [Vega is a declarative format for creating, saving, and sharing visualization designs](http://vega.github.io/)
+  - [分形](http://www.fractalcurves.com/)
   
 

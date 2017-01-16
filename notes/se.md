@@ -6,3 +6,4 @@
 - [oblique programming strategies](https://traviscj.com/blog/oblique_programming_strategies.html)
 - [Oblique Strategies](https://en.wikipedia.org/wiki/Oblique_Strategies)
 - [Learning How to Teach a Class](http://blog.katworksgames.com/2016/08/07/learning-how-to-teach-a-class/)
+- [How to Evaluate PaaS Services](http://www.timecockpit.com/blog/2016/12/30/How-to-Evaluate-PaaS-Services)

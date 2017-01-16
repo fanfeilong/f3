@@ -10,6 +10,7 @@
 
 - 算法可视化
   - [Algorithm Visualizer by Jason Park](http://devmastery.us13.list-manage.com/track/click?u=f1b8bfb7fc725a93f6e83bc85&id=740499797f&e=4486d1fe0e)
+  - [Top 10 algorithms in Interview Questions](http://www.geeksforgeeks.org/top-10-algorithms-in-interview-questions/)
 
 - 数据结构与算法
   - [Skip Lists: Done Right](http://ticki.github.io/blog/skip-lists-done-right/)

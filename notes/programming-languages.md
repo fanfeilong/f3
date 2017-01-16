@@ -140,6 +140,8 @@ func(1+1)
 * [typeof](http://en.wikipedia.org/wiki/Typeof)
 * [offsetof,containof](http://en.wikipedia.org/wiki/Offsetof)
 * [size and malloc](http://publications.gbdirect.co.uk/c_book/chapter5/sizeof_and_malloc.html)
+* [right-left-rule](http://ieng9.ucsd.edu/~cs30x/rt_lt.rule.html)
+* [Everything you need to know about pointers in C](http://boredzo.org/pointers/)
 
 #### c++
 -------------

@@ -484,11 +484,12 @@ end
 
 #### 参考资料
 -------------
-1. [So yuo want to learn type theory](http://purelytheoretical.com/sywtltt.html)
-2. [Logic, Languages, Compilation, and Verification](https://www.cs.uoregon.edu/research/summerschool/summer12/curriculum.html)
-3. [Constructive Logic ](http://www.cs.cmu.edu/~fp/courses/15317-f09/schedule.html)
-4. [Programming in Martin-L¨of ’s Type Theory](http://www.cse.chalmers.se/research/group/logic/book/book.pdf)
-5. [Beginner's Guide to Linkers](http://www.lurklurk.org/linkers/linkers.html)
-6. [The difference between top-down parsing and bottom-up parsing](http://qntm.org/top)
-7. [An Incremental Approach to Compiler Construction](http://schemeworkshop.org/2006/11-ghuloum.pdf)
+- [So yuo want to learn type theory](http://purelytheoretical.com/sywtltt.html)
+- [Logic, Languages, Compilation, and Verification](https://www.cs.uoregon.edu/research/summerschool/summer12/curriculum.html)
+- [Constructive Logic ](http://www.cs.cmu.edu/~fp/courses/15317-f09/schedule.html)
+- [Programming in Martin-L¨of ’s Type Theory](http://www.cse.chalmers.se/research/group/logic/book/book.pdf)
+- [Beginner's Guide to Linkers](http://www.lurklurk.org/linkers/linkers.html)
+- [The difference between top-down parsing and bottom-up parsing](http://qntm.org/top)
+- [An Incremental Approach to Compiler Construction](http://schemeworkshop.org/2006/11-ghuloum.pdf)
+- [x86 Assembly Guide](http://www.cs.virginia.edu/~evans/cs216/guides/x86.html)
 

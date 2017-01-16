@@ -201,6 +201,7 @@ by socket1, NOT the socket2.
 
 #### references
 - [BBR:Measuring bottleneck bandwidth and round-trip propagation time](http://queue.acm.org/detail.cfm?id=3022184)
+- [DCCP: The socket type you probably never heard of](https://www.anmolsarma.in/post/dccp/)
 
 ## FQA
 ------------

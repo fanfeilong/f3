@@ -34,6 +34,8 @@
 - 黎曼几何
 - 分形
   - [A turtle can draw fractals](http://blog.klipse.tech/python/2017/01/04/python-turtle-fractal.html)
+  - [fractal curves](http://www.fractalcurves.com/)
+  - [Brain Filling Curves](http://archive.org/stream/BrainfillingCurves-AFractalBestiary/BrainFilling#page/n0/mode/2up)
 
 ## 分析学
 - 数学分析
@@ -155,3 +157,4 @@ private KEY:N,D，Decode: e1^D%N=m
 
 ## 趣味数学
 - [Superformula](https://en.wikipedia.org/wiki/Superformula)
+- [MovingSofa](https://www.math.ucdavis.edu/~romik/movingsofa/)
