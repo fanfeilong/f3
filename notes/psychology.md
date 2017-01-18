@@ -49,6 +49,12 @@
 - [自利性偏差](http://zh.wikipedia.org/wiki/%E8%87%AA%E5%88%A9%E6%80%A7%E5%81%8F%E5%B7%AE)
 - [萨丕尔-沃夫假说](http://zh.wikipedia.org/wiki/%E8%90%A8%E4%B8%95%E5%B0%94-%E6%B2%83%E5%A4%AB%E5%81%87%E8%AF%B4)
 - [Herbert Heinrish's Law](https://en.wikipedia.org/wiki/Herbert_William_Heinrich)
+- [巴纳姆效应(Barnum effect)](https://en.wikipedia.org/wiki/Barnum_effect)
+- [刻板印象(Stereotype)](https://en.wikipedia.org/wiki/Stereotype)
+- [近因系列效应(Serial position effect)](https://en.wikipedia.org/wiki/Serial_position_effect)
+- [学习曲线(Learning curve)](https://en.wikipedia.org/wiki/Learning_curve)
+- [迈尔斯-布里格斯性格分类法(Myers–Briggs Type Indicator)](https://en.wikipedia.org/wiki/Myers%E2%80%93Briggs_Type_Indicator)
+- [五大性格特质(Big Five personality traits)](https://en.wikipedia.org/wiki/Big_Five_personality_traits)
 
 ## 心理学家
 - [让·皮亚杰](http://zh.wikipedia.org/wiki/%E8%AE%93%C2%B7%E7%9A%AE%E4%BA%9E%E5%82%91)
