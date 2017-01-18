@@ -76,6 +76,70 @@ func(1+1)
 => 4                   // 4
 ```
 
+#### 可重入
+
+- 不可重入
+```
+char* tmp;
+void swap(char* left,char* right){
+  temp = *left;
+  *left=*right;
+  *right=temp;
+}
+``` 
+
+- 可重入
+```
+void swap(char* left,char* right){
+  char* tmp;
+  temp = *left;
+  *left=*right;
+  *right=temp;
+}
+``` 
+
+#### 异步链式回调
+
+- 同步回调可能有状态时序问题
+```
+obj.ready = function(key,onComplete){
+  this.send(key,function(info){
+    onComplate();
+  })
+}
+
+obj.ready(function(ret){
+  obj.ready(function(ret){
+
+  })
+})
+```
+
+- 修正为异步链式调用
+```
+obj.ready = function(key,onComplete){
+  this.send(key,function(info){
+    asynCall(function(){ // here
+      onComplate();
+    });
+  })
+}
+
+obj.ready(function(ret){
+  obj.ready(function(ret){
+
+  })
+})
+```
+
+#### 静态一致性
+
+#### 顺序一致性
+
+#### 可线性化
+
+#### 拓扑同胚
+
 #### 文法
 - [python grammar](https://docs.python.org/3/reference/grammar.html)
 - [lua grammar](https://www.lua.org/manual/5.3/manual.html#9)
