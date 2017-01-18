@@ -341,3 +341,19 @@ var fib = eval(Wind.compile("async", function () {
 }));
 
 fib().start();
+
+/**************************************
+ * Q: How to kill child processes when process exit
+ * A: 1. listen on process's exit event
+ *    2. listen on process's ctrl-c and kill signal
+  **************************************/
+let children = [];
+process.on('exit', function() {
+  self.children.forEach(function(child) {
+    child.kill();
+  });
+});
+
+let cleanExit = function() { process.exit() };
+process.on('SIGINT', cleanExit); // catch ctrl-c
+process.on('SIGTERM', cleanExit); // catch kill
