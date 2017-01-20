@@ -18,3 +18,7 @@ faq in stackoverflow
 tools for javascript developer
 ===============
 - [JSDoc](https://resin.io/blog/open-source-guide-1-documentation-and-jsdoc/)
+
+Functional Features
+===============
+- [The many »Talents« of JavaScript](http://peterseliger.blogspot.jp/2014/04/the-many-talents-of-javascript.html#the-many-talents-of-javascript-for-generalizing-role-oriented-programming-approaches-like-traits-and-mixins)
