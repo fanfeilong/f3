@@ -253,6 +253,7 @@ git config --global alias.lss "log --no-merges --color --stat --graph --date=for
 
 #### references
 - [Simple, adaptive, computer-generated typing lessons that will teach you how to type faster and with fewer errors](http://www.keybr.com/#!game)
+- [SILE](http://sile-typesetter.org/what-is/)
 
 ## bash
 - [Batsh - A language that compiles to Bash and Windows Batch](http://batsh.org/#)

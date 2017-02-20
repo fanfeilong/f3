@@ -205,6 +205,7 @@ obj.ready(function(ret){
 * [offsetof,containof](http://en.wikipedia.org/wiki/Offsetof)
 * [size and malloc](http://publications.gbdirect.co.uk/c_book/chapter5/sizeof_and_malloc.html)
 * [right-left-rule](http://ieng9.ucsd.edu/~cs30x/rt_lt.rule.html)
+* [How Do I Declare a Function Pointer in C?](http://goshdarnfunctionpointers.com)
 * [Everything you need to know about pointers in C](http://boredzo.org/pointers/)
 
 #### c++
@@ -237,6 +238,7 @@ obj.ready(function(ret){
   * adaptor
 * c++ 98/03/11/14
 * [More C++ Idioms](http://en.wikibooks.org/wiki/More_C%2B%2B_Idioms)
+* [Modernize: Sink Functions](http://www.bfilipek.com/2017/02/modernize-sink-functions.html)
 
 #### csharp
 ----------------
@@ -314,6 +316,10 @@ obj.ready(function(ret){
 - no exceptions
 - builtin string, slice, map
 - array bounds checking
+
+#### javascript
+- [What You Should Already Know about JavaScript Scope](https://spin.atomicobject.com/2014/10/20/javascript-scope-closures/)
+- [functions, scope & closures - Daniel Jackson](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-170-software-studio-spring-2013/lecture-notes/MIT6_170S13_35-java-fn-cls.pdf)
 
 ## 参考资料
 -------------
