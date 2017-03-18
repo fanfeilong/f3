@@ -158,3 +158,5 @@ private KEY:N,D，Decode: e1^D%N=m
 ## 趣味数学
 - [Superformula](https://en.wikipedia.org/wiki/Superformula)
 - [MovingSofa](https://www.math.ucdavis.edu/~romik/movingsofa/)
+- [The Fundamental Theorem of Algebra: A Visual Approach](https://www.math.washington.edu/~morrow/336_14/fta.pdf)
+

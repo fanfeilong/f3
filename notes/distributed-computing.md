@@ -21,10 +21,15 @@
 协议
 ------
 - paxos
+  - [How Paxos works](http://rystsov.info/2015/09/16/how-paxos-works.html)
 - Zookeeper, ZAB
 - Viewstamped Replication(VR)
 - Facebook, raft
 - multi-paxos
+- [Single Decree Paxos](http://rystsov.info/2017/02/15/simple-consensus.html)
+
+(4) 分布式系统
+- [system-design-primer](https://github.com/donnemartin/system-design-primer)
 
 参考资料
 ==============

@@ -15,6 +15,10 @@
 - 数据结构与算法
   - [Skip Lists: Done Right](http://ticki.github.io/blog/skip-lists-done-right/)
   - [Why Recursive Data Structures?](http://raganwald.com/2016/12/27/recursive-data-structures.html)
+  - [Data structures and algorithms problems in C++ using STL](http://www.techiedelight.com/data-structures-and-algorithms-interview-questions-stl/)
+  - [Problem Solving with Algorithms and Data Structures using Python](http://interactivepython.org/runestone/static/pythonds/index.html#problem-solving-with-algorithms-and-data-structures-using-python)
+  - [A Common-Sense Guide to Data Structures and Algorithms](https://pragprog.com/book/jwdsal/a-common-sense-guide-to-data-structures-and-algorithms)
+  - [Kolmogorov complexity](https://en.wikipedia.org/wiki/Kolmogorov_complexity)
 
 - 搜索
 

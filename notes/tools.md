@@ -201,6 +201,7 @@ git config --global alias.lss "log --no-merges --color --stat --graph --date=for
 - [BibTeX Format](http://www.bibtex.org/Format/)
 - [TeXMacs (What you see is what you get)](http://www.texmacs.org/tmweb/home/welcome.en.html)
 - [Visual Debugging in TEX](http://www.pragma-ade.com/articles/art-visi.pdf)
+- [High quality graphics for your Latex document: The Matlab route](https://www.io.ac.nz/blog/matlab-to-latex/)
 
 ## MarkDown
 ----------
@@ -223,6 +224,8 @@ git config --global alias.lss "log --no-merges --color --stat --graph --date=for
 #### references
 - [js sequence diagrams](https://bramp.github.io/js-sequence-diagrams/)
 - [yuml](http://yuml.me/diagram/scruffy/class/samples)
+- [State machine diagram](https://www.visual-paradigm.com/VPGallery/diagrams/State.html)
+- [websequencediagrams](https://www.websequencediagrams.com)
 
 ## Regex
 
