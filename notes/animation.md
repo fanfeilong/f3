@@ -1,0 +1,2 @@
+- [Crazy Frog](https://en.wikipedia.org/wiki/Crazy_Frog)
+	- Crazy Frog, originally known as The Annoying Thing, is a computer-animated character created in 2003 by Swedish actor and playwright Erik Wernquist. Marketed by the ringtone provider Jamba! (later known as Jamster), the animation was originally created to accompany a sound effect produced by Daniel Malmedahl in 1997 while attempting to imitate the sound of a two-stroke engine.

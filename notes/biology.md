@@ -5,6 +5,8 @@
 
 ## video
 - [小科普：细胞大战病毒](http://v.youku.com/v_show/id_XNzA2NzM3NTcy.html)
+- [a-molecular-view-of-hiv-therapy-video](http://pdb101.rcsb.org/learn/videos/a-molecular-view-of-hiv-therapy-video)
+
 
 ## wiki
 - [生物学](http://zh.wikipedia.org/wiki/%E7%94%9F%E7%89%A9%E5%AD%A6) [Biology](http://en.wikipedia.org/wiki/Biology)

@@ -202,6 +202,8 @@ git config --global alias.lss "log --no-merges --color --stat --graph --date=for
 - [TeXMacs (What you see is what you get)](http://www.texmacs.org/tmweb/home/welcome.en.html)
 - [Visual Debugging in TEX](http://www.pragma-ade.com/articles/art-visi.pdf)
 - [High quality graphics for your Latex document: The Matlab route](https://www.io.ac.nz/blog/matlab-to-latex/)
+- [simple math typeing](http://www.mathifyit.com/)
+- [asciimath](http://asciimath.org/)
 
 ## MarkDown
 ----------
@@ -262,3 +264,8 @@ git config --global alias.lss "log --no-merges --color --stat --graph --date=for
 - [Batsh - A language that compiles to Bash and Windows Batch](http://batsh.org/#)
 - [The art of command line](https://github.com/jlevy/the-art-of-command-line)
 - [bash hand book](https://github.com/denysdovhan/bash-handbook)
+
+
+## modeling
+- [loopy](http://ncase.me/loopy/)
+

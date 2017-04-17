@@ -305,3 +305,4 @@ A 在各种细分人群（老年人、女性、白人等等）支持率都比 B 
 - [辛普森悖论](https://zh.wikipedia.org/zh-cn/%E8%BE%9B%E6%99%AE%E6%A3%AE%E6%82%96%E8%AE%BA)
 - [区群谬误](https://zh.wikipedia.org/wiki/%E5%8D%80%E7%BE%A4%E8%AC%AC%E8%AA%A4)
 
+

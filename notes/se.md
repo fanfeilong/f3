@@ -1,3 +1,4 @@
+## articles
 - [the unexpected outcoms of code review](http://michaelrbernste.in/2013/10/16/the-unexpected-outcomes-of-code-review.html)
 - [Beware of Developers Who Do Negative Work](http://blog.professorbeekums.com/2016/12/beware-of-developers-who-do-negative.html)
 - [Mastering Programming](https://www.prod.facebook.com/notes/kent-beck/mastering-programming/1184427814923414?utm_source=Dev+Mastery+Newsletter&utm_campaign=724eefb4d1-EMAIL_CAMPAIGN_2016_12_21&utm_medium=email&utm_term=0_49661ec53b-724eefb4d1-163381209)
@@ -10,3 +11,12 @@
 - [How to ask good questions](https://jvns.ca/blog/good-questions/)
 - [Top 100 Best Software Engineering Books, Ever](http://noop.nl/2008/06/top-100-best-software-engineering-books-ever.html)
 - [Is software development only about coding?](https://jjankowskidev.wordpress.com/2017/02/17/is-software-development-only-about-coding/)
+- [普通人与职业运动员之间的差距](https://www.zhihu.com/question/29888808)
+- [由用户输入系列对称的点的解决方案](http://blog.xiongduo.cn/category/ma-nong/) 发现一个搞古生物的码农的博客，需求分析／解决方案／代码实现／结果展示 感觉不错。
+- [Every attempt to manage academia makes it worse](https://svpow.com/2017/03/17/every-attempt-to-manage-academia-makes-it-worse/)
+- [How I Became Better Programmer](http://jlongster.com/How-I-Became-Better-Programmer)
+- [快速组建的开发团队要怎么活下来？](http://www.cnblogs.com/yangdong/p/how-to-quick-rampup-team.html)
+- [principles-of-debugging-effectively](https://www.gamedev.net/blog/1746/entry-2262804-principles-of-debugging-effectively/)
+
+## unit test
+- [nodeunit](https://github.com/caolan/nodeunit/blob/master/README.md)

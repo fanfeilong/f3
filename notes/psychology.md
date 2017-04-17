@@ -55,9 +55,27 @@
 - [学习曲线(Learning curve)](https://en.wikipedia.org/wiki/Learning_curve)
 - [迈尔斯-布里格斯性格分类法(Myers–Briggs Type Indicator)](https://en.wikipedia.org/wiki/Myers%E2%80%93Briggs_Type_Indicator)
 - [五大性格特质(Big Five personality traits)](https://en.wikipedia.org/wiki/Big_Five_personality_traits)
+- [古德哈特定律（Goodhart's law）](http://baike.baidu.com/item/%E5%8F%A4%E5%BE%B7%E5%93%88%E7%89%B9%E5%AE%9A%E5%BE%8B) ，是以 Charles Goodhart的名字命名的，这是一个非常有名的定理：当一个政策变成目标，它将不再是一个好的政策。作为前英格兰银行的建议者，提出：当政府试图管理这些金融财产的特别标识时，它们便不再是可信的经济风向标。
+- [Campbell's law](https://en.wikipedia.org/wiki/Campbell%27s_law)
+- [Cobra effect](https://en.wikipedia.org/wiki/Cobra_effect) The cobra effect occurs when an attempted solution to a problem makes the problem worse, 英国政府计划要减少眼镜蛇的数量，因而颁布法令说每打死一条眼镜蛇都可以领取赏金。然而印度人为了赏金反而开始养殖眼镜蛇.
+- [Reflexivity (social theory)](https://en.wikipedia.org/wiki/Reflexivity_(social_theory))
+- [Positive feedback](https://en.wikipedia.org/wiki/Positive_feedback)
+- [Negative feedback](https://en.wikipedia.org/wiki/Negative_feedback)
 
 ## 心理学家
-- [让·皮亚杰](http://zh.wikipedia.org/wiki/%E8%AE%93%C2%B7%E7%9A%AE%E4%BA%9E%E5%82%91)
+- 发展心理学家
+  - [让·皮亚杰](http://zh.wikipedia.org/wiki/%E8%AE%93%C2%B7%E7%9A%AE%E4%BA%9E%E5%82%91)
+  - [维果茨基]()
+- 行为心理学家
+  - [斯金纳]()
+- 社会心理学家
+- 认知心理学家
+
+## 学习
+- [学习的本质]()
+- [脑海探险]()
+- [教育心理学]()
+- [How to Learn New Things as an Adult](https://www.theatlantic.com/science/archive/2017/03/how-to-learn-new-things-as-an-adult/519687/?single_page=true)
 
 ## books
 - [x] +1.0 `<<暗时间>>`
@@ -68,3 +86,11 @@
 - [x] +1.0 `<<捕捉儿童敏感期>>`
 - [ ] +1.0 `<<培养孩子从画画做起>>`，[豆瓣](http://book.douban.com/subject/5378929/)
 - [x] +1.0 `<<社会心理学精要>>`，=>[NOTE](https://book.douban.com/review/8291002/)
+
+
+
+## articles
+- [tears](http://www.meltingasphalt.com/tears/)
+
+
+

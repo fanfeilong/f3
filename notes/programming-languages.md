@@ -162,6 +162,7 @@ obj.ready(function(ret){
 
 #### scheme
 ---------------
+- [beauty sicp](http://sarabander.github.io/sicp/)
 
 ##### 语言基础
 * atom: null?, zero?, number?, quote?
@@ -187,7 +188,7 @@ obj.ready(function(ret){
 
 #### c
 -----------
-
+- [cerberus](https://www.cl.cam.ac.uk/~pes20/cerberus/)
 * struct 
   * aligin
   * tail zero array
@@ -242,6 +243,7 @@ obj.ready(function(ret){
 
 #### csharp
 ----------------
+- [The-.NET-IL-Interpreter](http://mattwarren.org/2017/03/30/The-.NET-IL-Interpreter/)
 
 ##### 核心概念
 * lambda expressions, delegate, event, `Action<T>` and `Func<T>`
@@ -320,6 +322,7 @@ obj.ready(function(ret){
 #### javascript
 - [What You Should Already Know about JavaScript Scope](https://spin.atomicobject.com/2014/10/20/javascript-scope-closures/)
 - [functions, scope & closures - Daniel Jackson](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-170-software-studio-spring-2013/lecture-notes/MIT6_170S13_35-java-fn-cls.pdf)
+- [map/reduce/folder/zip](http://jcla1.com/blog/javascript-mapreduce/)
 
 ## 参考资料
 -------------
@@ -344,6 +347,7 @@ obj.ready(function(ret){
 - [Non Virtual Interface(NVI)](http://en.wikibooks.org/wiki/More_C%2B%2B_Idioms/Non-Virtual_Interface)
 - [How to write an interpreter(yin wang)](http://www.yinwang.org/blog-cn/2012/08/01/interpreter/)
 - [Bad Engineering Properties of Object-Oriented Languages](http://doc.cat-v.org/programming/bad_properties_of_OO)
+- [lowlevelprogramming-university](https://github.com/gurugio/lowlevelprogramming-university)
 
 ## 趣味编程
 - [编程语言伪简史](http://www.ithome.com/html/it/46432.htm) [A brief incomplete and mostly wrong history of programming languages](http://james-iry.blogspot.co.at/2009/05/brief-incomplete-and-mostly-wrong.html)

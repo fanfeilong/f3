@@ -150,3 +150,4 @@
 - [Trac: enhanced wiki and issue tracking](http://trac.edgewall.org/)
 - [redmine: A flexible project management](http://www.redmine.org)
 - [Onlne UML](http://yuml.me/)
+- [mit lock pick](http://www.blurofinsanity.com/mit/lockpick.html)

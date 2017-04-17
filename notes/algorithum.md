@@ -19,6 +19,14 @@
   - [Problem Solving with Algorithms and Data Structures using Python](http://interactivepython.org/runestone/static/pythonds/index.html#problem-solving-with-algorithms-and-data-structures-using-python)
   - [A Common-Sense Guide to Data Structures and Algorithms](https://pragprog.com/book/jwdsal/a-common-sense-guide-to-data-structures-and-algorithms)
   - [Kolmogorov complexity](https://en.wikipedia.org/wiki/Kolmogorov_complexity)
+  - [500 Data structures and algorithms interview questions and their solutions](https://techiedelight.quora.com/500-Data-structures-and-algorithms-interview-questions-and-their-solutions?share=1)
+  - [backtracking-interview-questions](http://www.techiedelight.com/backtracking-interview-questions/)
+  - [preparing-for-a-technical-interview-algorithms-data-structures-and-computer-science](http://www.primaryobjects.com/2017/03/28/preparing-for-a-technical-interview-algorithms-data-structures-and-computer-science/)
+  - [Competitive Programmer's Handbook](https://cses.fi/book.html)
+
+- machine learning
+  - [A-quick-look-at-Support-Vector-Machines](https://generalabstractnonsense.com/2017/03/A-quick-look-at-Support-Vector-Machines/)
+
 
 - 搜索
 

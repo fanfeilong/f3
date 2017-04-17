@@ -133,6 +133,7 @@
 ## 消息认证
 - 摘要
 - 哈希验证
+- [Passphrase FAQ](https://www.unix-ag.uni-kl.de/~conrad/krypto/passphrase-faq.html)
 
 ## 数字签名
 - 证书

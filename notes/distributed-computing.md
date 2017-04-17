@@ -30,6 +30,8 @@
 
 (4) 分布式系统
 - [system-design-primer](https://github.com/donnemartin/system-design-primer)
+- [TLA+](http://lamport.azurewebsites.net/video/intro.html)
+- [paxos code](http://nil.csail.mit.edu/6.824/2015/notes/paxos-code.html)
 
 参考资料
 ==============

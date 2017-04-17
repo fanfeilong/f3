@@ -43,3 +43,4 @@ books for `computer science`/`software enginer`/`programming`
 * [ ] +0.0 Fuzzylocks and the Three Fuzzy Bears - L. Zadeh
 * [ ] +0.0 Briefing for a Recursive Descent into Hell - Benoit Mandelbrot
 * [ ] +0.0 Eminent Programming Languages - Strachey
+* [ ] +0.0 https://www.cs.utexas.edu/users/EWD/
