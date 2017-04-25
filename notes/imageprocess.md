@@ -1,0 +1,1 @@
+- [Mumford–Shah functional](https://en.wikipedia.org/wiki/Mumford%E2%80%93Shah_functional)

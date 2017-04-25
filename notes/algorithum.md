@@ -23,6 +23,7 @@
   - [backtracking-interview-questions](http://www.techiedelight.com/backtracking-interview-questions/)
   - [preparing-for-a-technical-interview-algorithms-data-structures-and-computer-science](http://www.primaryobjects.com/2017/03/28/preparing-for-a-technical-interview-algorithms-data-structures-and-computer-science/)
   - [Competitive Programmer's Handbook](https://cses.fi/book.html)
+  - [Minimal examples of data structures and algorithms in Python](https://github.com/keon/algorithms)
 
 - machine learning
   - [A-quick-look-at-Support-Vector-Machines](https://generalabstractnonsense.com/2017/03/A-quick-look-at-Support-Vector-Machines/)

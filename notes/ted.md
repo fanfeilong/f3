@@ -73,3 +73,7 @@
     (http://www.ted.com/talks/robert_full_on_engineering_and_evolution.html)
   - [TED:Alan Russell讲人体的再生]
     (http://www.ted.com/talks/alan_russell_on_regenerating_our_bodies.html)
+
+
++ Youtube推荐：复杂性
+  - [Alan Kay, 2015: Power of Simplicity](https://www.youtube.com/watch?v=NdSD07U5uBs) Alan Kay brings lots of great insights about innovation and invention, and its exponentially difference in value creation of wealth and social impact﻿.

@@ -17,6 +17,8 @@
 - [How I Became Better Programmer](http://jlongster.com/How-I-Became-Better-Programmer)
 - [快速组建的开发团队要怎么活下来？](http://www.cnblogs.com/yangdong/p/how-to-quick-rampup-team.html)
 - [principles-of-debugging-effectively](https://www.gamedev.net/blog/1746/entry-2262804-principles-of-debugging-effectively/)
+- [SOFTWARE DEVELOPERS AFTER 40, 50 AND 60 WHO'RE STILL CODING (PHOTO)](https://belitsoft.com/php-development-services/top-software-developers-after-40-50-and-60#2)
+
 
 ## unit test
 - [nodeunit](https://github.com/caolan/nodeunit/blob/master/README.md)
