@@ -24,9 +24,11 @@
   - [preparing-for-a-technical-interview-algorithms-data-structures-and-computer-science](http://www.primaryobjects.com/2017/03/28/preparing-for-a-technical-interview-algorithms-data-structures-and-computer-science/)
   - [Competitive Programmer's Handbook](https://cses.fi/book.html)
   - [Minimal examples of data structures and algorithms in Python](https://github.com/keon/algorithms)
+  - [An Efficient Representation for Sparse Sets (1993) [pdf] (psu.edu)](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.30.7319&rep=rep1&type=pdf)
 
-- machine learning
+- pattern 
   - [A-quick-look-at-Support-Vector-Machines](https://generalabstractnonsense.com/2017/03/A-quick-look-at-Support-Vector-Machines/)
+  - [PAIP](http://norvig.com/paip.html)
 
 
 - 搜索

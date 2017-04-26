@@ -150,6 +150,7 @@ private KEY:N,D，Decode: e1^D%N=m
 - [wiki:spline](http://en.wikipedia.org/wiki/Cubic_splines)
 - [Moving Average](http://mathworld.wolfram.com/MovingAverage.html)
 - [Fourier Visualizations](http://bgrawi.com/Fourier-Visualizations/)
+- [A Primer on Bézier Curves](https://pomax.github.io/bezierinfo/#preface)
 
 ## 信息论
 - [Visual Information Theory](http://colah.github.io/posts/2015-09-Visual-Information/)
