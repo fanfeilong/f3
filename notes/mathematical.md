@@ -6,6 +6,7 @@
 - [历史中的数学](http://open.163.com/movie/2014/1/J/6/M9G136O9T_M9G37SFJ6.html)
 - [Examples of common false beliefs in mathematics](http://mathoverflow.net/questions/23478/examples-of-common-false-beliefs-in-mathematics)
 - [Math without endless memorization](https://betterexplained.com/)
+- [How to Read Mathematics](http://web.stonehill.edu/compsci/History_Math/math-read.htm)
 
 ## 工具
 - [An elementary introduction to the Wolfram Language](http://www.wolfram.com/language/elementary-introduction/)

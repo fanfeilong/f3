@@ -156,6 +156,9 @@ http://csharpindepth.com/ViewNote.aspx?NoteID=70&printable=true
 
 - [简单易懂的程序语言入门小册子](http://www.cnblogs.com/skabyy/p/3670193.html)
 
+- [A closure is a poor man’s object; an object is a poor man’s closure (2003) (mit.edu)](http://people.csail.mit.edu/gregs/ll1-discuss-archive-html/msg03277.html)
+- [oop in fp](http://okmij.org/ftp/Scheme/oop-in-fp.txt)
+
 
 
 

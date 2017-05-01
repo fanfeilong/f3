@@ -29,6 +29,7 @@
 - pattern 
   - [A-quick-look-at-Support-Vector-Machines](https://generalabstractnonsense.com/2017/03/A-quick-look-at-Support-Vector-Machines/)
   - [PAIP](http://norvig.com/paip.html)
+  - [precision and recall](https://en.wikipedia.org/wiki/Precision_and_recall)
 
 
 - 搜索
