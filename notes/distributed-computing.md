@@ -33,6 +33,9 @@
 - [TLA+](http://lamport.azurewebsites.net/video/intro.html)
 - [paxos code](http://nil.csail.mit.edu/6.824/2015/notes/paxos-code.html)
 
+(5) dist lock
+- [Distributed locks with Redis](https://redis.io/topics/distlock)
+
 参考资料
 ==============
 - [Awesome Courses,(Systems,PL-Compile,Algorithm)](https://github.com/prakhar1989/awesome-courses/blob/master/README.md)
