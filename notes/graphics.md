@@ -29,13 +29,25 @@
 - 数学基础
   - [Vector Math for 3D Computer Graphics](http://programmedlessons.org/VectorLessons/)
   - [Visualizing Projections](http://shaunlebron.github.io/visualizing-projections/)
-  
+  - [wiki|仿射空间(Affine space)](https://en.wikipedia.org/wiki/Affine_space)
+  - [wiki|射影空间(Project space)](https://en.wikipedia.org/wiki/Projective_space)
+  - [wiki|射影几何(Projective geometry)](https://en.wikipedia.org/wiki/Projective_geometry)
+  - [wiki|凸组合(Convex combination)](https://en.wikipedia.org/wiki/Convex_combination)
+  - [wiki|齐次坐标(Homogeneous coordinates)](https://en.wikipedia.org/wiki/Homogeneous_coordinates)
+  - [cnblogs|仿射空间与仿射变换](http://www.cnblogs.com/maplewizard/p/4047001.html)
+  - [cnblogs|齐次坐标的理解](http://www.cnblogs.com/csyisong/archive/2008/12/09/1351372.html)
+  - [openbook|吴福朝：计算机视觉中的数学方法](http://cvrs.whu.edu.cn/downloads/ebooks/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E4%B8%AD%E7%9A%84%E6%95%B0%E5%AD%A6%E6%96%B9%E6%B3%95.pdf)
+
+- 几何学
+  - [A History of Vector Analysis](https://en.wikipedia.org/wiki/A_History_of_Vector_Analysis)
+
 - 趣味图形
   - [Tessellations](http://www.tessellations.org/)
   - [齿轮](http://nathanfriend.io/inspirograph/)
   - [Vega is a declarative format for creating, saving, and sharing visualization designs](http://vega.github.io/)
   - [分形](http://www.fractalcurves.com/)
   - [3D Comic](http://yiwenl.github.io/Sketches/)
+
 - Software
   - [LightWave 3D](https://en.wikipedia.org/wiki/LightWave_3D)
     - LightWave is a software package used for rendering 3D images, both animated and static. It includes a fast rendering engine that supports such advanced features as realistic reflection, radiosity, caustics, and 999 render nodes. The 3D modeling component supports both polygon modeling and subdivision surfaces. The animation component has features such as reverse and forward kinematics for character animation, particle systems and dynamics. Programmers can expand LightWave's capabilities using an included SDK which offers Python, LScript (a proprietary scripting language) scripting and C language interfaces.

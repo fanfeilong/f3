@@ -350,6 +350,12 @@ obj.ready(function(ret){
 - [How to write an interpreter(yin wang)](http://www.yinwang.org/blog-cn/2012/08/01/interpreter/)
 - [Bad Engineering Properties of Object-Oriented Languages](http://doc.cat-v.org/programming/bad_properties_of_OO)
 - [lowlevelprogramming-university](https://github.com/gurugio/lowlevelprogramming-university)
+- [Programming as a Way of Thinking](https://blogs.scientificamerican.com/guest-blog/programming-as-a-way-of-thinking/)
 
 ## 趣味编程
 - [编程语言伪简史](http://www.ithome.com/html/it/46432.htm) [A brief incomplete and mostly wrong history of programming languages](http://james-iry.blogspot.co.at/2009/05/brief-incomplete-and-mostly-wrong.html)
+
+
+
+
+
