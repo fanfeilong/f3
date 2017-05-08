@@ -58,6 +58,7 @@
 
 ## 概率学
 - 大数定律
+- [Probability, Mathematical Statistics, Stochastic Processes](http://www.math.uah.edu/stat/index.html)
 
 ## 统计学
 - 数理统计
