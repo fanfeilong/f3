@@ -357,3 +357,28 @@ process.on('exit', function() {
 let cleanExit = function() { process.exit() };
 process.on('SIGINT', cleanExit); // catch ctrl-c
 process.on('SIGTERM', cleanExit); // catch kill
+
+
+
+/**************************************
+ * Q: How to read and write Uint64
+ * A: 1. read the buffer
+ *    2. write back the buffer
+  **************************************/
+function readUint64(buf,offset){
+    return buf.slice(offset,offset+8);
+}
+
+function writeUint64(dest,src,offset){
+    for(let i=0;i<8;i++){
+        dest[offset+i]=src[i];
+    }
+}
+
+
+
+
+
+
+
+

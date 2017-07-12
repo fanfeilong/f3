@@ -55,6 +55,8 @@ network notes
   5. Host A sends ACKnowledge
   6. Host B receives ACK.
   7. TCP socket connection is ESTABLISHED.
+- TCP Retransmission
+  - http://www.saminiir.com/lets-code-tcp-ip-stack-5-tcp-retransmission/
 
 - QUIC(Quick Udp Internet Connection)
   - https://www.chromium.org/quic
@@ -102,6 +104,7 @@ network notes
 * [Do routers verify UDP and TCP checksums?](http://serverfault.com/questions/644289/do-routers-verify-udp-and-tcp-checksums)
 * [UDP vs TCP](http://gafferongames.com/networking-for-game-programmers/udp-vs-tcp/)
 * [Characteristics of UDP Packet Loss: Effect of TCP Traffic](http://www.isoc.org/INET97/proceedings/F3/F3_1.HTM)
+* [Exploiting the Linux kernel via packet sockets](https://googleprojectzero.blogspot.jp/2017/05/exploiting-linux-kernel-via-packet.html)
 
 ## operations
 

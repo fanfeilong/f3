@@ -27,19 +27,27 @@
   - [building-better-interfaces-with-svg](http://slides.com/sarasoueidan/building-better-interfaces-with-svg#/)
   
 - 数学基础
-  - [Vector Math for 3D Computer Graphics](http://programmedlessons.org/VectorLessons/)
-  - [Visualizing Projections](http://shaunlebron.github.io/visualizing-projections/)
+  - [book|Vector Math for 3D Computer Graphics](http://programmedlessons.org/VectorLessons/)
+  - [code|Visualizing Projections](http://shaunlebron.github.io/visualizing-projections/)
   - [wiki|仿射空间(Affine space)](https://en.wikipedia.org/wiki/Affine_space)
   - [wiki|射影空间(Project space)](https://en.wikipedia.org/wiki/Projective_space)
   - [wiki|射影几何(Projective geometry)](https://en.wikipedia.org/wiki/Projective_geometry)
   - [wiki|凸组合(Convex combination)](https://en.wikipedia.org/wiki/Convex_combination)
   - [wiki|齐次坐标(Homogeneous coordinates)](https://en.wikipedia.org/wiki/Homogeneous_coordinates)
-  - [cnblogs|仿射空间与仿射变换](http://www.cnblogs.com/maplewizard/p/4047001.html)
-  - [cnblogs|齐次坐标的理解](http://www.cnblogs.com/csyisong/archive/2008/12/09/1351372.html)
-  - [openbook|吴福朝：计算机视觉中的数学方法](http://cvrs.whu.edu.cn/downloads/ebooks/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E4%B8%AD%E7%9A%84%E6%95%B0%E5%AD%A6%E6%96%B9%E6%B3%95.pdf)
+  - [blog|仿射空间与仿射变换](http://www.cnblogs.com/maplewizard/p/4047001.html)
+  - [blog|齐次坐标的理解](http://www.cnblogs.com/csyisong/archive/2008/12/09/1351372.html)
+  - [book|吴福朝：计算机视觉中的数学方法](http://cvrs.whu.edu.cn/downloads/ebooks/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E4%B8%AD%E7%9A%84%E6%95%B0%E5%AD%A6%E6%96%B9%E6%B3%95.pdf)
+  - [wiki|Gimbal Lock](https://en.wikipedia.org/wiki/Gimbal_lock)
+  - [wiki|Quaternion](https://en.wikipedia.org/wiki/Quaternion)
+  - [wiki|Quaternions and spatial rotation](https://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation)
+  - [blog|Understanding Quaternions](http://www.qiujiawei.com/understanding-quaternions/)
+  - [blog|三维旋转：旋转矩阵，欧拉角，四元数](http://www.cnblogs.com/yiyezhai/p/3176725.html)
+
+- 数据结构
+  - [Data structure for triangle meshes](http://www.redblobgames.com/x/1722-b-rep-triangle-meshes/)
 
 - 几何学
-  - [A History of Vector Analysis](https://en.wikipedia.org/wiki/A_History_of_Vector_Analysis)
+  - [wiki|A History of Vector Analysis](https://en.wikipedia.org/wiki/A_History_of_Vector_Analysis)
 
 - 趣味图形
   - [Tessellations](http://www.tessellations.org/)
@@ -47,6 +55,10 @@
   - [Vega is a declarative format for creating, saving, and sharing visualization designs](http://vega.github.io/)
   - [分形](http://www.fractalcurves.com/)
   - [3D Comic](http://yiwenl.github.io/Sketches/)
+
+- 图形库
+  - [LiquidFun](http://google.github.io/liquidfun/)
+  - [A GENERATIVE APPROACH TO SIMULATING WATERCOLOR PAINTS](http://www.tylerlhobbs.com/writings/watercolor)
 
 - Software
   - [LightWave 3D](https://en.wikipedia.org/wiki/LightWave_3D)

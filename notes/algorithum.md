@@ -36,3 +36,21 @@
 
 - NP Problems
   - [116-page survey article on P vs. NP: better late than never](http://www.scottaaronson.com/blog/?p=3095)
+
+- String
+  - Brute force
+  - KMP：http://www.cnblogs.com/yjiyjige/p/3263858.html
+  - Boyer Moore
+  - Sunday
+  - Bitap
+
+- Funny
+  - 成语接龙：https://www.douban.com/note/617994177/
+
+
+
+
+
+
+
+

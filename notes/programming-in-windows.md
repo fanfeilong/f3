@@ -1,5 +1,8 @@
 细节是魔鬼，整理所有的细节，并不断补充完整个地图，再发酵。
 
+- [How Command Line Parameters Are Parsed](http://daviddeley.com/autohotkey/parameters/parameters.htm)
+
+
 #### MSDN索引
 -------------
 * [Windows API Index](http://is.gd/22HU9t)
