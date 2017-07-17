@@ -165,3 +165,12 @@ Agreeing to Disagree
 Robert Aumann
 If two people have the same priors, and their posteriors for an event A are common knowledge, then these posteriors are equal.
 ```
+
+科学
+-------------------
+```
+鲁迅：现在有一班好讲鬼话的人，最恨科学，因为科学能教道理明白，能教人思路清楚，不许鬼混，所以自然而然的成了讲鬼话的人的对头。于是讲鬼话的人，便须想一个方法排除他。 其中最巧妙的是捣乱。先把科学东扯西拉，羼进鬼话，弄得是非不明，连科学也带了妖气。
+```
+
+
+
