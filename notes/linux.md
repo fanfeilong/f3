@@ -1,0 +1,2 @@
+- [Linux - 请允许我静静地后台运行](http://www.cnblogs.com/zhenbianshu/p/7152327.html)
+- [LINUX PID 1 和 SYSTEMD](http://coolshell.cn/articles/17998.html)
