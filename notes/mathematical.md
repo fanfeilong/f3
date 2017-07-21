@@ -59,6 +59,8 @@
 ## 概率学
 - 大数定律
 - [Probability, Mathematical Statistics, Stochastic Processes](http://www.math.uah.edu/stat/index.html)
+- [Achievement is not normal](https://www.johndcook.com/blog/2009/09/29/achievement-is-log-normal/)
+- [Why isn’t everything normally distributed?](https://www.johndcook.com/blog/2015/03/09/why-isnt-everything-normally-distributed/)
 
 ## 统计学
 - 数理统计
