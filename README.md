@@ -51,6 +51,17 @@ here, build life projects
   - [sort](https://github.com/fanfeilong/f3/tree/master/notes/sort.md) 
   - [scheduler](https://github.com/fanfeilong/f3/tree/master/notes/scheduler.md)
   - [todo:parser]()
++ [control structure]
+  - [branch/leaf](http://www.cnblogs.com/math/p/control-structure-001.html)
+  - [guard clause](http://www.cnblogs.com/math/p/control-structure-002.html)
+  - [state machine](http://www.cnblogs.com/math/p/control-structure-003.html)
+  - [localization](http://www.cnblogs.com/math/p/control-structure-004.html)
+  - [using](http://www.cnblogs.com/math/p/control-structure-005.html)
+  - [LRU](http://www.cnblogs.com/math/p/control-structure-006.html)
+  - [program counter](http://www.cnblogs.com/math/p/control-structure-007.html)
+  - [linearization](http://www.cnblogs.com/math/p/control-structure-008.html)
+  - [pipeline](http://www.cnblogs.com/math/p/control-structure-009.html)
+  - [opcode](http://www.cnblogs.com/math/p/control-structure-010.html)
 + principle
   - [the element of programming](https://github.com/fanfeilong/f3/tree/master/notes/the-element-of-programming.md) 
 + practice
