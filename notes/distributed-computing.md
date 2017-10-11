@@ -22,6 +22,8 @@
 ------
 - paxos
   - [How Paxos works](http://rystsov.info/2015/09/16/how-paxos-works.html)
+  - [consensus-protocols-two-phase-commit](http://the-paper-trail.org/blog/consensus-protocols-two-phase-commit/)
+  - [Understanding Paxos](https://understandingpaxos.wordpress.com/)
 - Zookeeper, ZAB
 - Viewstamped Replication(VR)
 - Facebook, raft
@@ -84,3 +86,6 @@
 
 - Consistent
   - [raft animation](http://thesecretlivesofdata.com/raft/)
+
+- Test
+  - [Testing Distributed Systems for Linearizability](http://www.anishathalye.com/2017/06/04/testing-distributed-systems-for-linearizability/)

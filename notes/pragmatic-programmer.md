@@ -99,6 +99,9 @@ It's Both What You Say and the Way You Say It
 你说什么和你怎么说同样重要
 ```
 
+## links
+- [Three Virtues](http://threevirtues.com)
+
 
 
 

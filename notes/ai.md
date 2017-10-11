@@ -4,3 +4,4 @@
 - [deeplearning.net](http://deeplearning.net)
 - [Neural Networks and Deep Learning](http://neuralnetworksanddeeplearning.com)
 	- [git repository](https://github.com/mnielsen/neural-networks-and-deep-learning)
+- [Exploring LSTMs](http://blog.echen.me/2017/05/30/exploring-lstms/)

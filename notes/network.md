@@ -1,5 +1,8 @@
 network notes
 
+- [Computer architecture for network engineers](https://github.com/lukego/blog/issues/18)
+- [How to transfer large amounts of data via network](http://moo.nac.uci.edu/~hjm/HOWTO_move_data.html)
+
 ## standard protocols
 -----------------
 
@@ -66,6 +69,7 @@ network notes
   - https://tools.ietf.org/html/draft-tsvwg-quic-protocol-02
 
 #### references
+- [Network protocolsFor programmers who know at least one programming language](https://www.destroyallsoftware.com/compendium/network-protocols?share_key=97d3ba4c24d21147)
 - [What is the Internet?](http://www.inetdaemon.com/tutorials/internet/index.shtml)
 - [RFC: A TCP/IP Tutorial](http://www.rfcreader.com/#rfc1180)
 - [wiki:互联网工程任务组（IETF）发布的征求修正意见书（RFC）](http://zh.wikipedia.org/wiki/RFC)
@@ -210,3 +214,11 @@ by socket1, NOT the socket2.
 ------------
 - [How to get udp socket port when bind to 0](http://stackoverflow.com/questions/1075399/how-to-bind-to-any-available-port):
 - [How Does 127.0.0.1 Work?](http://www.tech-faq.com/127-0-0-1.html)
+
+
+## Tools
+- [A tcpdump Tutorial and Primer with Examples](https://danielmiessler.com/study/tcpdump/)
+
+
+
+

@@ -86,7 +86,7 @@
 - [x] +1.0 `<<捕捉儿童敏感期>>`
 - [ ] +1.0 `<<培养孩子从画画做起>>`，[豆瓣](http://book.douban.com/subject/5378929/)
 - [x] +1.0 `<<社会心理学精要>>`，=>[NOTE](https://book.douban.com/review/8291002/)
-
+- [ ] +0.0 [Evolutionary Psychology](https://plato.stanford.edu/entries/evolutionary-psychology/)
 
 
 ## articles

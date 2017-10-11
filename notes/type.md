@@ -1,0 +1,1 @@
+- [A brief history of “type”](http://arcanesentiment.blogspot.jp/2015/01/a-brief-history-of-type.html)

@@ -18,7 +18,11 @@
 - [快速组建的开发团队要怎么活下来？](http://www.cnblogs.com/yangdong/p/how-to-quick-rampup-team.html)
 - [principles-of-debugging-effectively](https://www.gamedev.net/blog/1746/entry-2262804-principles-of-debugging-effectively/)
 - [SOFTWARE DEVELOPERS AFTER 40, 50 AND 60 WHO'RE STILL CODING (PHOTO)](https://belitsoft.com/php-development-services/top-software-developers-after-40-50-and-60#2)
-
+- [Computer architecture for network engineers](https://github.com/lukego/blog/issues/18)
+- [Library patterns Why frameworks are evil](http://tomasp.net/blog/2015/library-frameworks/)
 
 ## unit test
 - [nodeunit](https://github.com/caolan/nodeunit/blob/master/README.md)
+
+## book
+- [High-Quality Software Engineering](http://www.lurklurk.org/hqse/hqse.html)

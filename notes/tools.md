@@ -247,6 +247,7 @@ git config --global alias.lss "log --no-merges --color --stat --graph --date=for
 
 ## PDF
 #### operations
+- [sumatrapd](https://github.com/sumatrapdfreader/sumatrapdf/blob/master/readme.md)
 
 #### references
 - [pdftk](http://pdftk.com/)

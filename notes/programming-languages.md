@@ -210,6 +210,7 @@ obj.ready(function(ret){
 * [right-left-rule](http://ieng9.ucsd.edu/~cs30x/rt_lt.rule.html)
 * [How Do I Declare a Function Pointer in C?](http://goshdarnfunctionpointers.com)
 * [Everything you need to know about pointers in C](http://boredzo.org/pointers/)
+* [Beej's Guide to C Programming](http://beej.us/guide/bgc/output/html/singlepage/bgc.html)
 
 #### c++
 -------------
@@ -284,6 +285,7 @@ obj.ready(function(ret){
 - 利用尾递归技术，实现一定程度的热更新。
 
 #### Go
+- [5 things about programming I learned with Go](http://mjk.space/5-things-about-programming-learned-with-go/)
 读了rob pike的这篇[Less is exponentially more](https://commandcenter.blogspot.jp/2012/06/less-is-exponentially-more.html)，作者谈了Go的设计初衷和理念。还分析了为什么一开始使用Go的从Python、Ruby说社区来的多，而从C++来的少。两种不同的设计理念。
 - regular syntax (don't need a symbol table to parse)
 - garbage collection (only)

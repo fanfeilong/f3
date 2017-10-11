@@ -25,6 +25,9 @@
   - [Competitive Programmer's Handbook](https://cses.fi/book.html)
   - [Minimal examples of data structures and algorithms in Python](https://github.com/keon/algorithms)
   - [An Efficient Representation for Sparse Sets (1993) [pdf] (psu.edu)](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.30.7319&rep=rep1&type=pdf)
+  - [The Little AVL Tree That Could](https://dev.to/vaidehijoshi/the-little-avl-tree-that-could)
+  - [Visualizing Algorithms](https://bost.ocks.org/mike/algorithms/)
+  - [Designing a Tree Diff Algorithm Using Dynamic Programming and A star](http://thume.ca/2017/06/17/tree-diffing/)
 
 - pattern 
   - [A-quick-look-at-Support-Vector-Machines](https://generalabstractnonsense.com/2017/03/A-quick-look-at-Support-Vector-Machines/)

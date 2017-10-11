@@ -1,0 +1,5 @@
+#lang racket
+(define (make-point x y z)
+  (list x y z))
+(define (make-segment x y)
+  (list x y))

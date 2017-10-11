@@ -4,6 +4,7 @@
   
 - 用户界面设计
   - [Principles of User Interface Design](http://bokardo.com/principles-of-user-interface-design/)
+  - [GUI历史](http://toastytech.com/guis/index.html)
 
 - 字体
   - [wiki:中文字体](http://zh.wikipedia.org/zh/字体)
@@ -42,6 +43,7 @@
   - [wiki|Quaternions and spatial rotation](https://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation)
   - [blog|Understanding Quaternions](http://www.qiujiawei.com/understanding-quaternions/)
   - [blog|三维旋转：旋转矩阵，欧拉角，四元数](http://www.cnblogs.com/yiyezhai/p/3176725.html)
+  - [FIZZLEFADE](http://fabiensanglard.net/fizzlefade/index.php)
 
 - 数据结构
   - [Data structure for triangle meshes](http://www.redblobgames.com/x/1722-b-rep-triangle-meshes/)
@@ -59,6 +61,7 @@
 - 图形库
   - [LiquidFun](http://google.github.io/liquidfun/)
   - [A GENERATIVE APPROACH TO SIMULATING WATERCOLOR PAINTS](http://www.tylerlhobbs.com/writings/watercolor)
+  - [Low-Level Graphics on Linux](http://betteros.org/tut/graphics1.php)
 
 - Software
   - [LightWave 3D](https://en.wikipedia.org/wiki/LightWave_3D)

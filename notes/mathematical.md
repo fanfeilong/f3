@@ -167,3 +167,7 @@ private KEY:N,D，Decode: e1^D%N=m
 - [pi-and-the-golden-ratio](https://johncarlosbaez.wordpress.com/2017/03/07/pi-and-the-golden-ratio/)
 - [Squaring the square](https://en.wikipedia.org/wiki/Squaring_the_square)
 
+## 数学家
+- [亚历山大·格罗滕迪克, 代数几何创始人](https://zh.wikipedia.org/wiki/%E4%BA%9A%E5%8E%86%E5%B1%B1%E5%A4%A7%C2%B7%E6%A0%BC%E7%BD%97%E6%BB%95%E8%BF%AA%E5%85%8B)
+- [Alexander Grothendieck](https://al3x.svbtle.com/alexander-grothendieck)
+
