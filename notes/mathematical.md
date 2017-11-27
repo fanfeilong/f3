@@ -21,6 +21,7 @@
 - 高等代数
 - 抽象代数
   - 群、环、域、模
+  - [New Number Systems Seek Their Lost Primes](https://www.quantamagazine.org/ideal-numbers-seek-their-lost-primes-20170302)
 - 李代数
   - 李群
 

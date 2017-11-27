@@ -188,6 +188,7 @@ obj.ready(function(ret){
 
 #### c
 -----------
+- [simple vm](https://github.com/rmccullagh/como-lang-ng/blob/master/vm/simple.c)
 - [cerberus](https://www.cl.cam.ac.uk/~pes20/cerberus/)
 - [cmacro](https://github.com/eudoxia0/cmacro)
   - process programming language as data by the programming language it self

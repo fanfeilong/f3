@@ -22,3 +22,6 @@ tools for javascript developer
 Functional Features
 ===============
 - [The many »Talents« of JavaScript](http://peterseliger.blogspot.jp/2014/04/the-many-talents-of-javascript.html#the-many-talents-of-javascript-for-generalizing-role-oriented-programming-approaches-like-traits-and-mixins)
+
+- [javascript-symbols-generators-and-streams](https://medium.com/front-end-hacking/javascript-symbols-generators-and-streams-1f6ef0fb1fdc)
+- [implementing-javascript-functors-and-monads](https://medium.com/@rubenspgcavalcante/implementing-javascript-functors-and-monads-a87b6a4b4d9a)

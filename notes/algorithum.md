@@ -13,6 +13,9 @@
   - [Top 10 algorithms in Interview Questions](http://www.geeksforgeeks.org/top-10-algorithms-in-interview-questions/)
 
 - 数据结构与算法
+  - [LinkedListProblems](http://cslibrary.stanford.edu/105/LinkedListProblems.pdf)
+  - [BinaryTrees](http://cslibrary.stanford.edu/110/BinaryTrees.pdf)
+  - [TreeListRecursion](http://cslibrary.stanford.edu/109/TreeListRecursion.pdf)
   - [Skip Lists: Done Right](http://ticki.github.io/blog/skip-lists-done-right/)
   - [Why Recursive Data Structures?](http://raganwald.com/2016/12/27/recursive-data-structures.html)
   - [Data structures and algorithms problems in C++ using STL](http://www.techiedelight.com/data-structures-and-algorithms-interview-questions-stl/)
