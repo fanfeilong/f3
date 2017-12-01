@@ -153,7 +153,8 @@ http://csharpindepth.com/ViewNote.aspx?NoteID=70&printable=true
 - [Promise是Monad吗?](https://cnodejs.org/topic/594a1823325c502917ef0ca0)
 
 ## refernces
-- https://www.wisdomandwonder.com/link/2110/why-mit-switched-from-scheme-to-python
+- [why-mit-switched-from-scheme-to-python](https://www.wisdomandwonder.com/link/2110/why-mit-switched-from-scheme-to-python)
 - [How to implement a programming language in JavaScript](http://lisperator.net/pltut/)
+- [lisp-in-less-than-200-lines-of-c](https://carld.github.io/2017/06/20/lisp-in-less-than-200-lines-of-c.html)
 
 

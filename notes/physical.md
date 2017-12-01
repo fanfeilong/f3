@@ -33,3 +33,20 @@
 
 ## 未解问题
 - [List of unsolved problems in physics](http://en.wikipedia.org/wiki/List_of_unsolved_problems_in_physics)
+
+
+## 普朗克常数
+- http://en.wikipedia.org/wiki/Planck_constant
+>The Planck constant (denoted h, also called Planck's constant) is a physical constant that is the quantum of action in quantum mechanics. The Planck constant was first described as the proportionality constant between the energy (E) of a charged atomic oscillator in the wall of a black body, and the frequency (ν) of its associated electromagnetic wave. This relation between the energy and frequency is called the Planck relation:
+E = h\nu \,.
+
+普朗克常数×频率=光子能量
+波长×频率=光速
+从而，波长越短，能量越大。
+紫外线比红外线波长短，所以能量大，所以要防止紫外线。
+
+
+
+
+
+

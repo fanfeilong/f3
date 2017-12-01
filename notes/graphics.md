@@ -66,5 +66,8 @@
 - Software
   - [LightWave 3D](https://en.wikipedia.org/wiki/LightWave_3D)
     - LightWave is a software package used for rendering 3D images, both animated and static. It includes a fast rendering engine that supports such advanced features as realistic reflection, radiosity, caustics, and 999 render nodes. The 3D modeling component supports both polygon modeling and subdivision surfaces. The animation component has features such as reverse and forward kinematics for character animation, particle systems and dynamics. Programmers can expand LightWave's capabilities using an included SDK which offers Python, LScript (a proprietary scripting language) scripting and C language interfaces.
+
+- Computer Vision
+  - [a-year-in-computer-vision 2016-2017](http://www.themtank.org/a-year-in-computer-vision)
   
 
