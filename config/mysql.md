@@ -38,4 +38,10 @@
 - 使用installer一键安装，忽略不满足条件的组件（mysql for excel之类）
     - 最后会让设置root密码
 
+## [mysql][atomic/concurrency]
+- [MySQL and an atomic 'check ... on none insert'](https://blog.fastmail.com/2017/12/09/mysql-lock-nonexistent-row/)
+- [MySQL 加锁处理分析](https://github.com/hedengcheng/tech/blob/master/database/MySQL/MySQL%20%E5%8A%A0%E9%94%81%E5%A4%84%E7%90%86%E5%88%86%E6%9E%90.pdf)
+
+
+
 

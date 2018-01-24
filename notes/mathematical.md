@@ -72,6 +72,7 @@
 - 数值微分
 - 偏微分方程数值解
   - 流体力学
+  - [Mathematicians Find Wrinkle in Famed Fluid Equations](https://www.quantamagazine.org/mathematicians-find-wrinkle-in-famed-fluid-equations-20171221/)
 - 计算几何
 - 计算机几何造型
 
