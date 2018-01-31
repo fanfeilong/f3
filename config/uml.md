@@ -1,0 +1,4 @@
+- [js sequence diagrams](https://bramp.github.io/js-sequence-diagrams/)
+- [yuml](http://yuml.me/diagram/scruffy/class/samples)
+- [State machine diagram](https://www.visual-paradigm.com/VPGallery/diagrams/State.html)
+- [websequencediagrams](https://www.websequencediagrams.com)

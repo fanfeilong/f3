@@ -1,0 +1,2 @@
+- [Simple, adaptive, computer-generated typing lessons that will teach you how to type faster and with fewer errors](http://www.keybr.com/#!game)
+- [SILE](http://sile-typesetter.org/what-is/)

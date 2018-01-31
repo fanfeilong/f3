@@ -65,7 +65,6 @@ here, build life projects
 + principle
   - [the element of programming](https://github.com/fanfeilong/f3/tree/master/notes/the-element-of-programming.md) 
 + practice
-  - [tools](https://github.com/fanfeilong/f3/tree/master/notes/tools.md) 
   - [engineering](https://github.com/fanfeilong/f3/tree/master/notes/engineering.md)  
 + computer science
   - [compiler](https://github.com/fanfeilong/f3/tree/master/notes/compiler.md) 

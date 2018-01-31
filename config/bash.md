@@ -1,0 +1,3 @@
+- [Batsh - A language that compiles to Bash and Windows Batch](http://batsh.org/#)
+- [The art of command line](https://github.com/jlevy/the-art-of-command-line)
+- [bash hand book](https://github.com/denysdovhan/bash-handbook)
