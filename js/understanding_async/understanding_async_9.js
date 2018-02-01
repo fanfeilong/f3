@@ -1,28 +1,42 @@
 /**************************************
- * 使用Promise的函数
+ * MacroTask/MicroTask/tickTask
  **************************************/
 
-// promise方式返回异步结果
 function promiseFunc(arg){
 	return new Promise((resolve,reject)=>{
-
-		// 即使这里不是个异步函数，直接resolve
-		// Promise依然保证会异步执行
 		resolve({err:0,result:arg});
 	});
 }
 
-// 调用：ES7之后，增加了async，可以直接await去调用, 任何调用了await的函数，本身必须是async函数
-async function test1(){
-	let value = await promiseFunc('call promiseFunc await');
-	console.log(value.err,value.result);
+async function test2(){
+	// 同步打印
+	console.log('execute asycn test2');
+
+	setTimeout(()=>{
+		console.log('this is a macro task');
+	},1);
+
+	// process.nextTick是tickTask，它们会在'sync-end'被打印后优先于所有的
+	// Promise被执行，可见tickTask优先于MicroTask
+	process.nextTick(()=>{
+		console.log('this is a tick task');
+	})
+
+	// 这个Promise的打印在下面的async-return-promise之前执行，请观察日志顺序
+	promiseFunc('this is a microtask, which is a Promise').then(v=>console.log(v));
+
+	// 返回值虽然看上去是同步的，但是aync会封装成一个Promise返回，我们假设为 async-return-promise
+	return 'return asycn test2, this is also a promise, a microtask'
 }
 
-console.log('before test1');
-test1();
-test1();
-console.log('after test1');
+console.log('before test2');
+test2().then(v=>console.log(v));
+test2().then(v=>console.log(v));
+console.log('after test2'); // 注意这后面的打印日志
 
+promiseFunc('promiseFunc test').then(v=>console.log(v));
+
+console.log('sync-end');
 
 // 参考：
 // 1. http://js.walfud.com/macrotask-microtask/
