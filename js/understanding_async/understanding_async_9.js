@@ -12,21 +12,25 @@ async function test2(){
 	// 同步打印
 	console.log('execute asycn test2');
 
+	// Timer是一种MacroTask，顺序排在tickTask/MicroTask之后
+	// 请观察日志顺序
 	setTimeout(()=>{
-		console.log('this is a macro task');
+		console.log('this is a macro task, [call in test2] setTimeout');
 	},1);
 
 	// process.nextTick是tickTask，它们会在'sync-end'被打印后优先于所有的
 	// Promise被执行，可见tickTask优先于MicroTask
+	// 请观察日志顺序
 	process.nextTick(()=>{
-		console.log('this is a tick task');
+		console.log('this is a tick task, [call in test2] process.nextTick');
 	})
 
-	// 这个Promise的打印在下面的async-return-promise之前执行，请观察日志顺序
-	promiseFunc('this is a microtask, which is a Promise').then(v=>console.log(v));
+	// 这个Promise的打印在下面的async-return-promise之前执行，
+	// 请观察日志顺序
+	promiseFunc('this is a microtask, [call in test2] which is a Promise').then(v=>console.log(v.result));
 
 	// 返回值虽然看上去是同步的，但是aync会封装成一个Promise返回，我们假设为 async-return-promise
-	return 'return asycn test2, this is also a promise, a microtask'
+	return 'this is a microtask, [call in test2] return asycn test2'
 }
 
 console.log('before test2');
@@ -34,7 +38,7 @@ test2().then(v=>console.log(v));
 test2().then(v=>console.log(v));
 console.log('after test2'); // 注意这后面的打印日志
 
-promiseFunc('promiseFunc test').then(v=>console.log(v));
+promiseFunc('this is a microtask, [call after test2]').then(v=>console.log(v.result));
 
 console.log('sync-end');
 
