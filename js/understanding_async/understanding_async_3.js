@@ -13,21 +13,26 @@ function doSometingAsync(arg, callback){
 // 起作用的就是那层的函数，例如
 function promiseFunc(arg){
 	return new Promise((resolve,reject)=>{
-		doSometingAsync(arg,(err, result1)=>{            // 异步调用
+
+		// 异步调用
+		doSometingAsync(arg,(err, result1)=>{            
 
 			if(err){    
-				reject(err);                            // 这里reject对应的Promise属于promiseFunc的
+				// 这里reject对应的Promise属于promiseFunc的
+				reject(err);                            
 				return;
 			}
 
-			doSometingAsync(arg,(err, result2)=>{       // 嵌套的异步调用
+			// 嵌套的异步调用
+			doSometingAsync(arg,(err, result2)=>{       
 
 				if(err===0){ 
 					let value = {
 						err:err, 
 						result:result1+', '+result2
-					};              
-					resolve(value);                     // 这里resolve对应的Promise属于promiseFunc的
+					};        
+					// 这里resolve对应的Promise属于promiseFunc的      
+					resolve(value);                     
 				}else{
 					reject(err);
 				}

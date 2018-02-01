@@ -7,6 +7,7 @@ function doSometingAsync(arg, callback){
 /**************************************
  * 使用Promise的函数
  **************************************/
+
 // 2. promise方式返回异步结果
 function promiseFunc(arg){
 	return new Promise((resolve,reject)=>{
