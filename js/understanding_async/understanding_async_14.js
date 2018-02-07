@@ -28,6 +28,8 @@ async function multiQueryAsyncSequence2(sqls){
 				}
 				index++;
 				if(index===sqls.length){
+					// 使用了Promise，则
+					// resolve的时候async函数才真正返回
 					resolve(result);
 				}
 			})
