@@ -20,6 +20,8 @@
 - [SOFTWARE DEVELOPERS AFTER 40, 50 AND 60 WHO'RE STILL CODING (PHOTO)](https://belitsoft.com/php-development-services/top-software-developers-after-40-50-and-60#2)
 - [Computer architecture for network engineers](https://github.com/lukego/blog/issues/18)
 - [Library patterns Why frameworks are evil](http://tomasp.net/blog/2015/library-frameworks/)
+- [How Big Deals Kill Companies](https://blog.ycombinator.com/big-deals/)
+- [The Rise of Worse is Better](http://dreamsongs.com/RiseOfWorseIsBetter.html?utm_medium=social&utm_source=wechat_session)
 
 ## unit test
 - [nodeunit](https://github.com/caolan/nodeunit/blob/master/README.md)

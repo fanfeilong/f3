@@ -2,3 +2,4 @@
 - [Inside a super fast CSS engine: Quantum CSS ](https://hacks.mozilla.org/2017/08/inside-a-super-fast-css-engine-quantum-css-aka-stylo/)
 - [A list of V8 related resources](http://mrale.ph/)
 - [How JavaScript works: memory management + how to handle 4 common memory leaks](https://blog.sessionstack.com/how-javascript-works-memory-management-how-to-handle-4-common-memory-leaks-3f28b94cfbec)
+- [History of the browser user-agent string](https://webaim.org/blog/user-agent-string-history/)
