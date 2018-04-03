@@ -1,4 +1,0 @@
-- [正则表达式30分钟入门教程](http://deerchao.net/tutorials/regex/regex.htm)
-- [Word使用正则表达式查找替换](http://office.microsoft.com/zh-cn/word-help/HA102350661.aspx)
-- [Regexper](http://regexper.com/#)
-- [Regular Expressions in grep](http://www.robelle.com/smugbook/regexpr.html)
