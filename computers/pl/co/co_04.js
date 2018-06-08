@@ -1,4 +1,4 @@
-let toPromise = require('understanding_co_o4.js').toPromise;
+let toPromise = require('./co_o4.js').toPromise;
 
 function co(gen) {
   var ctx = this;

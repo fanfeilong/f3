@@ -1,5 +1,7 @@
 ## 基本概念
 
+- [Teach Yourself Scheme in Fixnum Days](https://ds26gte.github.io/tyscheme/index-Z-H-1.html)
+
 #### 作用域
 - dynamic scoping
 ```

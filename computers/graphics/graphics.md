@@ -63,6 +63,9 @@
   - [A GENERATIVE APPROACH TO SIMULATING WATERCOLOR PAINTS](http://www.tylerlhobbs.com/writings/watercolor)
   - [Low-Level Graphics on Linux](http://betteros.org/tut/graphics1.php)
 
+- 颜色
+  - [Color: From Hexcodes to Eyeballs](http://jamie-wong.com/post/color/)
+
 - Software
   - [LightWave 3D](https://en.wikipedia.org/wiki/LightWave_3D)
     - LightWave is a software package used for rendering 3D images, both animated and static. It includes a fast rendering engine that supports such advanced features as realistic reflection, radiosity, caustics, and 999 render nodes. The 3D modeling component supports both polygon modeling and subdivision surfaces. The animation component has features such as reverse and forward kinematics for character animation, particle systems and dynamics. Programmers can expand LightWave's capabilities using an included SDK which offers Python, LScript (a proprietary scripting language) scripting and C language interfaces.

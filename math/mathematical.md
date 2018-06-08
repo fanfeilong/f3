@@ -66,6 +66,7 @@
 ## 统计学
 - 数理统计
 - 贝叶斯统计
+- [](http://jdlm.info/articles/2018/03/18/markov-decision-process-2048.html?href=)
 
 ## 计算数学
 - 数值代数

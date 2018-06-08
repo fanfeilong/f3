@@ -1,4 +1,4 @@
-let is = require("./understanding_co_01.js");
+let is = require("./co_01.js");
 let {isPromise,isGenerator,isGeneratorFunction,isObject} = is;
 
 function thunkToPromise(fn) {

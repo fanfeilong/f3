@@ -1,0 +1,3 @@
+- [raft animation](http://thesecretlivesofdata.com/raft/)
+- [raft paper, zh-cn](http://www.infoq.com/cn/articles/raft-paper)
+- [raft wikipedia](https://en.wikipedia.org/wiki/Raft_(computer_science))
