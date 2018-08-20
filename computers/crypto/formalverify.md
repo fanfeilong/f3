@@ -1,0 +1,11 @@
+https://www.igi-global.com/chapter/formal-verification-methods/112414
+
+Higher-Order Logic: A system of deduction with a precise semantics. It differs from the more commonly-known predicate and first-order logics by allowing quantification over function variables. This extension substantially increases the expressiveness of the logic and thus higher-order logic can be used for the formal specification of most mathematical concepts and theories.
+
+Binary Decision Diagram (BDD): A representation of a Boolean expression using a rooted directed acyclic graph (DAG) that consists of terminal (with constant values 0 or 1) or non-terminal nodes (variables). A Reduced ordered BDD (ROBDD), which is a widely used data structure in formal verification, is a BDD with a particular variable order where identical nodes are shared and redundant tests are eliminated.
+
+Tautology: A logical formula is termed to be a tautology (valid) if and only if it is true for all the possible values of its variables. In other words, a formula is a tautology if its negation (¬F) is unsatisfiable. This relationship between satisfiablity and tautology is one of the foundational principles of using SAT solving for equivalence checking.
+
+Temporal Logic: Temporal logic allows us to formally represent time-dependent propositions. For example, propositions like an event would happen in the next time step or sometime in the future or would never happen in the future, can be expressed using temporal logic operators. Temporal logic is used in model-checking to express the properties of interest about the reactive systems.
+
+Formal Verification Methods: Mathematical techniques, often supported by computer-based tools, for the specification and verification of software and hardware systems. The main principle behind formal analysis of a system is to construct a computer based mathematical model of the given system and formally verify, within a computer, that this model meets rigorous specifications of intended behavior.

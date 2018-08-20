@@ -22,6 +22,10 @@
 - [Library patterns Why frameworks are evil](http://tomasp.net/blog/2015/library-frameworks/)
 - [How Big Deals Kill Companies](https://blog.ycombinator.com/big-deals/)
 - [The Rise of Worse is Better](http://dreamsongs.com/RiseOfWorseIsBetter.html?utm_medium=social&utm_source=wechat_session)
+- [Unix as IDE: Introduction](https://sanctum.geek.nz/arabesque/series/unix-as-ide/?)
+- [Readme Driven Development](http://tom.preston-werner.com/2010/08/23/readme-driven-development.html)
+- [Computer engineering](https://en.wikipedia.org/wiki/Computer_engineering)
+  - 软硬件都做的计算机工程
 
 ## unit test
 - [nodeunit](https://github.com/caolan/nodeunit/blob/master/README.md)

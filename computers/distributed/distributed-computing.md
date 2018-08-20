@@ -89,3 +89,12 @@
 
 - Test
   - [Testing Distributed Systems for Linearizability](http://www.anishathalye.com/2017/06/04/testing-distributed-systems-for-linearizability/)
+
+
+
+High availability
+=====
+- [MySQL High Availability at GitHub](https://githubengineering.com/mysql-high-availability-at-github/)
+
+
+

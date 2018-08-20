@@ -1,0 +1,1 @@
+- [OMG, the Water's Warm! NASA Study Solves Glacier Puzzle](https://www.nasa.gov/feature/jpl/omg-the-waters-warm-nasa-study-solves-glacier-puzzle)

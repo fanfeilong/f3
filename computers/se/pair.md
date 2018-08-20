@@ -1,0 +1,3 @@
+- [pair programming](http://www.cs.wm.edu/~noonan/pairprog.html)
+- [a recipe for successful pair programming](https://builttoadapt.io/a-recipe-for-successful-pair-programming-b5eec6611e7)
+- [how to pair programming](http://anh.cs.luc.edu/170/Kindergarten.html)

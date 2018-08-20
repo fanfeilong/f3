@@ -31,6 +31,7 @@
         - Pancake sorting-O(n), 但需要特別的硬體
         - 臭皮匠排序(stooge sort)算法简单，但需要约n^2.7的时间
     - [深入浅出PageRank算法](https://segmentfault.com/a/1190000000711128)
+    - https://sorting.cr.yp.to/
 
 
 - 查找

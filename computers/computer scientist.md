@@ -1,0 +1,2 @@
+- [wiki:Grace Hopper](https://en.wikipedia.org/wiki/Grace_Hopper)
+- [wiki:葛丽丝·霍普](https://zh.wikipedia.org/wiki/%E8%91%9B%E9%BA%97%E7%B5%B2%C2%B7%E9%9C%8D%E6%99%AE)

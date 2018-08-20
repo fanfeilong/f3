@@ -1,0 +1,5 @@
+- [社会心理学-[美] 戴维·迈尔斯](https://book.douban.com/subject/1476651/)
+- [社会心理学-E·Aronson ](https://book.douban.com/subject/1930235/)
+- [社会心理学-[以色列] 巴伦 / [美] 伯恩](https://book.douban.com/subject/1021379/)
+- [社会心理学-艾伦·约翰·珀西瓦尔·泰勒](https://book.douban.com/subject/1257648/)
+- [社会心理学-阿伦森](https://book.douban.com/subject/1483907/)

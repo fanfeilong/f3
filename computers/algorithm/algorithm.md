@@ -36,7 +36,8 @@
   - [A-quick-look-at-Support-Vector-Machines](https://generalabstractnonsense.com/2017/03/A-quick-look-at-Support-Vector-Machines/)
   - [PAIP](http://norvig.com/paip.html)
   - [precision and recall](https://en.wikipedia.org/wiki/Precision_and_recall)
-
+- [Phil’s Data Structure Zoo](https://g1thubhub.github.io/data-structure-zoo.html)
+- [Data Structures Reference](https://www.interviewcake.com/data-structures-reference)
 
 - 搜索
 
