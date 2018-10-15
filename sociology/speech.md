@@ -1,1 +1,2 @@
 - [Steve Jobs President & CEO, NeXT Computer Corp and Apple. MIT Sloan Distinguished Speaker Series](https://www.youtube.com/watch?v=Gk-9Fd2mEnI)
+- [兰迪·波许 最后一课](http://v.qq.com/detail/7/7qt8i40mmgkve03.html)

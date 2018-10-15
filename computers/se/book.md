@@ -1,0 +1,2 @@
+- [software engineering notebook](http://winterflower.github.io/2017/08/17/software-engineering-notebook/)
+- []()

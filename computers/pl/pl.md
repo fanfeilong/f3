@@ -165,6 +165,7 @@ obj.ready(function(ret){
 #### scheme
 ---------------
 - [beauty sicp](http://sarabander.github.io/sicp/)
+- [Lisp魔咒：对Lisp的非技术性吐槽](http://www.iteye.com/news/30710)
 
 ##### 语言基础
 * atom: null?, zero?, number?, quote?
