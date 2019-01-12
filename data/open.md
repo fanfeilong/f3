@@ -1,0 +1,2 @@
+* [Turn the web into a database](https://www.mixnode.com/blog/posts/turn-the-web-into-a-database-an-alternative-to-web-crawling-scraping)
+* [tencent nlp open data](https://ai.tencent.com/ailab/nlp/embedding.html)

@@ -84,3 +84,6 @@ lambda.x.
 - [单词拼写都是错的也能读](http://geon.github.io/programming/2016/03/03/dsxyliea)
 - [眼球Parser](http://www.kuaidula.com/)
 - [0.30000000000000004](http://0.30000000000000004.com)
+
+
+http://davidlowryduda.com/a-brief-notebook-on-cryptography/

@@ -1,0 +1,1 @@
+* 创新扩散理论：[Diffusion of innovations](https://en.wikipedia.org/wiki/Diffusion_of_innovations)
