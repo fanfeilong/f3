@@ -2,6 +2,7 @@
   - [布朗大学图形学教程](http://www.cs.brown.edu/courses/cs123/lectures.htm)
   - [WebGL Fundamentals](http://webglfundamentals.org/)
   - [NeHe OpenGL](http://nehe.gamedev.net/tutorial/creating_an_opengl_window_(win32))
+  - [learn-computer-graphics-programming](https://courses.pikuma.com/courses/learn-computer-graphics-programming)
   
 - 用户界面设计
   - [Principles of User Interface Design](http://bokardo.com/principles-of-user-interface-design/)
